@@ -18,6 +18,23 @@ export enum WebPrefKey {
   NotesHideTags = 'hideTags',
 };
 
+export type WebPrefValue = {
+  [WebPrefKey.TagsPanelWidth]: number,
+  [WebPrefKey.NotesPanelWidth]: number,
+  [WebPrefKey.EditorWidth]: number | null,
+  [WebPrefKey.EditorLeft]: number | null,
+  [WebPrefKey.EditorMonospaceEnabled]: boolean,
+  [WebPrefKey.EditorSpellcheck]: boolean,
+  [WebPrefKey.EditorResizersEnabled]: boolean,
+  [WebPrefKey.SortNotesBy]: string,
+  [WebPrefKey.SortNotesReverse]: boolean,
+  [WebPrefKey.NotesShowArchived]: boolean,
+  [WebPrefKey.NotesHidePinned]: boolean,
+  [WebPrefKey.NotesHideNotePreview]: boolean,
+  [WebPrefKey.NotesHideDate]: boolean,
+  [WebPrefKey.NotesHideTags]: boolean,
+}
+
 export class SNUserPrefs extends SNItem {
 
   get isSingleton() {
@@ -28,7 +45,7 @@ export class SNUserPrefs extends SNItem {
     return new SNPredicate('content_type', '=', this.content_type!);
   }
 
-  getPref(key: WebPrefKey) {
+  getPref<T extends WebPrefKey>(key: T): WebPrefValue[T] | undefined {
     return this.getAppDomainValue(key as any);
   }
 }

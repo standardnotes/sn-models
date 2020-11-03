@@ -57,9 +57,11 @@ import {
   UNSUPPORTED_BACKUP_FILE_VERSION, ChallengeStrings, ProtocolUpgradeStrings, INVALID_PASSWORD
 } from './services/api/messages';
 import { MINIMUM_PASSWORD_LENGTH, SessionEvent } from './services/api/session_manager';
-import { SNComponent, SNTag, SNNote } from './models';
+import { SNComponent, SNTag, SNNote, WebPrefKey } from './models';
 import { ProtocolVersion, compareVersions } from './protocol/versions';
 import { KeyParamsOrigination } from './protocol/key_params';
+import { PreferencesEvent, PreferencesService } from './services/preferences_service';
+import { WebPrefValue } from './models/app/userPrefs';
 
 /** How often to automatically sync, in milliseconds */
 const DEFAULT_AUTO_SYNC_INTERVAL = 30000;
@@ -112,6 +114,7 @@ export class SNApplication {
   public historyManager!: SNHistoryManager
   private itemManager!: ItemManager
   private keyRecoveryService!: SNKeyRecoveryService
+  private preferencesService!: PreferencesService
 
   private eventHandlers: ApplicationObserver[] = [];
   private services: PureService<any>[] = [];
@@ -949,6 +952,22 @@ export class SNApplication {
     return this.syncService!.resolveOutOfSync();
   }
 
+  public onPreferencesChange(listener: () => void) {
+    return this.preferencesService.addEventObserver(async (event) => {
+      if (event === PreferencesEvent.Changed) {
+        listener();
+      }
+    });
+  }
+
+  public getPreference<K extends WebPrefKey>(key: K, defaultValue: WebPrefValue[K]): WebPrefValue[K] {
+    return this.preferencesService.getValue(key, defaultValue);
+  }
+
+  public setPreference<K extends WebPrefKey>(key: K, value: WebPrefValue[K]) {
+    return this.preferencesService.setValue(key, value);
+  }
+
   public async setValue(key: string, value: any, mode?: StorageValueModes) {
     return this.storageService!.setValue(key, value, mode);
   }
@@ -1400,6 +1419,7 @@ export class SNApplication {
     this.createPrivilegesService();
     this.createHistoryManager();
     this.createActionsManager();
+    this.createPreferencesService();
   }
 
   private clearServices() {
@@ -1607,6 +1627,15 @@ export class SNApplication {
       this.syncService!,
     );
     this.services.push(this.actionsManager!);
+  }
+
+  private createPreferencesService() {
+    this.preferencesService = new PreferencesService(
+      this.singletonManager,
+      this.itemManager,
+      this.syncService
+    );
+    this.services.push(this.preferencesService);
   }
 
   private shouldSkipClass(classCandidate: any) {

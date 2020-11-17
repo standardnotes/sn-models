@@ -121,6 +121,12 @@ app.streamItems(
 
 ## Building
 
+### Requirements
+
+This repository uses `@standardnotes` packages from Github so before setting up make sure you have the `GITHUB_TOKEN` environment variable set. To generate your Github Personal Access Token go to your [Github Settings](https://github.com/settings/tokens) and make sure the token has [Github packages read and write rights](https://help.github.com/en/packages/publishing-and-managing-packages/about-github-packages#about-tokens)
+
+### Setup
+
 1. `npm install`
 2. `npm run start` to start Webpack in development mode (watches changes), or `npm run bundle` to create dist files.
 

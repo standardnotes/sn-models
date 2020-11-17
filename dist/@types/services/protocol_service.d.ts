@@ -12,7 +12,7 @@ import { SNStorageService } from './storage_service';
 import { SNRootKey } from '../protocol/root_key';
 import { PayloadManager } from './model_manager';
 import { PureService } from './pure_service';
-import { SNPureCrypto } from 'sncrypto/lib/common/pure_crypto';
+import { SNPureCrypto } from '@standardnotes/sncrypto';
 import { V001Algorithm, V002Algorithm } from '../protocol/operator/algorithms';
 import { DeviceInterface } from '../device_interface';
 export declare type BackupFile = {

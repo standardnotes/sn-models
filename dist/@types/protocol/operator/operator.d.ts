@@ -5,7 +5,7 @@ import { PurePayload } from './../payloads/pure_payload';
 import { SNItemsKey } from '../../models/app/items_key';
 import { PayloadFormat } from '../payloads/formats';
 import { ProtocolVersion } from '../versions';
-import { SNPureCrypto } from 'sncrypto/lib/common/pure_crypto';
+import { SNPureCrypto } from '@standardnotes/sncrypto';
 export declare type ItemsKeyContent = {
     itemsKey: string;
     dataAuthenticationKey?: string;

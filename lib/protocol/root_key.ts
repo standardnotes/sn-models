@@ -6,7 +6,7 @@ import { SNItem } from '@Models/core/item';
 import { ContentType } from '@Models/content_types';
 import { ProtocolVersion } from '@Protocol/versions';
 import { Uuid } from '@Lib/uuid';
-import { timingSafeEqual } from 'sncrypto/lib/common/utils';
+import { timingSafeEqual } from '@standardnotes/sncrypto';
 
 export type RootKeyContent = {
   version: ProtocolVersion;

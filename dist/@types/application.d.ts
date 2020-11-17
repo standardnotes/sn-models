@@ -12,7 +12,7 @@ import { SNPredicate } from './models/core/predicate';
 import { PurePayload } from './protocol/payloads/pure_payload';
 import { Challenge, ChallengeResponse, ChallengeValue } from './challenges';
 import { ChallengeObserver } from './services/challenge/challenge_service';
-import { SNPureCrypto } from 'sncrypto/lib/common/pure_crypto';
+import { SNPureCrypto } from '@standardnotes/sncrypto';
 import { Environment, Platform } from './platforms';
 import { ContentType } from './models/content_types';
 import { PayloadContent } from './protocol/payloads/generator';

@@ -30,7 +30,7 @@ import { SNRootKey } from '@Protocol/root_key';
 import { SNProtocolOperator } from '@Protocol/operator/operator';
 import { PayloadManager } from './model_manager';
 import { PureService } from '@Lib/services/pure_service';
-import { SNPureCrypto } from 'sncrypto/lib/common/pure_crypto';
+import { SNPureCrypto } from '@standardnotes/sncrypto';
 import { Uuid } from '@Lib/uuid';
 import {
   isReactNativeEnvironment,

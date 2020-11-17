@@ -17,7 +17,7 @@ import {
   CreateMaxPayloadFromAnyObject
 } from '@Payloads/generator';
 import { ProtocolVersion } from '@Protocol/versions';
-import { SNPureCrypto } from 'sncrypto/lib/common/pure_crypto';
+import { SNPureCrypto } from '@standardnotes/sncrypto';
 import { ContentType } from '@Lib/models';
 
 export type ItemsKeyContent = {

@@ -1,0 +1,1981 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>SNSyncService | SNJS Documentation - v2.0.41</title>
+	<meta name="description" content="Documentation for SNJS Documentation - v2.0.41">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">SNJS Documentation - v2.0.41</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">SNJS Documentation - v2.0.41</a>
+				</li>
+				<li>
+					<a href="../modules/services_sync_sync_service.html">services/sync/sync_service</a>
+				</li>
+				<li>
+					<a href="services_sync_sync_service.snsyncservice.html">SNSyncService</a>
+				</li>
+			</ul>
+			<h1>Class SNSyncService</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The sync service orchestrates with the model manager, api service, and storage service
+							to ensure consistent state between the three. When a change is made to an item, consumers
+							call the sync service&#39;s sync function to first persist pending changes to local storage.
+							Then, the items are uploaded to the server. The sync service handles server responses,
+							including mapping any retrieved items to application state via model manager mapping.
+							After each sync request, any changes made or retrieved are also persisted locally.
+						The sync service largely does not perform any task unless it is called upon.</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="services_pure_service.pureservice.html" class="tsd-signature-type" data-tsd-kind="Class">PureService</a><span class="tsd-signature-symbol">&lt;</span><a href="../enums/services_sync_events.syncevent.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SyncEvent</a><span class="tsd-signature-symbol">&gt;</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">SNSyncService</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="services_sync_sync_service.snsyncservice.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#_simulate_latency" class="tsd-kind-icon">_simulate_<wbr>latency</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#apiservice" class="tsd-kind-icon">api<wbr>Service</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#completedonlinedownloadfirstsync" class="tsd-kind-icon">completed<wbr>Online<wbr>Download<wbr>First<wbr>Sync</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#cursortoken" class="tsd-kind-icon">cursor<wbr>Token</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#databaseloaded" class="tsd-kind-icon">database<wbr>Loaded</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="services_sync_sync_service.snsyncservice.html#deviceinterface" class="tsd-kind-icon">device<wbr>Interface</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#interval" class="tsd-kind-icon">interval</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#itemmanager" class="tsd-kind-icon">item<wbr>Manager</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#localloadpriorty" class="tsd-kind-icon">local<wbr>Load<wbr>Priorty</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#locked" class="tsd-kind-icon">locked</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="services_sync_sync_service.snsyncservice.html#loggingenabled" class="tsd-kind-icon">logging<wbr>Enabled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#majorchangethreshold" class="tsd-kind-icon">major<wbr>Change<wbr>Threshold</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#maxdiscordance" class="tsd-kind-icon">max<wbr>Discordance</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#modelmanager" class="tsd-kind-icon">model<wbr>Manager</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#opstatus" class="tsd-kind-icon">op<wbr>Status</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#protocolservice" class="tsd-kind-icon">protocol<wbr>Service</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#resolvequeue" class="tsd-kind-icon">resolve<wbr>Queue</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#sessionmanager" class="tsd-kind-icon">session<wbr>Manager</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#spawnqueue" class="tsd-kind-icon">spawn<wbr>Queue</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#state" class="tsd-kind-icon">state</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#storageservice" class="tsd-kind-icon">storage<wbr>Service</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#synclock" class="tsd-kind-icon">sync<wbr>Lock</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#synctoken" class="tsd-kind-icon">sync<wbr>Token</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="services_sync_sync_service.snsyncservice.html#addeventobserver" class="tsd-kind-icon">add<wbr>Event<wbr>Observer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#alternateuuidforitem" class="tsd-kind-icon">alternate<wbr>Uuid<wbr>For<wbr>Item</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="services_sync_sync_service.snsyncservice.html#blockdeinit" class="tsd-kind-icon">block<wbr>Deinit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#clearsyncpositiontokens" class="tsd-kind-icon">clear<wbr>Sync<wbr>Position<wbr>Tokens</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#computedataintegrityhash" class="tsd-kind-icon">compute<wbr>Data<wbr>Integrity<wbr>Hash</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="services_sync_sync_service.snsyncservice.html#deinit" class="tsd-kind-icon">deinit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#deletepayloads" class="tsd-kind-icon">delete<wbr>Payloads</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#downloadfirstsync" class="tsd-kind-icon">download<wbr>First<wbr>Sync</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-protected"><a href="services_sync_sync_service.snsyncservice.html#executecriticalfunction" class="tsd-kind-icon">execute<wbr>Critical<wbr>Function</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#getdatabasepayloads" class="tsd-kind-icon">get<wbr>Database<wbr>Payloads</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#getlastsyncdate" class="tsd-kind-icon">get<wbr>Last<wbr>Sync<wbr>Date</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#getlastsynctoken" class="tsd-kind-icon">get<wbr>Last<wbr>Sync<wbr>Token</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#getpaginationtoken" class="tsd-kind-icon">get<wbr>Pagination<wbr>Token</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#getstatus" class="tsd-kind-icon">get<wbr>Status</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="services_sync_sync_service.snsyncservice.html#handleapplicationstage" class="tsd-kind-icon">handle<wbr>Application<wbr>Stage</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#handleerrorserverresponse" class="tsd-kind-icon">handle<wbr>Error<wbr>Server<wbr>Response</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#handleinvalidsessionstate" class="tsd-kind-icon">handle<wbr>Invalid<wbr>Session<wbr>State</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#handleneversynceddeleted" class="tsd-kind-icon">handle<wbr>Never<wbr>Synced<wbr>Deleted</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#handleofflineresponse" class="tsd-kind-icon">handle<wbr>Offline<wbr>Response</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#handlesuccessserverresponse" class="tsd-kind-icon">handle<wbr>Success<wbr>Server<wbr>Response</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#initializestate" class="tsd-kind-icon">initialize<wbr>State</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#initializestatus" class="tsd-kind-icon">initialize<wbr>Status</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#isdatabaseloaded" class="tsd-kind-icon">is<wbr>Database<wbr>Loaded</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#isoutofsync" class="tsd-kind-icon">is<wbr>Out<wbr>OfSync</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#itemsneedingsync" class="tsd-kind-icon">items<wbr>Needing<wbr>Sync</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#loaddatabasepayloads" class="tsd-kind-icon">load<wbr>Database<wbr>Payloads</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#locksyncing" class="tsd-kind-icon">lock<wbr>Syncing</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="services_sync_sync_service.snsyncservice.html#log" class="tsd-kind-icon">log</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#markallitemsasneedingsync" class="tsd-kind-icon">mark<wbr>All<wbr>Items<wbr>AsNeeding<wbr>Sync</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="services_sync_sync_service.snsyncservice.html#notifyevent" class="tsd-kind-icon">notify<wbr>Event</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#onnewdatabasecreated" class="tsd-kind-icon">on<wbr>New<wbr>Database<wbr>Created</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#payloadsbypreparingforserver" class="tsd-kind-icon">payloads<wbr>ByPreparing<wbr>For<wbr>Server</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#persistpayloads" class="tsd-kind-icon">persist<wbr>Payloads</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#poppayloadsneedingpresyncsave" class="tsd-kind-icon">pop<wbr>Payloads<wbr>Needing<wbr>Pre<wbr>Sync<wbr>Save</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#popspawnqueue" class="tsd-kind-icon">pop<wbr>Spawn<wbr>Queue</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#queuestrategyforcespawnnew" class="tsd-kind-icon">queue<wbr>Strategy<wbr>Force<wbr>Spawn<wbr>New</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#queuestrategyresolveonnext" class="tsd-kind-icon">queue<wbr>Strategy<wbr>Resolve<wbr>OnNext</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#resetsyncstate" class="tsd-kind-icon">reset<wbr>Sync<wbr>State</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#resolveoutofsync" class="tsd-kind-icon">resolve<wbr>Out<wbr>OfSync</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#setlastsynctoken" class="tsd-kind-icon">set<wbr>Last<wbr>Sync<wbr>Token</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#setpaginationtoken" class="tsd-kind-icon">set<wbr>Pagination<wbr>Token</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#statelessdownloadallitems" class="tsd-kind-icon">stateless<wbr>Download<wbr>All<wbr>Items</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#sync" class="tsd-kind-icon">sync</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#syncofflineoperation" class="tsd-kind-icon">sync<wbr>Offline<wbr>Operation</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_sync_sync_service.snsyncservice.html#synconlineoperation" class="tsd-kind-icon">sync<wbr>Online<wbr>Operation</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#unlocksyncing" class="tsd-kind-icon">unlock<wbr>Syncing</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#ut_beginlatencysimulator" class="tsd-kind-icon">ut_<wbr>begin<wbr>Latency<wbr>Simulator</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#ut_clearlastsyncdate" class="tsd-kind-icon">ut_<wbr>clear<wbr>Last<wbr>Sync<wbr>Date</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#ut_endlatencysimulator" class="tsd-kind-icon">ut_<wbr>end<wbr>Latency<wbr>Simulator</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_sync_sync_service.snsyncservice.html#ut_setdatabaseloaded" class="tsd-kind-icon">ut_<wbr>set<wbr>Database<wbr>Loaded</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">new SNSync<wbr>Service<span class="tsd-signature-symbol">(</span>itemManager<span class="tsd-signature-symbol">: </span><a href="services_item_manager.itemmanager.html" class="tsd-signature-type" data-tsd-kind="Class">ItemManager</a>, sessionManager<span class="tsd-signature-symbol">: </span><a href="services_api_session_manager.snsessionmanager.html" class="tsd-signature-type" data-tsd-kind="Class">SNSessionManager</a>, protocolService<span class="tsd-signature-symbol">: </span><a href="services_protocol_service.snprotocolservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNProtocolService</a>, storageService<span class="tsd-signature-symbol">: </span><a href="services_storage_service.snstorageservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNStorageService</a>, modelManager<span class="tsd-signature-symbol">: </span><a href="services_model_manager.payloadmanager.html" class="tsd-signature-type" data-tsd-kind="Class">PayloadManager</a>, apiService<span class="tsd-signature-symbol">: </span><a href="services_api_api_service.snapiservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNApiService</a>, interval<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="services_sync_sync_service.snsyncservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNSyncService</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L150">services/sync/sync_service.ts:150</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>itemManager: <a href="services_item_manager.itemmanager.html" class="tsd-signature-type" data-tsd-kind="Class">ItemManager</a></h5>
+								</li>
+								<li>
+									<h5>sessionManager: <a href="services_api_session_manager.snsessionmanager.html" class="tsd-signature-type" data-tsd-kind="Class">SNSessionManager</a></h5>
+								</li>
+								<li>
+									<h5>protocolService: <a href="services_protocol_service.snprotocolservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNProtocolService</a></h5>
+								</li>
+								<li>
+									<h5>storageService: <a href="services_storage_service.snstorageservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNStorageService</a></h5>
+								</li>
+								<li>
+									<h5>modelManager: <a href="services_model_manager.payloadmanager.html" class="tsd-signature-type" data-tsd-kind="Class">PayloadManager</a></h5>
+								</li>
+								<li>
+									<h5>apiService: <a href="services_api_api_service.snapiservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNApiService</a></h5>
+								</li>
+								<li>
+									<h5>interval: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="services_sync_sync_service.snsyncservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNSyncService</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_simulate_latency" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> _simulate_<wbr>latency</h3>
+					<div class="tsd-signature tsd-kind-icon">_simulate_<wbr>latency<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L142">services/sync/sync_service.ts:142</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="apiservice" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> api<wbr>Service</h3>
+					<div class="tsd-signature tsd-kind-icon">api<wbr>Service<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="services_api_api_service.snapiservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNApiService</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L122">services/sync/sync_service.ts:122</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="completedonlinedownloadfirstsync" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> completed<wbr>Online<wbr>Download<wbr>First<wbr>Sync</h3>
+					<div class="tsd-signature tsd-kind-icon">completed<wbr>Online<wbr>Download<wbr>First<wbr>Sync<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L131">services/sync/sync_service.ts:131</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="cursortoken" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> cursor<wbr>Token</h3>
+					<div class="tsd-signature tsd-kind-icon">cursor<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L139">services/sync/sync_service.ts:139</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="databaseloaded" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> database<wbr>Loaded</h3>
+					<div class="tsd-signature tsd-kind-icon">database<wbr>Loaded<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L136">services/sync/sync_service.ts:136</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="deviceinterface" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> device<wbr>Interface</h3>
+					<div class="tsd-signature tsd-kind-icon">device<wbr>Interface<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="device_interface.deviceinterface.html" class="tsd-signature-type" data-tsd-kind="Class">DeviceInterface</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#deviceinterface">deviceInterface</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L11">services/pure_service.ts:11</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="interval" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> interval</h3>
+					<div class="tsd-signature tsd-kind-icon">interval<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L123">services/sync/sync_service.ts:123</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="itemmanager" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> item<wbr>Manager</h3>
+					<div class="tsd-signature tsd-kind-icon">item<wbr>Manager<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="services_item_manager.itemmanager.html" class="tsd-signature-type" data-tsd-kind="Class">ItemManager</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L121">services/sync/sync_service.ts:121</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="localloadpriorty" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> local<wbr>Load<wbr>Priorty</h3>
+					<div class="tsd-signature tsd-kind-icon">local<wbr>Load<wbr>Priorty<span class="tsd-signature-symbol">:</span> <a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L145">services/sync/sync_service.ts:145</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Content types appearing first are always mapped first</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="locked" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> locked</h3>
+					<div class="tsd-signature tsd-kind-icon">locked<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L135">services/sync/sync_service.ts:135</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="loggingenabled" class="tsd-anchor"></a>
+					<h3>logging<wbr>Enabled</h3>
+					<div class="tsd-signature tsd-kind-icon">logging<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#loggingenabled">loggingEnabled</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L10">services/pure_service.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="majorchangethreshold" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> major<wbr>Change<wbr>Threshold</h3>
+					<div class="tsd-signature tsd-kind-icon">major<wbr>Change<wbr>Threshold<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L133">services/sync/sync_service.ts:133</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="maxdiscordance" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> max<wbr>Discordance</h3>
+					<div class="tsd-signature tsd-kind-icon">max<wbr>Discordance<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L134">services/sync/sync_service.ts:134</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="modelmanager" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> model<wbr>Manager</h3>
+					<div class="tsd-signature tsd-kind-icon">model<wbr>Manager<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="services_model_manager.payloadmanager.html" class="tsd-signature-type" data-tsd-kind="Class">PayloadManager</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L120">services/sync/sync_service.ts:120</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="opstatus" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> op<wbr>Status</h3>
+					<div class="tsd-signature tsd-kind-icon">op<wbr>Status<span class="tsd-signature-symbol">:</span> <a href="services_sync_sync_op_status.syncopstatus.html" class="tsd-signature-type" data-tsd-kind="Class">SyncOpStatus</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L125">services/sync/sync_service.ts:125</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="protocolservice" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> protocol<wbr>Service</h3>
+					<div class="tsd-signature tsd-kind-icon">protocol<wbr>Service<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="services_protocol_service.snprotocolservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNProtocolService</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L118">services/sync/sync_service.ts:118</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="resolvequeue" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> resolve<wbr>Queue</h3>
+					<div class="tsd-signature tsd-kind-icon">resolve<wbr>Queue<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">SyncPromise</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L127">services/sync/sync_service.ts:127</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="sessionmanager" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> session<wbr>Manager</h3>
+					<div class="tsd-signature tsd-kind-icon">session<wbr>Manager<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="services_api_session_manager.snsessionmanager.html" class="tsd-signature-type" data-tsd-kind="Class">SNSessionManager</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L117">services/sync/sync_service.ts:117</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="spawnqueue" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> spawn<wbr>Queue</h3>
+					<div class="tsd-signature tsd-kind-icon">spawn<wbr>Queue<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">SyncPromise</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L128">services/sync/sync_service.ts:128</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="state" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> state</h3>
+					<div class="tsd-signature tsd-kind-icon">state<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="services_sync_sync_state.syncstate.html" class="tsd-signature-type" data-tsd-kind="Class">SyncState</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L124">services/sync/sync_service.ts:124</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="storageservice" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> storage<wbr>Service</h3>
+					<div class="tsd-signature tsd-kind-icon">storage<wbr>Service<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="services_storage_service.snstorageservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNStorageService</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L119">services/sync/sync_service.ts:119</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="synclock" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> sync<wbr>Lock</h3>
+					<div class="tsd-signature tsd-kind-icon">sync<wbr>Lock<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L141">services/sync/sync_service.ts:141</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="synctoken" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> sync<wbr>Token</h3>
+					<div class="tsd-signature tsd-kind-icon">sync<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L138">services/sync/sync_service.ts:138</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="addeventobserver" class="tsd-anchor"></a>
+					<h3>add<wbr>Event<wbr>Observer</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Observer<span class="tsd-signature-symbol">(</span>observer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventObserver</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/services_sync_events.syncevent.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SyncEvent</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#addeventobserver">addEventObserver</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L14">services/pure_service.ts:14</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>observer: <span class="tsd-signature-type">EventObserver</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/services_sync_events.syncevent.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SyncEvent</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-signature">
+									<ul class="tsd-signatures tsd-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="alternateuuidforitem" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> alternate<wbr>Uuid<wbr>For<wbr>Item</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">alternate<wbr>Uuid<wbr>For<wbr>Item<span class="tsd-signature-symbol">(</span>uuid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L370">services/sync/sync_service.ts:370</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>uuid: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="blockdeinit" class="tsd-anchor"></a>
+					<h3>block<wbr>Deinit</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">block<wbr>Deinit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#blockdeinit">blockDeinit</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L31">services/pure_service.ts:31</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Called by application to allow services to momentarily block deinit until
+									sensitive operations complete.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="clearsyncpositiontokens" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> clear<wbr>Sync<wbr>Position<wbr>Tokens</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">clear<wbr>Sync<wbr>Position<wbr>Tokens<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L358">services/sync/sync_service.ts:358</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="computedataintegrityhash" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> compute<wbr>Data<wbr>Integrity<wbr>Hash</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">compute<wbr>Data<wbr>Integrity<wbr>Hash<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L937">services/sync/sync_service.ts:937</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Computes a hash of all items updated_at strings joined with a comma.
+									The server will also do the same, to determine whether the client values match server values.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A SHA256 digest string (hex).</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="deinit" class="tsd-anchor"></a>
+					<h3>deinit</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">deinit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#deinit">deinit</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L184">services/sync/sync_service.ts:184</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="deletepayloads" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> delete<wbr>Payloads</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Payloads<span class="tsd-signature-symbol">(</span>payloads<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L926">services/sync/sync_service.ts:926</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>payloads: <a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="downloadfirstsync" class="tsd-anchor"></a>
+					<h3>download<wbr>First<wbr>Sync</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">download<wbr>First<wbr>Sync<span class="tsd-signature-symbol">(</span>waitTimeOnFailureMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, otherSyncOptions<span class="tsd-signature-symbol">?: </span><a href="../modules/services_sync_sync_service.html#syncoptions" class="tsd-signature-type" data-tsd-kind="Type alias">SyncOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L489">services/sync/sync_service.ts:489</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>waitTimeOnFailureMs: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> otherSyncOptions: <a href="../modules/services_sync_sync_service.html#syncoptions" class="tsd-signature-type" data-tsd-kind="Type alias">SyncOptions</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-protected">
+					<a name="executecriticalfunction" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> execute<wbr>Critical<wbr>Function</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">execute<wbr>Critical<wbr>Function&lt;T&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#executecriticalfunction">executeCriticalFunction</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L51">services/pure_service.ts:51</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>A critical function is one that should block signing out or destroying application
+										session until the crticial function has completed. For example, persisting keys to
+										disk is a critical operation, and should be wrapped in this function call. The
+										parent application instance will await all criticial functions via the <code>blockDeinit</code>
+									function before signing out and deiniting.</p>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T = <span class="tsd-signature-type">void</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>func: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getdatabasepayloads" class="tsd-anchor"></a>
+					<h3>get<wbr>Database<wbr>Payloads</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Database<wbr>Payloads<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L257">services/sync/sync_service.ts:257</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Used in tandem with <code>loadDatabasePayloads</code></p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getlastsyncdate" class="tsd-anchor"></a>
+					<h3>get<wbr>Last<wbr>Sync<wbr>Date</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Last<wbr>Sync<wbr>Date<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L235">services/sync/sync_service.ts:235</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="getlastsynctoken" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> get<wbr>Last<wbr>Sync<wbr>Token</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Last<wbr>Sync<wbr>Token<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L344">services/sync/sync_service.ts:344</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="getpaginationtoken" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> get<wbr>Pagination<wbr>Token</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Pagination<wbr>Token<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L351">services/sync/sync_service.ts:351</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getstatus" class="tsd-anchor"></a>
+					<h3>get<wbr>Status</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Status<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="services_sync_sync_op_status.syncopstatus.html" class="tsd-signature-type" data-tsd-kind="Class">SyncOpStatus</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L239">services/sync/sync_service.ts:239</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="services_sync_sync_op_status.syncopstatus.html" class="tsd-signature-type" data-tsd-kind="Class">SyncOpStatus</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="handleapplicationstage" class="tsd-anchor"></a>
+					<h3>handle<wbr>Application<wbr>Stage</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">handle<wbr>Application<wbr>Stage<span class="tsd-signature-symbol">(</span>_stage<span class="tsd-signature-symbol">: </span><a href="../enums/stages.applicationstage.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ApplicationStage</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#handleapplicationstage">handleApplicationStage</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L62">services/pure_service.ts:62</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Application instances will call this function directly when they arrive
+									at a certain migratory state.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>_stage: <a href="../enums/stages.applicationstage.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ApplicationStage</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="handleerrorserverresponse" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> handle<wbr>Error<wbr>Server<wbr>Response</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">handle<wbr>Error<wbr>Server<wbr>Response<span class="tsd-signature-symbol">(</span>response<span class="tsd-signature-symbol">: </span><a href="services_sync_response.syncresponse.html" class="tsd-signature-type" data-tsd-kind="Class">SyncResponse</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L831">services/sync/sync_service.ts:831</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>response: <a href="services_sync_response.syncresponse.html" class="tsd-signature-type" data-tsd-kind="Class">SyncResponse</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="handleinvalidsessionstate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> handle<wbr>Invalid<wbr>Session<wbr>State</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">handle<wbr>Invalid<wbr>Session<wbr>State<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L746">services/sync/sync_service.ts:746</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This is a temporary patch for users in mobile where for some reason the session+user
+										object go missing, and results in errorless sync in mistaken no account state.
+										Mobile will use protocolService.hasAccount(), which checks key state for account status,
+										to display a sign out button, whereas sync below will use sessionManager for account status,
+										which checks for existence of session object. These two states should be equivalent,
+									but if they&#39;re not, it means we&#39;re in an errored state.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="handleneversynceddeleted" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> handle<wbr>Never<wbr>Synced<wbr>Deleted</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">handle<wbr>Never<wbr>Synced<wbr>Deleted<span class="tsd-signature-symbol">(</span>items<span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L898">services/sync/sync_service.ts:898</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Items that have never been synced and marked as deleted should be cleared
+									as dirty, mapped, then removed from storage.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>items: <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="handleofflineresponse" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> handle<wbr>Offline<wbr>Response</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">handle<wbr>Offline<wbr>Response<span class="tsd-signature-symbol">(</span>response<span class="tsd-signature-symbol">: </span><a href="services_sync_response.syncresponse.html" class="tsd-signature-type" data-tsd-kind="Class">SyncResponse</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L805">services/sync/sync_service.ts:805</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>response: <a href="services_sync_response.syncresponse.html" class="tsd-signature-type" data-tsd-kind="Class">SyncResponse</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="handlesuccessserverresponse" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> handle<wbr>Success<wbr>Server<wbr>Response</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">handle<wbr>Success<wbr>Server<wbr>Response<span class="tsd-signature-symbol">(</span>operation<span class="tsd-signature-symbol">: </span><a href="services_sync_account_operation.accountsyncoperation.html" class="tsd-signature-type" data-tsd-kind="Class">AccountSyncOperation</a>, response<span class="tsd-signature-symbol">: </span><a href="services_sync_response.syncresponse.html" class="tsd-signature-type" data-tsd-kind="Class">SyncResponse</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L841">services/sync/sync_service.ts:841</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>operation: <a href="services_sync_account_operation.accountsyncoperation.html" class="tsd-signature-type" data-tsd-kind="Class">AccountSyncOperation</a></h5>
+								</li>
+								<li>
+									<h5>response: <a href="services_sync_response.syncresponse.html" class="tsd-signature-type" data-tsd-kind="Class">SyncResponse</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="initializestate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> initialize<wbr>State</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">initialize<wbr>State<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L210">services/sync/sync_service.ts:210</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="initializestatus" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> initialize<wbr>Status</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">initialize<wbr>Status<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L201">services/sync/sync_service.ts:201</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isdatabaseloaded" class="tsd-anchor"></a>
+					<h3>is<wbr>Database<wbr>Loaded</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Database<wbr>Loaded<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L250">services/sync/sync_service.ts:250</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isoutofsync" class="tsd-anchor"></a>
+					<h3>is<wbr>Out<wbr>OfSync</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Out<wbr>OfSync<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L231">services/sync/sync_service.ts:231</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="itemsneedingsync" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> items<wbr>Needing<wbr>Sync</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">items<wbr>Needing<wbr>Sync<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L365">services/sync/sync_service.ts:365</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="loaddatabasepayloads" class="tsd-anchor"></a>
+					<h3>load<wbr>Database<wbr>Payloads</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">load<wbr>Database<wbr>Payloads<span class="tsd-signature-symbol">(</span>rawPayloads<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L269">services/sync/sync_service.ts:269</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>rawPayloads: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>use <code>getDatabasePayloads</code> to get these payloads.
+											They are fed as a parameter so that callers don&#39;t have to await the loading, but can
+										await getting the raw payloads from storage</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="locksyncing" class="tsd-anchor"></a>
+					<h3>lock<wbr>Syncing</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">lock<wbr>Syncing<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L223">services/sync/sync_service.ts:223</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="log" class="tsd-anchor"></a>
+					<h3>log</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#log">log</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L66">services/pure_service.ts:66</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>message: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="markallitemsasneedingsync" class="tsd-anchor"></a>
+					<h3>mark<wbr>All<wbr>Items<wbr>AsNeeding<wbr>Sync</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">mark<wbr>All<wbr>Items<wbr>AsNeeding<wbr>Sync<span class="tsd-signature-symbol">(</span>alternateUuids<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L392">services/sync/sync_service.ts:392</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Mark all items as dirty and needing sync, then persist to storage.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>alternateUuids: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>In the case of signing in and merging local data, we alternate UUIDs
+											to avoid overwriting data a user may retrieve that has the same UUID.
+										Alternating here forces us to to create duplicates of the items instead.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="notifyevent" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> notify<wbr>Event</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">notify<wbr>Event<span class="tsd-signature-symbol">(</span>eventName<span class="tsd-signature-symbol">: </span><a href="../enums/services_sync_events.syncevent.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SyncEvent</a>, data<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#notifyevent">notifyEvent</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L21">services/pure_service.ts:21</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>eventName: <a href="../enums/services_sync_events.syncevent.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SyncEvent</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> data: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="onnewdatabasecreated" class="tsd-anchor"></a>
+					<h3>on<wbr>New<wbr>Database<wbr>Created</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>New<wbr>Database<wbr>Created<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L178">services/sync/sync_service.ts:178</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If the database has been newly created (because its new or was previously destroyed)
+									we want to reset any sync tokens we have.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="payloadsbypreparingforserver" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> payloads<wbr>ByPreparing<wbr>For<wbr>Server</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">payloads<wbr>ByPreparing<wbr>For<wbr>Server<span class="tsd-signature-symbol">(</span>payloads<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L476">services/sync/sync_service.ts:476</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Certain content types should not be encrypted when sending to server,
+									such as server extensions</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>payloads: <a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="persistpayloads" class="tsd-anchor"></a>
+					<h3>persist<wbr>Payloads</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">persist<wbr>Payloads<span class="tsd-signature-symbol">(</span>payloads<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L916">services/sync/sync_service.ts:916</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>payloads: <a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The decrypted payloads to persist</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="poppayloadsneedingpresyncsave" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> pop<wbr>Payloads<wbr>Needing<wbr>Pre<wbr>Sync<wbr>Save</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">pop<wbr>Payloads<wbr>Needing<wbr>Pre<wbr>Sync<wbr>Save<span class="tsd-signature-symbol">(</span>from<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L425">services/sync/sync_service.ts:425</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return the payloads that need local persistence, before beginning a sync.
+										This way, if the application is closed before a sync request completes,
+									pending data will be saved to disk, and synced the next time the app opens.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>from: <a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="popspawnqueue" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> pop<wbr>Spawn<wbr>Queue</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">pop<wbr>Spawn<wbr>Queue<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L454">services/sync/sync_service.ts:454</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>For timing strategy SyncQueueStrategy.ForceSpawnNew, we will execute a whole sync request
+									and pop it from the queue.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="queuestrategyforcespawnnew" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> queue<wbr>Strategy<wbr>Force<wbr>Spawn<wbr>New</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">queue<wbr>Strategy<wbr>Force<wbr>Spawn<wbr>New<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../modules/services_sync_sync_service.html#syncoptions" class="tsd-signature-type" data-tsd-kind="Type alias">SyncOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L444">services/sync/sync_service.ts:444</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="../modules/services_sync_sync_service.html#syncoptions" class="tsd-signature-type" data-tsd-kind="Type alias">SyncOptions</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="queuestrategyresolveonnext" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> queue<wbr>Strategy<wbr>Resolve<wbr>OnNext</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">queue<wbr>Strategy<wbr>Resolve<wbr>OnNext<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L438">services/sync/sync_service.ts:438</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="resetsyncstate" class="tsd-anchor"></a>
+					<h3>reset<wbr>Sync<wbr>State</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">reset<wbr>Sync<wbr>State<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L246">services/sync/sync_service.ts:246</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Called by application when sign in or registration occurs.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="resolveoutofsync" class="tsd-anchor"></a>
+					<h3>resolve<wbr>Out<wbr>OfSync</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">resolve<wbr>Out<wbr>OfSync<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L954">services/sync/sync_service.ts:954</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Downloads all items and maps to lcoal items to attempt resolve out-of-sync state</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="setlastsynctoken" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> set<wbr>Last<wbr>Sync<wbr>Token</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Last<wbr>Sync<wbr>Token<span class="tsd-signature-symbol">(</span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L330">services/sync/sync_service.ts:330</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>token: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="setpaginationtoken" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> set<wbr>Pagination<wbr>Token</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Pagination<wbr>Token<span class="tsd-signature-symbol">(</span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L335">services/sync/sync_service.ts:335</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>token: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="statelessdownloadallitems" class="tsd-anchor"></a>
+					<h3>stateless<wbr>Download<wbr>All<wbr>Items</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">stateless<wbr>Download<wbr>All<wbr>Items<span class="tsd-signature-symbol">(</span>contentType<span class="tsd-signature-symbol">?: </span><a href="../enums/models_content_types.contenttype.html#any" class="tsd-signature-type" data-tsd-kind="Enumeration member">Any</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#item" class="tsd-signature-type" data-tsd-kind="Enumeration member">Item</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#rootkey" class="tsd-signature-type" data-tsd-kind="Enumeration member">RootKey</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#itemskey" class="tsd-signature-type" data-tsd-kind="Enumeration member">ItemsKey</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#encryptedstorage" class="tsd-signature-type" data-tsd-kind="Enumeration member">EncryptedStorage</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#note" class="tsd-signature-type" data-tsd-kind="Enumeration member">Note</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#tag" class="tsd-signature-type" data-tsd-kind="Enumeration member">Tag</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#smarttag" class="tsd-signature-type" data-tsd-kind="Enumeration member">SmartTag</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#component" class="tsd-signature-type" data-tsd-kind="Enumeration member">Component</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#editor" class="tsd-signature-type" data-tsd-kind="Enumeration member">Editor</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#actionsextension" class="tsd-signature-type" data-tsd-kind="Enumeration member">ActionsExtension</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#userprefs" class="tsd-signature-type" data-tsd-kind="Enumeration member">UserPrefs</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#historysession" class="tsd-signature-type" data-tsd-kind="Enumeration member">HistorySession</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#theme" class="tsd-signature-type" data-tsd-kind="Enumeration member">Theme</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#mfa" class="tsd-signature-type" data-tsd-kind="Enumeration member">Mfa</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#serverextension" class="tsd-signature-type" data-tsd-kind="Enumeration member">ServerExtension</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#filesafecredentials" class="tsd-signature-type" data-tsd-kind="Enumeration member">FilesafeCredentials</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#filesafefilemetadata" class="tsd-signature-type" data-tsd-kind="Enumeration member">FilesafeFileMetadata</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#filesafeintegration" class="tsd-signature-type" data-tsd-kind="Enumeration member">FilesafeIntegration</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#extensionrepo" class="tsd-signature-type" data-tsd-kind="Enumeration member">ExtensionRepo</a>, customEvent<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L978">services/sync/sync_service.ts:978</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> contentType: <a href="../enums/models_content_types.contenttype.html#any" class="tsd-signature-type" data-tsd-kind="Enumeration member">Any</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#item" class="tsd-signature-type" data-tsd-kind="Enumeration member">Item</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#rootkey" class="tsd-signature-type" data-tsd-kind="Enumeration member">RootKey</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#itemskey" class="tsd-signature-type" data-tsd-kind="Enumeration member">ItemsKey</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#encryptedstorage" class="tsd-signature-type" data-tsd-kind="Enumeration member">EncryptedStorage</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#note" class="tsd-signature-type" data-tsd-kind="Enumeration member">Note</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#tag" class="tsd-signature-type" data-tsd-kind="Enumeration member">Tag</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#smarttag" class="tsd-signature-type" data-tsd-kind="Enumeration member">SmartTag</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#component" class="tsd-signature-type" data-tsd-kind="Enumeration member">Component</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#editor" class="tsd-signature-type" data-tsd-kind="Enumeration member">Editor</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#actionsextension" class="tsd-signature-type" data-tsd-kind="Enumeration member">ActionsExtension</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#userprefs" class="tsd-signature-type" data-tsd-kind="Enumeration member">UserPrefs</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#historysession" class="tsd-signature-type" data-tsd-kind="Enumeration member">HistorySession</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#theme" class="tsd-signature-type" data-tsd-kind="Enumeration member">Theme</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#mfa" class="tsd-signature-type" data-tsd-kind="Enumeration member">Mfa</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#serverextension" class="tsd-signature-type" data-tsd-kind="Enumeration member">ServerExtension</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#filesafecredentials" class="tsd-signature-type" data-tsd-kind="Enumeration member">FilesafeCredentials</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#filesafefilemetadata" class="tsd-signature-type" data-tsd-kind="Enumeration member">FilesafeFileMetadata</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#filesafeintegration" class="tsd-signature-type" data-tsd-kind="Enumeration member">FilesafeIntegration</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#extensionrepo" class="tsd-signature-type" data-tsd-kind="Enumeration member">ExtensionRepo</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> customEvent: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="sync" class="tsd-anchor"></a>
+					<h3>sync</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">sync<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><a href="../modules/services_sync_sync_service.html#syncoptions" class="tsd-signature-type" data-tsd-kind="Type alias">SyncOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L506">services/sync/sync_service.ts:506</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="../modules/services_sync_sync_service.html#syncoptions" class="tsd-signature-type" data-tsd-kind="Type alias">SyncOptions</a><span class="tsd-signature-symbol"> = ...</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="syncofflineoperation" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> sync<wbr>Offline<wbr>Operation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">sync<wbr>Offline<wbr>Operation<span class="tsd-signature-symbol">(</span>payloads<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span>, source<span class="tsd-signature-symbol">: </span><a href="../enums/services_sync_sync_service.syncsources.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SyncSources</a>, mode<span class="tsd-signature-symbol">: </span><a href="../enums/services_sync_sync_service.syncmodes.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SyncModes</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="services_sync_offline_operation.offlinesyncoperation.html" class="tsd-signature-type" data-tsd-kind="Class">OfflineSyncOperation</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L788">services/sync/sync_service.ts:788</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>payloads: <a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>source: <a href="../enums/services_sync_sync_service.syncsources.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SyncSources</a></h5>
+								</li>
+								<li>
+									<h5>mode: <a href="../enums/services_sync_sync_service.syncmodes.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SyncModes</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="services_sync_offline_operation.offlinesyncoperation.html" class="tsd-signature-type" data-tsd-kind="Class">OfflineSyncOperation</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="synconlineoperation" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> sync<wbr>Online<wbr>Operation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">sync<wbr>Online<wbr>Operation<span class="tsd-signature-symbol">(</span>payloads<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span>, checkIntegrity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, source<span class="tsd-signature-symbol">: </span><a href="../enums/services_sync_sync_service.syncsources.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SyncSources</a>, mode<span class="tsd-signature-symbol">: </span><a href="../enums/services_sync_sync_service.syncmodes.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SyncModes</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="services_sync_account_operation.accountsyncoperation.html" class="tsd-signature-type" data-tsd-kind="Class">AccountSyncOperation</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L751">services/sync/sync_service.ts:751</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>payloads: <a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>checkIntegrity: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li>
+									<h5>source: <a href="../enums/services_sync_sync_service.syncsources.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SyncSources</a></h5>
+								</li>
+								<li>
+									<h5>mode: <a href="../enums/services_sync_sync_service.syncmodes.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SyncModes</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="services_sync_account_operation.accountsyncoperation.html" class="tsd-signature-type" data-tsd-kind="Class">AccountSyncOperation</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="unlocksyncing" class="tsd-anchor"></a>
+					<h3>unlock<wbr>Syncing</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">unlock<wbr>Syncing<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L227">services/sync/sync_service.ts:227</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="ut_beginlatencysimulator" class="tsd-anchor"></a>
+					<h3>ut_<wbr>begin<wbr>Latency<wbr>Simulator</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">ut_<wbr>begin<wbr>Latency<wbr>Simulator<span class="tsd-signature-symbol">(</span>latency<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L1006">services/sync/sync_service.ts:1006</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>unit_testing</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>latency: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="ut_clearlastsyncdate" class="tsd-anchor"></a>
+					<h3>ut_<wbr>clear<wbr>Last<wbr>Sync<wbr>Date</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">ut_<wbr>clear<wbr>Last<wbr>Sync<wbr>Date<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L1000">services/sync/sync_service.ts:1000</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>unit_testing</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="ut_endlatencysimulator" class="tsd-anchor"></a>
+					<h3>ut_<wbr>end<wbr>Latency<wbr>Simulator</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">ut_<wbr>end<wbr>Latency<wbr>Simulator<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L1015">services/sync/sync_service.ts:1015</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>unit_testing</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="ut_setdatabaseloaded" class="tsd-anchor"></a>
+					<h3>ut_<wbr>set<wbr>Database<wbr>Loaded</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">ut_<wbr>set<wbr>Database<wbr>Loaded<span class="tsd-signature-symbol">(</span>loaded<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/sync/sync_service.ts#L994">services/sync/sync_service.ts:994</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>unit_testing</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>loaded: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/services_sync_sync_service.html">services/sync/sync_<wbr>service</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/services_sync_sync_service.syncmodes.html" class="tsd-kind-icon">Sync<wbr>Modes</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/services_sync_sync_service.syncqueuestrategy.html" class="tsd-kind-icon">Sync<wbr>Queue<wbr>Strategy</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/services_sync_sync_service.syncsources.html" class="tsd-kind-icon">Sync<wbr>Sources</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module">
+						<a href="services_sync_sync_service.snsyncservice.html" class="tsd-kind-icon">SNSync<wbr>Service</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_sync_sync_service.snsyncservice.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#_simulate_latency" class="tsd-kind-icon">_simulate_<wbr>latency</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#apiservice" class="tsd-kind-icon">api<wbr>Service</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#completedonlinedownloadfirstsync" class="tsd-kind-icon">completed<wbr>Online<wbr>Download<wbr>First<wbr>Sync</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#cursortoken" class="tsd-kind-icon">cursor<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#databaseloaded" class="tsd-kind-icon">database<wbr>Loaded</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_sync_sync_service.snsyncservice.html#deviceinterface" class="tsd-kind-icon">device<wbr>Interface</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#interval" class="tsd-kind-icon">interval</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#itemmanager" class="tsd-kind-icon">item<wbr>Manager</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#localloadpriorty" class="tsd-kind-icon">local<wbr>Load<wbr>Priorty</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#locked" class="tsd-kind-icon">locked</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_sync_sync_service.snsyncservice.html#loggingenabled" class="tsd-kind-icon">logging<wbr>Enabled</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#majorchangethreshold" class="tsd-kind-icon">major<wbr>Change<wbr>Threshold</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#maxdiscordance" class="tsd-kind-icon">max<wbr>Discordance</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#modelmanager" class="tsd-kind-icon">model<wbr>Manager</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#opstatus" class="tsd-kind-icon">op<wbr>Status</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#protocolservice" class="tsd-kind-icon">protocol<wbr>Service</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#resolvequeue" class="tsd-kind-icon">resolve<wbr>Queue</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#sessionmanager" class="tsd-kind-icon">session<wbr>Manager</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#spawnqueue" class="tsd-kind-icon">spawn<wbr>Queue</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#state" class="tsd-kind-icon">state</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#storageservice" class="tsd-kind-icon">storage<wbr>Service</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#synclock" class="tsd-kind-icon">sync<wbr>Lock</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#synctoken" class="tsd-kind-icon">sync<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_sync_sync_service.snsyncservice.html#addeventobserver" class="tsd-kind-icon">add<wbr>Event<wbr>Observer</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#alternateuuidforitem" class="tsd-kind-icon">alternate<wbr>Uuid<wbr>For<wbr>Item</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_sync_sync_service.snsyncservice.html#blockdeinit" class="tsd-kind-icon">block<wbr>Deinit</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#clearsyncpositiontokens" class="tsd-kind-icon">clear<wbr>Sync<wbr>Position<wbr>Tokens</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#computedataintegrityhash" class="tsd-kind-icon">compute<wbr>Data<wbr>Integrity<wbr>Hash</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="services_sync_sync_service.snsyncservice.html#deinit" class="tsd-kind-icon">deinit</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#deletepayloads" class="tsd-kind-icon">delete<wbr>Payloads</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#downloadfirstsync" class="tsd-kind-icon">download<wbr>First<wbr>Sync</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-protected">
+								<a href="services_sync_sync_service.snsyncservice.html#executecriticalfunction" class="tsd-kind-icon">execute<wbr>Critical<wbr>Function</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#getdatabasepayloads" class="tsd-kind-icon">get<wbr>Database<wbr>Payloads</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#getlastsyncdate" class="tsd-kind-icon">get<wbr>Last<wbr>Sync<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#getlastsynctoken" class="tsd-kind-icon">get<wbr>Last<wbr>Sync<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#getpaginationtoken" class="tsd-kind-icon">get<wbr>Pagination<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#getstatus" class="tsd-kind-icon">get<wbr>Status</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_sync_sync_service.snsyncservice.html#handleapplicationstage" class="tsd-kind-icon">handle<wbr>Application<wbr>Stage</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#handleerrorserverresponse" class="tsd-kind-icon">handle<wbr>Error<wbr>Server<wbr>Response</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#handleinvalidsessionstate" class="tsd-kind-icon">handle<wbr>Invalid<wbr>Session<wbr>State</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#handleneversynceddeleted" class="tsd-kind-icon">handle<wbr>Never<wbr>Synced<wbr>Deleted</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#handleofflineresponse" class="tsd-kind-icon">handle<wbr>Offline<wbr>Response</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#handlesuccessserverresponse" class="tsd-kind-icon">handle<wbr>Success<wbr>Server<wbr>Response</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#initializestate" class="tsd-kind-icon">initialize<wbr>State</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#initializestatus" class="tsd-kind-icon">initialize<wbr>Status</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#isdatabaseloaded" class="tsd-kind-icon">is<wbr>Database<wbr>Loaded</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#isoutofsync" class="tsd-kind-icon">is<wbr>Out<wbr>OfSync</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#itemsneedingsync" class="tsd-kind-icon">items<wbr>Needing<wbr>Sync</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#loaddatabasepayloads" class="tsd-kind-icon">load<wbr>Database<wbr>Payloads</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#locksyncing" class="tsd-kind-icon">lock<wbr>Syncing</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_sync_sync_service.snsyncservice.html#log" class="tsd-kind-icon">log</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#markallitemsasneedingsync" class="tsd-kind-icon">mark<wbr>All<wbr>Items<wbr>AsNeeding<wbr>Sync</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="services_sync_sync_service.snsyncservice.html#notifyevent" class="tsd-kind-icon">notify<wbr>Event</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#onnewdatabasecreated" class="tsd-kind-icon">on<wbr>New<wbr>Database<wbr>Created</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#payloadsbypreparingforserver" class="tsd-kind-icon">payloads<wbr>ByPreparing<wbr>For<wbr>Server</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#persistpayloads" class="tsd-kind-icon">persist<wbr>Payloads</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#poppayloadsneedingpresyncsave" class="tsd-kind-icon">pop<wbr>Payloads<wbr>Needing<wbr>Pre<wbr>Sync<wbr>Save</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#popspawnqueue" class="tsd-kind-icon">pop<wbr>Spawn<wbr>Queue</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#queuestrategyforcespawnnew" class="tsd-kind-icon">queue<wbr>Strategy<wbr>Force<wbr>Spawn<wbr>New</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#queuestrategyresolveonnext" class="tsd-kind-icon">queue<wbr>Strategy<wbr>Resolve<wbr>OnNext</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#resetsyncstate" class="tsd-kind-icon">reset<wbr>Sync<wbr>State</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#resolveoutofsync" class="tsd-kind-icon">resolve<wbr>Out<wbr>OfSync</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#setlastsynctoken" class="tsd-kind-icon">set<wbr>Last<wbr>Sync<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#setpaginationtoken" class="tsd-kind-icon">set<wbr>Pagination<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#statelessdownloadallitems" class="tsd-kind-icon">stateless<wbr>Download<wbr>All<wbr>Items</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#sync" class="tsd-kind-icon">sync</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#syncofflineoperation" class="tsd-kind-icon">sync<wbr>Offline<wbr>Operation</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_sync_sync_service.snsyncservice.html#synconlineoperation" class="tsd-kind-icon">sync<wbr>Online<wbr>Operation</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#unlocksyncing" class="tsd-kind-icon">unlock<wbr>Syncing</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#ut_beginlatencysimulator" class="tsd-kind-icon">ut_<wbr>begin<wbr>Latency<wbr>Simulator</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#ut_clearlastsyncdate" class="tsd-kind-icon">ut_<wbr>clear<wbr>Last<wbr>Sync<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#ut_endlatencysimulator" class="tsd-kind-icon">ut_<wbr>end<wbr>Latency<wbr>Simulator</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_sync_sync_service.snsyncservice.html#ut_setdatabaseloaded" class="tsd-kind-icon">ut_<wbr>set<wbr>Database<wbr>Loaded</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="../modules/services_sync_sync_service.html#syncoptions" class="tsd-kind-icon">Sync<wbr>Options</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

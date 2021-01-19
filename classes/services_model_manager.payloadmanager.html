@@ -1,0 +1,977 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>PayloadManager | SNJS Documentation - v2.0.41</title>
+	<meta name="description" content="Documentation for SNJS Documentation - v2.0.41">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">SNJS Documentation - v2.0.41</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">SNJS Documentation - v2.0.41</a>
+				</li>
+				<li>
+					<a href="../modules/services_model_manager.html">services/model_manager</a>
+				</li>
+				<li>
+					<a href="services_model_manager.payloadmanager.html">PayloadManager</a>
+				</li>
+			</ul>
+			<h1>Class PayloadManager</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The model manager is responsible for keeping state regarding what items exist in the
+							global application state. It does so by exposing functions that allow consumers to &#39;map&#39;
+							a detached payload into global application state. Whenever a change is made or retrieved
+							from any source, it must be mapped in order to be properly reflected in global application state.
+							The model manager deals only with in-memory state, and does not deal directly with storage.
+							It also serves as a query store, and can be queried for current notes, tags, etc.
+							It exposes methods that allow consumers to listen to mapping events. This is how
+						applications &#39;stream&#39; items to display in the interface.</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="services_pure_service.pureservice.html" class="tsd-signature-type" data-tsd-kind="Class">PureService</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">PayloadManager</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="services_model_manager.payloadmanager.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_model_manager.payloadmanager.html#changeobservers" class="tsd-kind-icon">change<wbr>Observers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="services_model_manager.payloadmanager.html#collection" class="tsd-kind-icon">collection</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="services_model_manager.payloadmanager.html#deviceinterface" class="tsd-kind-icon">device<wbr>Interface</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_model_manager.payloadmanager.html#emitqueue" class="tsd-kind-icon">emit<wbr>Queue</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="services_model_manager.payloadmanager.html#loggingenabled" class="tsd-kind-icon">logging<wbr>Enabled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_model_manager.payloadmanager.html#overwriteprotection" class="tsd-kind-icon">overwrite<wbr>Protection</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="services_model_manager.payloadmanager.html#addeventobserver" class="tsd-kind-icon">add<wbr>Event<wbr>Observer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_model_manager.payloadmanager.html#addobserver" class="tsd-kind-icon">add<wbr>Observer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="services_model_manager.payloadmanager.html#blockdeinit" class="tsd-kind-icon">block<wbr>Deinit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="services_model_manager.payloadmanager.html#deinit" class="tsd-kind-icon">deinit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_model_manager.payloadmanager.html#emitcollection" class="tsd-kind-icon">emit<wbr>Collection</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_model_manager.payloadmanager.html#emitpayload" class="tsd-kind-icon">emit<wbr>Payload</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_model_manager.payloadmanager.html#emitpayloads" class="tsd-kind-icon">emit<wbr>Payloads</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-protected"><a href="services_model_manager.payloadmanager.html#executecriticalfunction" class="tsd-kind-icon">execute<wbr>Critical<wbr>Function</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_model_manager.payloadmanager.html#find" class="tsd-kind-icon">find</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_model_manager.payloadmanager.html#getmastercollection" class="tsd-kind-icon">get<wbr>Master<wbr>Collection</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="services_model_manager.payloadmanager.html#handleapplicationstage" class="tsd-kind-icon">handle<wbr>Application<wbr>Stage</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_model_manager.payloadmanager.html#importpayloads" class="tsd-kind-icon">import<wbr>Payloads</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="services_model_manager.payloadmanager.html#log" class="tsd-kind-icon">log</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_model_manager.payloadmanager.html#mergepayloadsontomaster" class="tsd-kind-icon">merge<wbr>Payloads<wbr>Onto<wbr>Master</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_model_manager.payloadmanager.html#notifychangeobservers" class="tsd-kind-icon">notify<wbr>Change<wbr>Observers</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="services_model_manager.payloadmanager.html#notifyevent" class="tsd-kind-icon">notify<wbr>Event</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_model_manager.payloadmanager.html#popqueue" class="tsd-kind-icon">pop<wbr>Queue</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_model_manager.payloadmanager.html#removepayloadlocally" class="tsd-kind-icon">remove<wbr>Payload<wbr>Locally</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_model_manager.payloadmanager.html#resetstate" class="tsd-kind-icon">reset<wbr>State</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Payload<wbr>Manager<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="services_model_manager.payloadmanager.html" class="tsd-signature-type" data-tsd-kind="Class">PayloadManager</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/model_manager.ts#L57">services/model_manager.ts:57</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="services_model_manager.payloadmanager.html" class="tsd-signature-type" data-tsd-kind="Class">PayloadManager</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="changeobservers" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> change<wbr>Observers</h3>
+					<div class="tsd-signature tsd-kind-icon">change<wbr>Observers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ChangeObserver</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/model_manager.ts#L47">services/model_manager.ts:47</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="collection" class="tsd-anchor"></a>
+					<h3>collection</h3>
+					<div class="tsd-signature tsd-kind-icon">collection<span class="tsd-signature-symbol">:</span> <a href="protocol_collection_collection.mutablecollection.html" class="tsd-signature-type" data-tsd-kind="Class">MutableCollection</a><span class="tsd-signature-symbol">&lt;</span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/model_manager.ts#L48">services/model_manager.ts:48</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="deviceinterface" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> device<wbr>Interface</h3>
+					<div class="tsd-signature tsd-kind-icon">device<wbr>Interface<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="device_interface.deviceinterface.html" class="tsd-signature-type" data-tsd-kind="Class">DeviceInterface</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#deviceinterface">deviceInterface</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L11">services/pure_service.ts:11</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="emitqueue" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> emit<wbr>Queue</h3>
+					<div class="tsd-signature tsd-kind-icon">emit<wbr>Queue<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">QueueElement</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/model_manager.ts#L49">services/model_manager.ts:49</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="loggingenabled" class="tsd-anchor"></a>
+					<h3>logging<wbr>Enabled</h3>
+					<div class="tsd-signature tsd-kind-icon">logging<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#loggingenabled">loggingEnabled</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L10">services/pure_service.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="overwriteprotection" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> overwrite<wbr>Protection</h3>
+					<div class="tsd-signature tsd-kind-icon">overwrite<wbr>Protection<span class="tsd-signature-symbol">:</span> <a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/model_manager.ts#L57">services/model_manager.ts:57</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An array of content types for which we enable encrypted overwrite protection.
+								If a payload attempting to be emitted is errored, yet our current local version
+								is not errored, and the payload&#39;s content type is in this array, we do not overwrite
+								our local version. We instead notify observers of this interaction for them to handle
+							as needed</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="addeventobserver" class="tsd-anchor"></a>
+					<h3>add<wbr>Event<wbr>Observer</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Observer<span class="tsd-signature-symbol">(</span>observer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventObserver</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#addeventobserver">addEventObserver</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L14">services/pure_service.ts:14</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>observer: <span class="tsd-signature-type">EventObserver</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-signature">
+									<ul class="tsd-signatures tsd-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addobserver" class="tsd-anchor"></a>
+					<h3>add<wbr>Observer</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Observer<span class="tsd-signature-symbol">(</span>types<span class="tsd-signature-symbol">: </span><a href="../enums/models_content_types.contenttype.html#any" class="tsd-signature-type" data-tsd-kind="Enumeration member">Any</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#item" class="tsd-signature-type" data-tsd-kind="Enumeration member">Item</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#rootkey" class="tsd-signature-type" data-tsd-kind="Enumeration member">RootKey</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#itemskey" class="tsd-signature-type" data-tsd-kind="Enumeration member">ItemsKey</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#encryptedstorage" class="tsd-signature-type" data-tsd-kind="Enumeration member">EncryptedStorage</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#note" class="tsd-signature-type" data-tsd-kind="Enumeration member">Note</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#tag" class="tsd-signature-type" data-tsd-kind="Enumeration member">Tag</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#smarttag" class="tsd-signature-type" data-tsd-kind="Enumeration member">SmartTag</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#component" class="tsd-signature-type" data-tsd-kind="Enumeration member">Component</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#editor" class="tsd-signature-type" data-tsd-kind="Enumeration member">Editor</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#actionsextension" class="tsd-signature-type" data-tsd-kind="Enumeration member">ActionsExtension</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#userprefs" class="tsd-signature-type" data-tsd-kind="Enumeration member">UserPrefs</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#historysession" class="tsd-signature-type" data-tsd-kind="Enumeration member">HistorySession</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#theme" class="tsd-signature-type" data-tsd-kind="Enumeration member">Theme</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#mfa" class="tsd-signature-type" data-tsd-kind="Enumeration member">Mfa</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#serverextension" class="tsd-signature-type" data-tsd-kind="Enumeration member">ServerExtension</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#filesafecredentials" class="tsd-signature-type" data-tsd-kind="Enumeration member">FilesafeCredentials</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#filesafefilemetadata" class="tsd-signature-type" data-tsd-kind="Enumeration member">FilesafeFileMetadata</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#filesafeintegration" class="tsd-signature-type" data-tsd-kind="Enumeration member">FilesafeIntegration</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#extensionrepo" class="tsd-signature-type" data-tsd-kind="Enumeration member">ExtensionRepo</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a><span class="tsd-signature-symbol">[]</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ChangeCallback</span>, priority<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/model_manager.ts#L203">services/model_manager.ts:203</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Notifies observers when an item has been mapped.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>types: <a href="../enums/models_content_types.contenttype.html#any" class="tsd-signature-type" data-tsd-kind="Enumeration member">Any</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#item" class="tsd-signature-type" data-tsd-kind="Enumeration member">Item</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#rootkey" class="tsd-signature-type" data-tsd-kind="Enumeration member">RootKey</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#itemskey" class="tsd-signature-type" data-tsd-kind="Enumeration member">ItemsKey</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#encryptedstorage" class="tsd-signature-type" data-tsd-kind="Enumeration member">EncryptedStorage</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#note" class="tsd-signature-type" data-tsd-kind="Enumeration member">Note</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#tag" class="tsd-signature-type" data-tsd-kind="Enumeration member">Tag</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#smarttag" class="tsd-signature-type" data-tsd-kind="Enumeration member">SmartTag</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#component" class="tsd-signature-type" data-tsd-kind="Enumeration member">Component</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#editor" class="tsd-signature-type" data-tsd-kind="Enumeration member">Editor</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#actionsextension" class="tsd-signature-type" data-tsd-kind="Enumeration member">ActionsExtension</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#userprefs" class="tsd-signature-type" data-tsd-kind="Enumeration member">UserPrefs</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#historysession" class="tsd-signature-type" data-tsd-kind="Enumeration member">HistorySession</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#theme" class="tsd-signature-type" data-tsd-kind="Enumeration member">Theme</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#mfa" class="tsd-signature-type" data-tsd-kind="Enumeration member">Mfa</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#serverextension" class="tsd-signature-type" data-tsd-kind="Enumeration member">ServerExtension</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#filesafecredentials" class="tsd-signature-type" data-tsd-kind="Enumeration member">FilesafeCredentials</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#filesafefilemetadata" class="tsd-signature-type" data-tsd-kind="Enumeration member">FilesafeFileMetadata</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#filesafeintegration" class="tsd-signature-type" data-tsd-kind="Enumeration member">FilesafeIntegration</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#extensionrepo" class="tsd-signature-type" data-tsd-kind="Enumeration member">ExtensionRepo</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An array of content types to listen for</p>
+									</div>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">ChangeCallback</span></h5>
+								</li>
+								<li>
+									<h5>priority: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The lower the priority, the earlier the function is called
+										wrt to other observers</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-signature">
+									<ul class="tsd-signatures tsd-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="blockdeinit" class="tsd-anchor"></a>
+					<h3>block<wbr>Deinit</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">block<wbr>Deinit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#blockdeinit">blockDeinit</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L31">services/pure_service.ts:31</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Called by application to allow services to momentarily block deinit until
+									sensitive operations complete.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="deinit" class="tsd-anchor"></a>
+					<h3>deinit</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">deinit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#deinit">deinit</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/model_manager.ts#L73">services/model_manager.ts:73</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="emitcollection" class="tsd-anchor"></a>
+					<h3>emit<wbr>Collection</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">emit<wbr>Collection<span class="tsd-signature-symbol">(</span>collection<span class="tsd-signature-symbol">: </span><a href="protocol_collection_payload_collection.immutablepayloadcollection.html" class="tsd-signature-type" data-tsd-kind="Class">ImmutablePayloadCollection</a>, sourceKey<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/model_manager.ts#L91">services/model_manager.ts:91</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>One of many mapping helpers available.
+									This function maps a collection of payloads.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>collection: <a href="protocol_collection_payload_collection.immutablepayloadcollection.html" class="tsd-signature-type" data-tsd-kind="Class">ImmutablePayloadCollection</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> sourceKey: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="emitpayload" class="tsd-anchor"></a>
+					<h3>emit<wbr>Payload</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">emit<wbr>Payload<span class="tsd-signature-symbol">(</span>payload<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a>, source<span class="tsd-signature-symbol">: </span><a href="../enums/protocol_payloads_sources.payloadsource.html" class="tsd-signature-type" data-tsd-kind="Enumeration">PayloadSource</a>, sourceKey<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/model_manager.ts#L108">services/model_manager.ts:108</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>One of many mapping helpers available.
+									This function maps a payload to an item</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>payload: <a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a></h5>
+								</li>
+								<li>
+									<h5>source: <a href="../enums/protocol_payloads_sources.payloadsource.html" class="tsd-signature-type" data-tsd-kind="Enumeration">PayloadSource</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> sourceKey: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>every paylod altered as a result of this operation, to be
+							saved to storage by the caller</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="emitpayloads" class="tsd-anchor"></a>
+					<h3>emit<wbr>Payloads</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">emit<wbr>Payloads<span class="tsd-signature-symbol">(</span>payloads<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span>, source<span class="tsd-signature-symbol">: </span><a href="../enums/protocol_payloads_sources.payloadsource.html" class="tsd-signature-type" data-tsd-kind="Enumeration">PayloadSource</a>, sourceKey<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/model_manager.ts#L126">services/model_manager.ts:126</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This function maps multiple payloads to items, and is the authoratative mapping
+									function that all other mapping helpers rely on</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>payloads: <a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>source: <a href="../enums/protocol_payloads_sources.payloadsource.html" class="tsd-signature-type" data-tsd-kind="Enumeration">PayloadSource</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> sourceKey: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>every paylod altered as a result of this operation, to be
+							saved to storage by the caller</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-protected">
+					<a name="executecriticalfunction" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> execute<wbr>Critical<wbr>Function</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">execute<wbr>Critical<wbr>Function&lt;T&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#executecriticalfunction">executeCriticalFunction</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L51">services/pure_service.ts:51</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>A critical function is one that should block signing out or destroying application
+										session until the crticial function has completed. For example, persisting keys to
+										disk is a critical operation, and should be wrapped in this function call. The
+										parent application instance will await all criticial functions via the <code>blockDeinit</code>
+									function before signing out and deiniting.</p>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T = <span class="tsd-signature-type">void</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>func: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="find" class="tsd-anchor"></a>
+					<h3>find</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">find<span class="tsd-signature-symbol">(</span>uuids<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/model_manager.ts#L83">services/model_manager.ts:83</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>uuids: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getmastercollection" class="tsd-anchor"></a>
+					<h3>get<wbr>Master<wbr>Collection</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Master<wbr>Collection<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="protocol_collection_payload_collection.immutablepayloadcollection.html" class="tsd-signature-type" data-tsd-kind="Class">ImmutablePayloadCollection</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/model_manager.ts#L69">services/model_manager.ts:69</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Our payload collection keeps the latest mapped payload for every payload
+										that passes through our mapping function. Use this to query current state
+									as needed to make decisions, like about duplication or uuid alteration.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="protocol_collection_payload_collection.immutablepayloadcollection.html" class="tsd-signature-type" data-tsd-kind="Class">ImmutablePayloadCollection</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="handleapplicationstage" class="tsd-anchor"></a>
+					<h3>handle<wbr>Application<wbr>Stage</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">handle<wbr>Application<wbr>Stage<span class="tsd-signature-symbol">(</span>_stage<span class="tsd-signature-symbol">: </span><a href="../enums/stages.applicationstage.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ApplicationStage</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#handleapplicationstage">handleApplicationStage</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L62">services/pure_service.ts:62</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Application instances will call this function directly when they arrive
+									at a certain migratory state.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>_stage: <a href="../enums/stages.applicationstage.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ApplicationStage</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="importpayloads" class="tsd-anchor"></a>
+					<h3>import<wbr>Payloads</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">import<wbr>Payloads<span class="tsd-signature-symbol">(</span>payloads<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/model_manager.ts#L262">services/model_manager.ts:262</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Imports an array of payloads from an external source (such as a backup file)
+									and marks the items as dirty.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>payloads: <a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Resulting items</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="log" class="tsd-anchor"></a>
+					<h3>log</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#log">log</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L66">services/pure_service.ts:66</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>message: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="mergepayloadsontomaster" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> merge<wbr>Payloads<wbr>Onto<wbr>Master</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">merge<wbr>Payloads<wbr>Onto<wbr>Master<span class="tsd-signature-symbol">(</span>payloads<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>changed<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>discarded<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>ignored<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>inserted<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/model_manager.ts#L158">services/model_manager.ts:158</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>payloads: <a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>changed<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>discarded<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>ignored<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>inserted<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>changed<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>discarded<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>ignored<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>inserted<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="notifychangeobservers" class="tsd-anchor"></a>
+					<h3>notify<wbr>Change<wbr>Observers</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">notify<wbr>Change<wbr>Observers<span class="tsd-signature-symbol">(</span>changed<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span>, inserted<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span>, discarded<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span>, ignored<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span>, source<span class="tsd-signature-symbol">: </span><a href="../enums/protocol_payloads_sources.payloadsource.html" class="tsd-signature-type" data-tsd-kind="Enumeration">PayloadSource</a>, sourceKey<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/model_manager.ts#L226">services/model_manager.ts:226</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This function is mostly for internal use, but can be used externally by consumers who
+									explicitely understand what they are doing (want to propagate model state without mapping)</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>changed: <a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>inserted: <a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>discarded: <a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>ignored: <a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>source: <a href="../enums/protocol_payloads_sources.payloadsource.html" class="tsd-signature-type" data-tsd-kind="Enumeration">PayloadSource</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> sourceKey: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="notifyevent" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> notify<wbr>Event</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">notify<wbr>Event<span class="tsd-signature-symbol">(</span>eventName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#notifyevent">notifyEvent</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L21">services/pure_service.ts:21</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>eventName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> data: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="popqueue" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> pop<wbr>Queue</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">pop<wbr>Queue<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/model_manager.ts#L147">services/model_manager.ts:147</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="removepayloadlocally" class="tsd-anchor"></a>
+					<h3>remove<wbr>Payload<wbr>Locally</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Payload<wbr>Locally<span class="tsd-signature-symbol">(</span>payload<span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/model_manager.ts#L275">services/model_manager.ts:275</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>payload: <a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="resetstate" class="tsd-anchor"></a>
+					<h3>reset<wbr>State</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">reset<wbr>State<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/model_manager.ts#L79">services/model_manager.ts:79</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/services_model_manager.html">services/model_<wbr>manager</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module">
+						<a href="services_model_manager.payloadmanager.html" class="tsd-kind-icon">Payload<wbr>Manager</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_model_manager.payloadmanager.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_model_manager.payloadmanager.html#changeobservers" class="tsd-kind-icon">change<wbr>Observers</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="services_model_manager.payloadmanager.html#collection" class="tsd-kind-icon">collection</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_model_manager.payloadmanager.html#deviceinterface" class="tsd-kind-icon">device<wbr>Interface</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_model_manager.payloadmanager.html#emitqueue" class="tsd-kind-icon">emit<wbr>Queue</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_model_manager.payloadmanager.html#loggingenabled" class="tsd-kind-icon">logging<wbr>Enabled</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_model_manager.payloadmanager.html#overwriteprotection" class="tsd-kind-icon">overwrite<wbr>Protection</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_model_manager.payloadmanager.html#addeventobserver" class="tsd-kind-icon">add<wbr>Event<wbr>Observer</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_model_manager.payloadmanager.html#addobserver" class="tsd-kind-icon">add<wbr>Observer</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_model_manager.payloadmanager.html#blockdeinit" class="tsd-kind-icon">block<wbr>Deinit</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="services_model_manager.payloadmanager.html#deinit" class="tsd-kind-icon">deinit</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_model_manager.payloadmanager.html#emitcollection" class="tsd-kind-icon">emit<wbr>Collection</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_model_manager.payloadmanager.html#emitpayload" class="tsd-kind-icon">emit<wbr>Payload</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_model_manager.payloadmanager.html#emitpayloads" class="tsd-kind-icon">emit<wbr>Payloads</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-protected">
+								<a href="services_model_manager.payloadmanager.html#executecriticalfunction" class="tsd-kind-icon">execute<wbr>Critical<wbr>Function</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_model_manager.payloadmanager.html#find" class="tsd-kind-icon">find</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_model_manager.payloadmanager.html#getmastercollection" class="tsd-kind-icon">get<wbr>Master<wbr>Collection</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_model_manager.payloadmanager.html#handleapplicationstage" class="tsd-kind-icon">handle<wbr>Application<wbr>Stage</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_model_manager.payloadmanager.html#importpayloads" class="tsd-kind-icon">import<wbr>Payloads</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_model_manager.payloadmanager.html#log" class="tsd-kind-icon">log</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_model_manager.payloadmanager.html#mergepayloadsontomaster" class="tsd-kind-icon">merge<wbr>Payloads<wbr>Onto<wbr>Master</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_model_manager.payloadmanager.html#notifychangeobservers" class="tsd-kind-icon">notify<wbr>Change<wbr>Observers</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="services_model_manager.payloadmanager.html#notifyevent" class="tsd-kind-icon">notify<wbr>Event</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_model_manager.payloadmanager.html#popqueue" class="tsd-kind-icon">pop<wbr>Queue</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_model_manager.payloadmanager.html#removepayloadlocally" class="tsd-kind-icon">remove<wbr>Payload<wbr>Locally</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_model_manager.payloadmanager.html#resetstate" class="tsd-kind-icon">reset<wbr>State</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

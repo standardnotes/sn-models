@@ -1,0 +1,1056 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>SNHistoryManager | SNJS Documentation - v2.0.41</title>
+	<meta name="description" content="Documentation for SNJS Documentation - v2.0.41">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">SNJS Documentation - v2.0.41</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">SNJS Documentation - v2.0.41</a>
+				</li>
+				<li>
+					<a href="../modules/services_history_history_manager.html">services/history/history_manager</a>
+				</li>
+				<li>
+					<a href="services_history_history_manager.snhistorymanager.html">SNHistoryManager</a>
+				</li>
+			</ul>
+			<h1>Class SNHistoryManager</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The history manager is responsible for:</p>
+						<ol>
+							<li>Transient session history, which include keeping track of changes made in the
+								current application session. These change logs (unless otherwise configured) are
+								ephemeral and do not persist past application restart. Session history entries are
+							added via change observers that trigger when an item changes.</li>
+							<li>Remote server history. Entries are automatically added by the server and must be
+							retrieved per item via an API call.</li>
+						</ol>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="services_pure_service.pureservice.html" class="tsd-signature-type" data-tsd-kind="Class">PureService</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">SNHistoryManager</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="services_history_history_manager.snhistorymanager.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_history_history_manager.snhistorymanager.html#apiservice" class="tsd-kind-icon">api<wbr>Service</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="services_history_history_manager.snhistorymanager.html#autooptimize" class="tsd-kind-icon">auto<wbr>Optimize</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_history_history_manager.snhistorymanager.html#contenttypes" class="tsd-kind-icon">content<wbr>Types</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="services_history_history_manager.snhistorymanager.html#deviceinterface" class="tsd-kind-icon">device<wbr>Interface</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_history_history_manager.snhistorymanager.html#itemmanager" class="tsd-kind-icon">item<wbr>Manager</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="services_history_history_manager.snhistorymanager.html#loggingenabled" class="tsd-kind-icon">logging<wbr>Enabled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_history_history_manager.snhistorymanager.html#persistable" class="tsd-kind-icon">persistable</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_history_history_manager.snhistorymanager.html#protocolservice" class="tsd-kind-icon">protocol<wbr>Service</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_history_history_manager.snhistorymanager.html#removechangeobserver" class="tsd-kind-icon">remove<wbr>Change<wbr>Observer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_history_history_manager.snhistorymanager.html#savetimeout" class="tsd-kind-icon">save<wbr>Timeout</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_history_history_manager.snhistorymanager.html#sessionhistory" class="tsd-kind-icon">session<wbr>History</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_history_history_manager.snhistorymanager.html#storageservice" class="tsd-kind-icon">storage<wbr>Service</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_history_history_manager.snhistorymanager.html#timeout" class="tsd-kind-icon">timeout</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_history_history_manager.snhistorymanager.html#addchangeobserver" class="tsd-kind-icon">add<wbr>Change<wbr>Observer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="services_history_history_manager.snhistorymanager.html#addeventobserver" class="tsd-kind-icon">add<wbr>Event<wbr>Observer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_history_history_manager.snhistorymanager.html#addhistoryentryforitem" class="tsd-kind-icon">add<wbr>History<wbr>Entry<wbr>For<wbr>Item</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="services_history_history_manager.snhistorymanager.html#blockdeinit" class="tsd-kind-icon">block<wbr>Deinit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_history_history_manager.snhistorymanager.html#clearallhistory" class="tsd-kind-icon">clear<wbr>All<wbr>History</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_history_history_manager.snhistorymanager.html#clearhistoryforitem" class="tsd-kind-icon">clear<wbr>History<wbr>For<wbr>Item</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="services_history_history_manager.snhistorymanager.html#deinit" class="tsd-kind-icon">deinit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-protected"><a href="services_history_history_manager.snhistorymanager.html#executecriticalfunction" class="tsd-kind-icon">execute<wbr>Critical<wbr>Function</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_history_history_manager.snhistorymanager.html#fetchremoterevision" class="tsd-kind-icon">fetch<wbr>Remote<wbr>Revision</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="services_history_history_manager.snhistorymanager.html#handleapplicationstage" class="tsd-kind-icon">handle<wbr>Application<wbr>Stage</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_history_history_manager.snhistorymanager.html#initializefromdisk" class="tsd-kind-icon">initialize<wbr>From<wbr>Disk</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_history_history_manager.snhistorymanager.html#isautooptimizeenabled" class="tsd-kind-icon">is<wbr>Auto<wbr>Optimize<wbr>Enabled</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_history_history_manager.snhistorymanager.html#isdiskenabled" class="tsd-kind-icon">is<wbr>Disk<wbr>Enabled</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="services_history_history_manager.snhistorymanager.html#log" class="tsd-kind-icon">log</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="services_history_history_manager.snhistorymanager.html#notifyevent" class="tsd-kind-icon">notify<wbr>Event</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_history_history_manager.snhistorymanager.html#remotehistoryforitem" class="tsd-kind-icon">remote<wbr>History<wbr>For<wbr>Item</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_history_history_manager.snhistorymanager.html#savetodisk" class="tsd-kind-icon">save<wbr>ToDisk</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_history_history_manager.snhistorymanager.html#sessionhistoryforitem" class="tsd-kind-icon">session<wbr>History<wbr>For<wbr>Item</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_history_history_manager.snhistorymanager.html#setsessionitemrevisionthreshold" class="tsd-kind-icon">set<wbr>Session<wbr>Item<wbr>Revision<wbr>Threshold</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_history_history_manager.snhistorymanager.html#toggleautooptimize" class="tsd-kind-icon">toggle<wbr>Auto<wbr>Optimize</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_history_history_manager.snhistorymanager.html#toggledisksaving" class="tsd-kind-icon">toggle<wbr>Disk<wbr>Saving</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">new SNHistory<wbr>Manager<span class="tsd-signature-symbol">(</span>itemManager<span class="tsd-signature-symbol">: </span><a href="services_item_manager.itemmanager.html" class="tsd-signature-type" data-tsd-kind="Class">ItemManager</a>, storageService<span class="tsd-signature-symbol">: </span><a href="services_storage_service.snstorageservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNStorageService</a>, apiService<span class="tsd-signature-symbol">: </span><a href="services_api_api_service.snapiservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNApiService</a>, protocolService<span class="tsd-signature-symbol">: </span><a href="services_protocol_service.snprotocolservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNProtocolService</a>, contentTypes<span class="tsd-signature-symbol">: </span><a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a><span class="tsd-signature-symbol">[]</span>, timeout<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="services_history_history_manager.snhistorymanager.html" class="tsd-signature-type" data-tsd-kind="Class">SNHistoryManager</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L40">services/history/history_manager.ts:40</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>itemManager: <a href="services_item_manager.itemmanager.html" class="tsd-signature-type" data-tsd-kind="Class">ItemManager</a></h5>
+								</li>
+								<li>
+									<h5>storageService: <a href="services_storage_service.snstorageservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNStorageService</a></h5>
+								</li>
+								<li>
+									<h5>apiService: <a href="services_api_api_service.snapiservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNApiService</a></h5>
+								</li>
+								<li>
+									<h5>protocolService: <a href="services_protocol_service.snprotocolservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNProtocolService</a></h5>
+								</li>
+								<li>
+									<h5>contentTypes: <a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>timeout: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="services_history_history_manager.snhistorymanager.html" class="tsd-signature-type" data-tsd-kind="Class">SNHistoryManager</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="apiservice" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> api<wbr>Service</h3>
+					<div class="tsd-signature tsd-kind-icon">api<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="services_api_api_service.snapiservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNApiService</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L32">services/history/history_manager.ts:32</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="autooptimize" class="tsd-anchor"></a>
+					<h3>auto<wbr>Optimize</h3>
+					<div class="tsd-signature tsd-kind-icon">auto<wbr>Optimize<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L39">services/history/history_manager.ts:39</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="contenttypes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> content<wbr>Types</h3>
+					<div class="tsd-signature tsd-kind-icon">content<wbr>Types<span class="tsd-signature-symbol">:</span> <a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L34">services/history/history_manager.ts:34</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="deviceinterface" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> device<wbr>Interface</h3>
+					<div class="tsd-signature tsd-kind-icon">device<wbr>Interface<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="device_interface.deviceinterface.html" class="tsd-signature-type" data-tsd-kind="Class">DeviceInterface</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#deviceinterface">deviceInterface</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L11">services/pure_service.ts:11</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="itemmanager" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> item<wbr>Manager</h3>
+					<div class="tsd-signature tsd-kind-icon">item<wbr>Manager<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="services_item_manager.itemmanager.html" class="tsd-signature-type" data-tsd-kind="Class">ItemManager</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L30">services/history/history_manager.ts:30</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="loggingenabled" class="tsd-anchor"></a>
+					<h3>logging<wbr>Enabled</h3>
+					<div class="tsd-signature tsd-kind-icon">logging<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#loggingenabled">loggingEnabled</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L10">services/pure_service.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="persistable" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> persistable</h3>
+					<div class="tsd-signature tsd-kind-icon">persistable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L38">services/history/history_manager.ts:38</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="protocolservice" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> protocol<wbr>Service</h3>
+					<div class="tsd-signature tsd-kind-icon">protocol<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="services_protocol_service.snprotocolservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNProtocolService</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L33">services/history/history_manager.ts:33</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="removechangeobserver" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> remove<wbr>Change<wbr>Observer</h3>
+					<div class="tsd-signature tsd-kind-icon">remove<wbr>Change<wbr>Observer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L37">services/history/history_manager.ts:37</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="savetimeout" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> save<wbr>Timeout</h3>
+					<div class="tsd-signature tsd-kind-icon">save<wbr>Timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L40">services/history/history_manager.ts:40</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="sessionhistory" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> session<wbr>History</h3>
+					<div class="tsd-signature tsd-kind-icon">session<wbr>History<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="services_history_session_session_history_map.sessionhistorymap.html" class="tsd-signature-type" data-tsd-kind="Class">SessionHistoryMap</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L36">services/history/history_manager.ts:36</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="storageservice" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> storage<wbr>Service</h3>
+					<div class="tsd-signature tsd-kind-icon">storage<wbr>Service<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="services_storage_service.snstorageservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNStorageService</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L31">services/history/history_manager.ts:31</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="timeout" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> timeout</h3>
+					<div class="tsd-signature tsd-kind-icon">timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L35">services/history/history_manager.ts:35</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addchangeobserver" class="tsd-anchor"></a>
+					<h3>add<wbr>Change<wbr>Observer</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Change<wbr>Observer<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L94">services/history/history_manager.ts:94</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="addeventobserver" class="tsd-anchor"></a>
+					<h3>add<wbr>Event<wbr>Observer</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Observer<span class="tsd-signature-symbol">(</span>observer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventObserver</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#addeventobserver">addEventObserver</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L14">services/pure_service.ts:14</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>observer: <span class="tsd-signature-type">EventObserver</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-signature">
+									<ul class="tsd-signatures tsd-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addhistoryentryforitem" class="tsd-anchor"></a>
+					<h3>add<wbr>History<wbr>Entry<wbr>For<wbr>Item</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>History<wbr>Entry<wbr>For<wbr>Item<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L141">services/history/history_manager.ts:141</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>item: <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="blockdeinit" class="tsd-anchor"></a>
+					<h3>block<wbr>Deinit</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">block<wbr>Deinit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#blockdeinit">blockDeinit</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L31">services/pure_service.ts:31</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Called by application to allow services to momentarily block deinit until
+									sensitive operations complete.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clearallhistory" class="tsd-anchor"></a>
+					<h3>clear<wbr>All<wbr>History</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clear<wbr>All<wbr>History<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L173">services/history/history_manager.ts:173</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>For local session history</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clearhistoryforitem" class="tsd-anchor"></a>
+					<h3>clear<wbr>History<wbr>For<wbr>Item</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clear<wbr>History<wbr>For<wbr>Item<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L167">services/history/history_manager.ts:167</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>For local session history</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>item: <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="deinit" class="tsd-anchor"></a>
+					<h3>deinit</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">deinit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#deinit">deinit</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L59">services/history/history_manager.ts:59</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-protected">
+					<a name="executecriticalfunction" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> execute<wbr>Critical<wbr>Function</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">execute<wbr>Critical<wbr>Function&lt;T&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#executecriticalfunction">executeCriticalFunction</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L51">services/pure_service.ts:51</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>A critical function is one that should block signing out or destroying application
+										session until the crticial function has completed. For example, persisting keys to
+										disk is a critical operation, and should be wrapped in this function call. The
+										parent application instance will await all criticial functions via the <code>blockDeinit</code>
+									function before signing out and deiniting.</p>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T = <span class="tsd-signature-type">void</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>func: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="fetchremoterevision" class="tsd-anchor"></a>
+					<h3>fetch<wbr>Remote<wbr>Revision</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">fetch<wbr>Remote<wbr>Revision<span class="tsd-signature-symbol">(</span>itemUuid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, entry<span class="tsd-signature-symbol">: </span><a href="../modules/services_api_responses.html#revisionlistentry" class="tsd-signature-type" data-tsd-kind="Type alias">RevisionListEntry</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="services_history_entries_item_history_entry.itemhistoryentry.html" class="tsd-signature-type" data-tsd-kind="Class">ItemHistoryEntry</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L233">services/history/history_manager.ts:233</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Expands on a revision fetched via <code>remoteHistoryForItem</code> by getting a revision&#39;s
+									complete fields (including encrypted content).</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>itemUuid: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>entry: <a href="../modules/services_api_responses.html#revisionlistentry" class="tsd-signature-type" data-tsd-kind="Type alias">RevisionListEntry</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="services_history_entries_item_history_entry.itemhistoryentry.html" class="tsd-signature-type" data-tsd-kind="Class">ItemHistoryEntry</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="handleapplicationstage" class="tsd-anchor"></a>
+					<h3>handle<wbr>Application<wbr>Stage</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">handle<wbr>Application<wbr>Stage<span class="tsd-signature-symbol">(</span>_stage<span class="tsd-signature-symbol">: </span><a href="../enums/stages.applicationstage.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ApplicationStage</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#handleapplicationstage">handleApplicationStage</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L62">services/pure_service.ts:62</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Application instances will call this function directly when they arrive
+									at a certain migratory state.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>_stage: <a href="../enums/stages.applicationstage.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ApplicationStage</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="initializefromdisk" class="tsd-anchor"></a>
+					<h3>initialize<wbr>From<wbr>Disk</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">initialize<wbr>From<wbr>Disk<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L73">services/history/history_manager.ts:73</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>For local session history</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isautooptimizeenabled" class="tsd-anchor"></a>
+					<h3>is<wbr>Auto<wbr>Optimize<wbr>Enabled</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Auto<wbr>Optimize<wbr>Enabled<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L121">services/history/history_manager.ts:121</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>For local session history</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isdiskenabled" class="tsd-anchor"></a>
+					<h3>is<wbr>Disk<wbr>Enabled</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Disk<wbr>Enabled<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L116">services/history/history_manager.ts:116</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>For local session history</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="log" class="tsd-anchor"></a>
+					<h3>log</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#log">log</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L66">services/pure_service.ts:66</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>message: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="notifyevent" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> notify<wbr>Event</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">notify<wbr>Event<span class="tsd-signature-symbol">(</span>eventName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#notifyevent">notifyEvent</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L21">services/pure_service.ts:21</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>eventName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> data: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="remotehistoryforitem" class="tsd-anchor"></a>
+					<h3>remote<wbr>History<wbr>For<wbr>Item</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">remote<wbr>History<wbr>For<wbr>Item<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../modules/services_api_responses.html#revisionlistentry" class="tsd-signature-type" data-tsd-kind="Type alias">RevisionListEntry</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L221">services/history/history_manager.ts:221</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fetches a list of revisions from the server for an item. These revisions do not
+										include the item&#39;s content. Instead, each revision&#39;s content must be fetched
+									individually upon selection via <code>fetchRemoteRevision</code>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>item: <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../modules/services_api_responses.html#revisionlistentry" class="tsd-signature-type" data-tsd-kind="Type alias">RevisionListEntry</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="savetodisk" class="tsd-anchor"></a>
+					<h3>save<wbr>ToDisk</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">save<wbr>ToDisk<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L126">services/history/history_manager.ts:126</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>For local session history</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="sessionhistoryforitem" class="tsd-anchor"></a>
+					<h3>session<wbr>History<wbr>For<wbr>Item</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">session<wbr>History<wbr>For<wbr>Item<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="services_history_session_item_session_history.itemsessionhistory.html" class="tsd-signature-type" data-tsd-kind="Class">ItemSessionHistory</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L162">services/history/history_manager.ts:162</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>item: <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="services_history_session_item_session_history.itemsessionhistory.html" class="tsd-signature-type" data-tsd-kind="Class">ItemSessionHistory</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setsessionitemrevisionthreshold" class="tsd-anchor"></a>
+					<h3>set<wbr>Session<wbr>Item<wbr>Revision<wbr>Threshold</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Session<wbr>Item<wbr>Revision<wbr>Threshold<span class="tsd-signature-symbol">(</span>threshold<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L137">services/history/history_manager.ts:137</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>For local session history</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>threshold: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="toggleautooptimize" class="tsd-anchor"></a>
+					<h3>toggle<wbr>Auto<wbr>Optimize</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">toggle<wbr>Auto<wbr>Optimize<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L201">services/history/history_manager.ts:201</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>For local session history</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="toggledisksaving" class="tsd-anchor"></a>
+					<h3>toggle<wbr>Disk<wbr>Saving</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">toggle<wbr>Disk<wbr>Saving<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/history/history_manager.ts#L181">services/history/history_manager.ts:181</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>For local session history</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/services_history_history_manager.html">services/history/history_<wbr>manager</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module">
+						<a href="services_history_history_manager.snhistorymanager.html" class="tsd-kind-icon">SNHistory<wbr>Manager</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_history_history_manager.snhistorymanager.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_history_history_manager.snhistorymanager.html#apiservice" class="tsd-kind-icon">api<wbr>Service</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="services_history_history_manager.snhistorymanager.html#autooptimize" class="tsd-kind-icon">auto<wbr>Optimize</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_history_history_manager.snhistorymanager.html#contenttypes" class="tsd-kind-icon">content<wbr>Types</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_history_history_manager.snhistorymanager.html#deviceinterface" class="tsd-kind-icon">device<wbr>Interface</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_history_history_manager.snhistorymanager.html#itemmanager" class="tsd-kind-icon">item<wbr>Manager</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_history_history_manager.snhistorymanager.html#loggingenabled" class="tsd-kind-icon">logging<wbr>Enabled</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_history_history_manager.snhistorymanager.html#persistable" class="tsd-kind-icon">persistable</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_history_history_manager.snhistorymanager.html#protocolservice" class="tsd-kind-icon">protocol<wbr>Service</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_history_history_manager.snhistorymanager.html#removechangeobserver" class="tsd-kind-icon">remove<wbr>Change<wbr>Observer</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_history_history_manager.snhistorymanager.html#savetimeout" class="tsd-kind-icon">save<wbr>Timeout</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_history_history_manager.snhistorymanager.html#sessionhistory" class="tsd-kind-icon">session<wbr>History</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_history_history_manager.snhistorymanager.html#storageservice" class="tsd-kind-icon">storage<wbr>Service</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_history_history_manager.snhistorymanager.html#timeout" class="tsd-kind-icon">timeout</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_history_history_manager.snhistorymanager.html#addchangeobserver" class="tsd-kind-icon">add<wbr>Change<wbr>Observer</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_history_history_manager.snhistorymanager.html#addeventobserver" class="tsd-kind-icon">add<wbr>Event<wbr>Observer</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_history_history_manager.snhistorymanager.html#addhistoryentryforitem" class="tsd-kind-icon">add<wbr>History<wbr>Entry<wbr>For<wbr>Item</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_history_history_manager.snhistorymanager.html#blockdeinit" class="tsd-kind-icon">block<wbr>Deinit</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_history_history_manager.snhistorymanager.html#clearallhistory" class="tsd-kind-icon">clear<wbr>All<wbr>History</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_history_history_manager.snhistorymanager.html#clearhistoryforitem" class="tsd-kind-icon">clear<wbr>History<wbr>For<wbr>Item</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="services_history_history_manager.snhistorymanager.html#deinit" class="tsd-kind-icon">deinit</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-protected">
+								<a href="services_history_history_manager.snhistorymanager.html#executecriticalfunction" class="tsd-kind-icon">execute<wbr>Critical<wbr>Function</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_history_history_manager.snhistorymanager.html#fetchremoterevision" class="tsd-kind-icon">fetch<wbr>Remote<wbr>Revision</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_history_history_manager.snhistorymanager.html#handleapplicationstage" class="tsd-kind-icon">handle<wbr>Application<wbr>Stage</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_history_history_manager.snhistorymanager.html#initializefromdisk" class="tsd-kind-icon">initialize<wbr>From<wbr>Disk</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_history_history_manager.snhistorymanager.html#isautooptimizeenabled" class="tsd-kind-icon">is<wbr>Auto<wbr>Optimize<wbr>Enabled</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_history_history_manager.snhistorymanager.html#isdiskenabled" class="tsd-kind-icon">is<wbr>Disk<wbr>Enabled</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_history_history_manager.snhistorymanager.html#log" class="tsd-kind-icon">log</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="services_history_history_manager.snhistorymanager.html#notifyevent" class="tsd-kind-icon">notify<wbr>Event</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_history_history_manager.snhistorymanager.html#remotehistoryforitem" class="tsd-kind-icon">remote<wbr>History<wbr>For<wbr>Item</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_history_history_manager.snhistorymanager.html#savetodisk" class="tsd-kind-icon">save<wbr>ToDisk</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_history_history_manager.snhistorymanager.html#sessionhistoryforitem" class="tsd-kind-icon">session<wbr>History<wbr>For<wbr>Item</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_history_history_manager.snhistorymanager.html#setsessionitemrevisionthreshold" class="tsd-kind-icon">set<wbr>Session<wbr>Item<wbr>Revision<wbr>Threshold</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_history_history_manager.snhistorymanager.html#toggleautooptimize" class="tsd-kind-icon">toggle<wbr>Auto<wbr>Optimize</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_history_history_manager.snhistorymanager.html#toggledisksaving" class="tsd-kind-icon">toggle<wbr>Disk<wbr>Saving</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

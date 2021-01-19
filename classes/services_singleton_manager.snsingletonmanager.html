@@ -1,0 +1,772 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>SNSingletonManager | SNJS Documentation - v2.0.41</title>
+	<meta name="description" content="Documentation for SNJS Documentation - v2.0.41">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">SNJS Documentation - v2.0.41</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">SNJS Documentation - v2.0.41</a>
+				</li>
+				<li>
+					<a href="../modules/services_singleton_manager.html">services/singleton_manager</a>
+				</li>
+				<li>
+					<a href="services_singleton_manager.snsingletonmanager.html">SNSingletonManager</a>
+				</li>
+			</ul>
+			<h1>Class SNSingletonManager</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The singleton manager allow consumers to ensure that only 1 item exists of a certain
+							predicate. For example, consumers may want to ensure that only one item of contentType
+						UserPreferences exist. The singleton manager allows consumers to do this via 2 methods:</p>
+						<ol>
+							<li>Consumers may use <code>findOrCreateSingleton</code> to retrieve an item if it exists, or create
+								it otherwise. While this method may serve most cases, it does not allow the consumer
+								to subscribe to changes, such as if after this method is called, a UserPreferences object
+							is downloaded from a remote source.</li>
+							<li>Consumers may use <code>registerPredicate</code> in order to constantly monitor a particular
+								predicate and ensure that only 1 value exists for that predicate. This may be used in
+								tandem with <code>findOrCreateSingleton</code>, for example to monitor a predicate after we
+							intitially create the item.</li>
+						</ol>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="services_pure_service.pureservice.html" class="tsd-signature-type" data-tsd-kind="Class">PureService</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">SNSingletonManager</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="services_singleton_manager.snsingletonmanager.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="services_singleton_manager.snsingletonmanager.html#deviceinterface" class="tsd-kind-icon">device<wbr>Interface</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="services_singleton_manager.snsingletonmanager.html#loggingenabled" class="tsd-kind-icon">logging<wbr>Enabled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_singleton_manager.snsingletonmanager.html#registeredpredicates" class="tsd-kind-icon">registered<wbr>Predicates</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_singleton_manager.snsingletonmanager.html#removeitemobserver" class="tsd-kind-icon">remove<wbr>Item<wbr>Observer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_singleton_manager.snsingletonmanager.html#removesyncobserver" class="tsd-kind-icon">remove<wbr>Sync<wbr>Observer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="services_singleton_manager.snsingletonmanager.html#resolvequeue" class="tsd-kind-icon">resolve<wbr>Queue</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="services_singleton_manager.snsingletonmanager.html#addeventobserver" class="tsd-kind-icon">add<wbr>Event<wbr>Observer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_singleton_manager.snsingletonmanager.html#addobservers" class="tsd-kind-icon">add<wbr>Observers</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="services_singleton_manager.snsingletonmanager.html#blockdeinit" class="tsd-kind-icon">block<wbr>Deinit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="services_singleton_manager.snsingletonmanager.html#deinit" class="tsd-kind-icon">deinit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-protected"><a href="services_singleton_manager.snsingletonmanager.html#executecriticalfunction" class="tsd-kind-icon">execute<wbr>Critical<wbr>Function</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="services_singleton_manager.snsingletonmanager.html#findorcreatesingleton" class="tsd-kind-icon">find<wbr>OrCreate<wbr>Singleton</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="services_singleton_manager.snsingletonmanager.html#handleapplicationstage" class="tsd-kind-icon">handle<wbr>Application<wbr>Stage</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_singleton_manager.snsingletonmanager.html#handlestrategy" class="tsd-kind-icon">handle<wbr>Strategy</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="services_singleton_manager.snsingletonmanager.html#log" class="tsd-kind-icon">log</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="services_singleton_manager.snsingletonmanager.html#notifyevent" class="tsd-kind-icon">notify<wbr>Event</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_singleton_manager.snsingletonmanager.html#popresolvequeue" class="tsd-kind-icon">pop<wbr>Resolve<wbr>Queue</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_singleton_manager.snsingletonmanager.html#registerpredicate" class="tsd-kind-icon">register<wbr>Predicate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_singleton_manager.snsingletonmanager.html#resolvesingletonsforitems" class="tsd-kind-icon">resolve<wbr>Singletons<wbr>For<wbr>Items</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="services_singleton_manager.snsingletonmanager.html#validitemsmatchingpredicate" class="tsd-kind-icon">valid<wbr>Items<wbr>Matching<wbr>Predicate</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">new SNSingleton<wbr>Manager<span class="tsd-signature-symbol">(</span>itemManager<span class="tsd-signature-symbol">: </span><a href="services_item_manager.itemmanager.html" class="tsd-signature-type" data-tsd-kind="Class">ItemManager</a>, syncService<span class="tsd-signature-symbol">: </span><a href="services_sync_sync_service.snsyncservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNSyncService</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="services_singleton_manager.snsingletonmanager.html" class="tsd-signature-type" data-tsd-kind="Class">SNSingletonManager</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/singleton_manager.ts#L32">services/singleton_manager.ts:32</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>itemManager: <a href="services_item_manager.itemmanager.html" class="tsd-signature-type" data-tsd-kind="Class">ItemManager</a></h5>
+								</li>
+								<li>
+									<h5>syncService: <a href="services_sync_sync_service.snsyncservice.html" class="tsd-signature-type" data-tsd-kind="Class">SNSyncService</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="services_singleton_manager.snsingletonmanager.html" class="tsd-signature-type" data-tsd-kind="Class">SNSingletonManager</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="deviceinterface" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> device<wbr>Interface</h3>
+					<div class="tsd-signature tsd-kind-icon">device<wbr>Interface<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="device_interface.deviceinterface.html" class="tsd-signature-type" data-tsd-kind="Class">DeviceInterface</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#deviceinterface">deviceInterface</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L11">services/pure_service.ts:11</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="loggingenabled" class="tsd-anchor"></a>
+					<h3>logging<wbr>Enabled</h3>
+					<div class="tsd-signature tsd-kind-icon">logging<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#loggingenabled">loggingEnabled</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L10">services/pure_service.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="registeredpredicates" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> registered<wbr>Predicates</h3>
+					<div class="tsd-signature tsd-kind-icon">registered<wbr>Predicates<span class="tsd-signature-symbol">:</span> <a href="models_core_predicate.snpredicate.html" class="tsd-signature-type" data-tsd-kind="Class">SNPredicate</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/singleton_manager.ts#L29">services/singleton_manager.ts:29</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="removeitemobserver" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> remove<wbr>Item<wbr>Observer</h3>
+					<div class="tsd-signature tsd-kind-icon">remove<wbr>Item<wbr>Observer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/singleton_manager.ts#L31">services/singleton_manager.ts:31</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="removesyncobserver" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> remove<wbr>Sync<wbr>Observer</h3>
+					<div class="tsd-signature tsd-kind-icon">remove<wbr>Sync<wbr>Observer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/singleton_manager.ts#L32">services/singleton_manager.ts:32</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="resolvequeue" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> resolve<wbr>Queue</h3>
+					<div class="tsd-signature tsd-kind-icon">resolve<wbr>Queue<span class="tsd-signature-symbol">:</span> <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/singleton_manager.ts#L28">services/singleton_manager.ts:28</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="addeventobserver" class="tsd-anchor"></a>
+					<h3>add<wbr>Event<wbr>Observer</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Observer<span class="tsd-signature-symbol">(</span>observer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventObserver</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#addeventobserver">addEventObserver</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L14">services/pure_service.ts:14</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>observer: <span class="tsd-signature-type">EventObserver</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-signature">
+									<ul class="tsd-signatures tsd-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="addobservers" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> add<wbr>Observers</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Observers<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/singleton_manager.ts#L71">services/singleton_manager.ts:71</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>We only want to resolve singletons for items that are newly created (because this
+										is when items proliferate). However, we don&#39;t want to resolve immediately on creation,
+										but instead wait for the next full sync to complete. This is so that when you download
+										a singleton and create the object, but the items key for the item has not yet been
+										downloaded, the singleton will be errorDecrypting, and would be mishandled in the
+										overall singleton logic. By waiting for a full sync to complete, we can be sure that
+									all items keys have been downloaded.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="blockdeinit" class="tsd-anchor"></a>
+					<h3>block<wbr>Deinit</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">block<wbr>Deinit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#blockdeinit">blockDeinit</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L31">services/pure_service.ts:31</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Called by application to allow services to momentarily block deinit until
+									sensitive operations complete.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="deinit" class="tsd-anchor"></a>
+					<h3>deinit</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">deinit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#deinit">deinit</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/singleton_manager.ts#L44">services/singleton_manager.ts:44</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-protected">
+					<a name="executecriticalfunction" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> execute<wbr>Critical<wbr>Function</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">execute<wbr>Critical<wbr>Function&lt;T&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#executecriticalfunction">executeCriticalFunction</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L51">services/pure_service.ts:51</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>A critical function is one that should block signing out or destroying application
+										session until the crticial function has completed. For example, persisting keys to
+										disk is a critical operation, and should be wrapped in this function call. The
+										parent application instance will await all criticial functions via the <code>blockDeinit</code>
+									function before signing out and deiniting.</p>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T = <span class="tsd-signature-type">void</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>func: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+					<a name="findorcreatesingleton" class="tsd-anchor"></a>
+					<h3>find<wbr>OrCreate<wbr>Singleton</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">find<wbr>OrCreate<wbr>Singleton&lt;T&gt;<span class="tsd-signature-symbol">(</span>predicate<span class="tsd-signature-symbol">: </span><a href="models_core_predicate.snpredicate.html" class="tsd-signature-type" data-tsd-kind="Class">SNPredicate</a>, createContentType<span class="tsd-signature-symbol">: </span><a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a>, createContent<span class="tsd-signature-symbol">: </span><a href="../modules/protocol_payloads_generator.html#payloadcontent" class="tsd-signature-type" data-tsd-kind="Type alias">PayloadContent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/singleton_manager.ts#L193">services/singleton_manager.ts:193</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span> = <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>predicate: <a href="models_core_predicate.snpredicate.html" class="tsd-signature-type" data-tsd-kind="Class">SNPredicate</a></h5>
+								</li>
+								<li>
+									<h5>createContentType: <a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a></h5>
+								</li>
+								<li>
+									<h5>createContent: <a href="../modules/protocol_payloads_generator.html#payloadcontent" class="tsd-signature-type" data-tsd-kind="Type alias">PayloadContent</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="handleapplicationstage" class="tsd-anchor"></a>
+					<h3>handle<wbr>Application<wbr>Stage</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">handle<wbr>Application<wbr>Stage<span class="tsd-signature-symbol">(</span>_stage<span class="tsd-signature-symbol">: </span><a href="../enums/stages.applicationstage.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ApplicationStage</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#handleapplicationstage">handleApplicationStage</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L62">services/pure_service.ts:62</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Application instances will call this function directly when they arrive
+									at a certain migratory state.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>_stage: <a href="../enums/stages.applicationstage.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ApplicationStage</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="handlestrategy" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> handle<wbr>Strategy</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">handle<wbr>Strategy<span class="tsd-signature-symbol">(</span>items<span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span>, strategy<span class="tsd-signature-symbol">: </span><a href="../enums/models_core_item.singletonstrategy.html#keepearliest" class="tsd-signature-type" data-tsd-kind="Enumeration member">KeepEarliest</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/singleton_manager.ts#L179">services/singleton_manager.ts:179</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>items: <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>strategy: <a href="../enums/models_core_item.singletonstrategy.html#keepearliest" class="tsd-signature-type" data-tsd-kind="Enumeration member">KeepEarliest</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="log" class="tsd-anchor"></a>
+					<h3>log</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#log">log</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L66">services/pure_service.ts:66</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>message: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="notifyevent" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> notify<wbr>Event</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">notify<wbr>Event<span class="tsd-signature-symbol">(</span>eventName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="services_pure_service.pureservice.html">PureService</a>.<a href="services_pure_service.pureservice.html#notifyevent">notifyEvent</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/pure_service.ts#L21">services/pure_service.ts:21</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>eventName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> data: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="popresolvequeue" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> pop<wbr>Resolve<wbr>Queue</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">pop<wbr>Resolve<wbr>Queue<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/singleton_manager.ts#L56">services/singleton_manager.ts:56</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="registerpredicate" class="tsd-anchor"></a>
+					<h3>register<wbr>Predicate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">register<wbr>Predicate<span class="tsd-signature-symbol">(</span>predicate<span class="tsd-signature-symbol">: </span><a href="models_core_predicate.snpredicate.html" class="tsd-signature-type" data-tsd-kind="Class">SNPredicate</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/singleton_manager.ts#L111">services/singleton_manager.ts:111</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Predicates registered are automatically observed. If global item state changes
+										such that the item(s) match the predicate, procedures will be followed such that
+									the end result is that only 1 item remains, and the others are deleted.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>predicate: <a href="models_core_predicate.snpredicate.html" class="tsd-signature-type" data-tsd-kind="Class">SNPredicate</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="resolvesingletonsforitems" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> resolve<wbr>Singletons<wbr>For<wbr>Items</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">resolve<wbr>Singletons<wbr>For<wbr>Items<span class="tsd-signature-symbol">(</span>items<span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span>, eventSource<span class="tsd-signature-symbol">: </span><a href="../enums/services_sync_events.syncevent.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SyncEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/singleton_manager.ts#L122">services/singleton_manager.ts:122</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>items: <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>eventSource: <a href="../enums/services_sync_events.syncevent.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SyncEvent</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="validitemsmatchingpredicate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> valid<wbr>Items<wbr>Matching<wbr>Predicate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">valid<wbr>Items<wbr>Matching<wbr>Predicate<span class="tsd-signature-symbol">(</span>predicate<span class="tsd-signature-symbol">: </span><a href="models_core_predicate.snpredicate.html" class="tsd-signature-type" data-tsd-kind="Class">SNPredicate</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/services/singleton_manager.ts#L115">services/singleton_manager.ts:115</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>predicate: <a href="models_core_predicate.snpredicate.html" class="tsd-signature-type" data-tsd-kind="Class">SNPredicate</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/services_singleton_manager.html">services/singleton_<wbr>manager</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module">
+						<a href="services_singleton_manager.snsingletonmanager.html" class="tsd-kind-icon">SNSingleton<wbr>Manager</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_singleton_manager.snsingletonmanager.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_singleton_manager.snsingletonmanager.html#deviceinterface" class="tsd-kind-icon">device<wbr>Interface</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_singleton_manager.snsingletonmanager.html#loggingenabled" class="tsd-kind-icon">logging<wbr>Enabled</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_singleton_manager.snsingletonmanager.html#registeredpredicates" class="tsd-kind-icon">registered<wbr>Predicates</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_singleton_manager.snsingletonmanager.html#removeitemobserver" class="tsd-kind-icon">remove<wbr>Item<wbr>Observer</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_singleton_manager.snsingletonmanager.html#removesyncobserver" class="tsd-kind-icon">remove<wbr>Sync<wbr>Observer</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="services_singleton_manager.snsingletonmanager.html#resolvequeue" class="tsd-kind-icon">resolve<wbr>Queue</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_singleton_manager.snsingletonmanager.html#addeventobserver" class="tsd-kind-icon">add<wbr>Event<wbr>Observer</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_singleton_manager.snsingletonmanager.html#addobservers" class="tsd-kind-icon">add<wbr>Observers</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_singleton_manager.snsingletonmanager.html#blockdeinit" class="tsd-kind-icon">block<wbr>Deinit</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="services_singleton_manager.snsingletonmanager.html#deinit" class="tsd-kind-icon">deinit</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-protected">
+								<a href="services_singleton_manager.snsingletonmanager.html#executecriticalfunction" class="tsd-kind-icon">execute<wbr>Critical<wbr>Function</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+								<a href="services_singleton_manager.snsingletonmanager.html#findorcreatesingleton" class="tsd-kind-icon">find<wbr>OrCreate<wbr>Singleton</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_singleton_manager.snsingletonmanager.html#handleapplicationstage" class="tsd-kind-icon">handle<wbr>Application<wbr>Stage</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_singleton_manager.snsingletonmanager.html#handlestrategy" class="tsd-kind-icon">handle<wbr>Strategy</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="services_singleton_manager.snsingletonmanager.html#log" class="tsd-kind-icon">log</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="services_singleton_manager.snsingletonmanager.html#notifyevent" class="tsd-kind-icon">notify<wbr>Event</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_singleton_manager.snsingletonmanager.html#popresolvequeue" class="tsd-kind-icon">pop<wbr>Resolve<wbr>Queue</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_singleton_manager.snsingletonmanager.html#registerpredicate" class="tsd-kind-icon">register<wbr>Predicate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_singleton_manager.snsingletonmanager.html#resolvesingletonsforitems" class="tsd-kind-icon">resolve<wbr>Singletons<wbr>For<wbr>Items</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="services_singleton_manager.snsingletonmanager.html#validitemsmatchingpredicate" class="tsd-kind-icon">valid<wbr>Items<wbr>Matching<wbr>Predicate</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

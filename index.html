@@ -1,0 +1,589 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>SNJS Documentation - v2.0.41</title>
+	<meta name="description" content="Documentation for SNJS Documentation - v2.0.41">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">SNJS Documentation - v2.0.41</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>SNJS Documentation - v2.0.41</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#snjs" id="snjs" style="color: inherit; text-decoration: none;">
+					<h1>SNJS</h1>
+				</a>
+				<p>SNJS is a client-side JavaScript library for <a href="https://standardnotes.org">Standard Notes</a> that contains shared logic for all Standard Notes clients.</p>
+				<a href="#introduction" id="introduction" style="color: inherit; text-decoration: none;">
+					<h2>Introduction</h2>
+				</a>
+				<p>SNJS (Standard Notes JavaScript) is a shared library we use in all Standard Notes clients (desktop, web, and mobile React Native). Its role is essentially to extract any business or data logic from client code, so that clients are mostly responsible for UI-level code, and don’t have to think about encryption and key stretching, or even authentication or storage specifics. Extracting the code into a shared library also prevents us from having to write the same critical code on multiple platforms.</p>
+				<p>The entry point of SNJS is the <a href="lib/application.ts"><code>SNApplication</code></a> class. The application class is a complete unit of application functionality. Theoretically, many instances of an application can be created, each with its own storage namespace and memory state. This can allow clients to support multiple user accounts.</p>
+				<p>An application must be supplied a custom subclass of <a href="lib/device_interface.ts">DeviceInterface</a>. This allows the library to generalize all behavior a client will need to perform throughout normal client operation, such as saving data to a local database store, saving key/values, and accessing the keychain.</p>
+				<p>The application interacts with a variety of services and managers to facilitate complete client functionality. While the distinction is not fully technical, a service can be thought of as a class that allows consumers to perform actions on demand, while a manager is responsible for managing and reacting to application state (but also expose on-demand functions). All managers and services live in <code>lib/services</code>.</p>
+				<p>On Web platforms SNJS interacts with <a href="https://github.com/standardnotes/sncrypto/tree/004"><code>sncrypto</code></a> to perform operations as mentioned in the <a href="https://github.com/standardnotes/snjs/blob/004/specification.md">specification</a> document. This includes operations like key generation and data encryption.</p>
+				<p>SNJS also interacts with a Standard Notes <a href="https://github.com/standardnotes/syncing-server">syncing-server</a>, which is dumb data and sync store that deals with encrypted data, and never learns of client secrets or sensitive information.</p>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
+				</a>
+				<p><code>npm install snjs</code></p>
+				<a href="#integrating-in-module-environment" id="integrating-in-module-environment" style="color: inherit; text-decoration: none;">
+					<h2>Integrating in module environment</h2>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">SNApplication</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;snjs&#039;</span><span style="color: #000000">;</span>
+</code></pre>
+				<a href="#integrating-in-non-module-web-environment" id="integrating-in-non-module-web-environment" style="color: inherit; text-decoration: none;">
+					<h2>Integrating in non-module web environment</h2>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #800000">&lt;script</span><span style="color: #000000"> </span><span style="color: #FF0000">src</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;snjs.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+<span style="color: #267F99">Object</span><span style="color: #000000">.</span><span style="color: #795E26">assign</span><span style="color: #000000">(</span><span style="color: #001080">window</span><span style="color: #000000">, </span><span style="color: #001080">SNLibrary</span><span style="color: #000000">);</span>
+</code></pre>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<ol>
+					<li>Initialize an application:</li>
+				</ol>
+				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">deviceInterface</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">DeviceInterfaceSubclass</span><span style="color: #000000">();</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">alertService</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">SNAlertServiceSubclass</span><span style="color: #000000">();</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">app</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">SNApplication</span><span style="color: #000000">(</span>
+<span style="color: #000000">  </span><span style="color: #001080">Environment</span><span style="color: #000000">.</span><span style="color: #001080">Web</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">Platform</span><span style="color: #000000">.</span><span style="color: #001080">LinuxWeb</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">deviceInterface</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">SNWebCrypto</span><span style="color: #000000">(),</span>
+<span style="color: #000000">  </span><span style="color: #001080">alertService</span><span style="color: #000000">,</span>
+<span style="color: #000000">);</span>
+</code></pre>
+				<ol start="2">
+					<li>Launch the application:</li>
+				</ol>
+				<pre><code class="language-javascript"><span style="color: #000000"> </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">prepareForLaunch</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #795E26">receiveChallenge</span><span style="color: #001080">:</span><span style="color: #000000"> (</span><span style="color: #001080">challenge</span><span style="color: #000000">, </span><span style="color: #001080">orchestrator</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+
+<span style="color: #000000">  }</span>
+<span style="color: #000000"> });</span>
+<span style="color: #000000"> </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">launch</span><span style="color: #000000">();</span>
+</code></pre>
+				<p>Once the app is launched, you may perform any app-related functions, including:</p>
+				<a href="#signing-into-an-account" id="signing-into-an-account" style="color: inherit; text-decoration: none;">
+					<h3>Signing into an account</h3>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">signIn</span><span style="color: #000000">(</span>
+<span style="color: #000000">  </span><span style="color: #001080">email</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">password</span>
+<span style="color: #000000">).</span><span style="color: #795E26">then</span><span style="color: #000000">((</span><span style="color: #001080">response</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+
+<span style="color: #000000">});</span>
+</code></pre>
+				<a href="#registering-a-new-account" id="registering-a-new-account" style="color: inherit; text-decoration: none;">
+					<h3>Registering a new account</h3>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">register</span><span style="color: #000000">(</span>
+<span style="color: #000000">  </span><span style="color: #001080">email</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">password</span>
+<span style="color: #000000">).</span><span style="color: #795E26">then</span><span style="color: #000000">((</span><span style="color: #001080">response</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+
+<span style="color: #000000">});</span>
+</code></pre>
+				<a href="#lock-the-app-with-a-passcode" id="lock-the-app-with-a-passcode" style="color: inherit; text-decoration: none;">
+					<h3>Lock the app with a passcode</h3>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">setPasscode</span><span style="color: #000000">(</span><span style="color: #001080">somePasscode</span><span style="color: #000000">).</span><span style="color: #795E26">then</span><span style="color: #000000">(() </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+
+<span style="color: #000000">});</span>
+</code></pre>
+				<a href="#create-a-note" id="create-a-note" style="color: inherit; text-decoration: none;">
+					<h3>Create a note</h3>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">item</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">createManagedItem</span><span style="color: #000000">(</span>
+<span style="color: #000000">  </span><span style="color: #001080">ContentType</span><span style="color: #000000">.</span><span style="color: #001080">Note</span><span style="color: #000000">,</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">title:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Ideas&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">text:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Coming soon.&#039;</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">);</span>
+<span style="color: #008000">/** Save the item both locally and sync with server */</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">saveItem</span><span style="color: #000000">(</span><span style="color: #001080">item</span><span style="color: #000000">.</span><span style="color: #001080">uuid</span><span style="color: #000000">);</span>
+</code></pre>
+				<a href="#stream-notes" id="stream-notes" style="color: inherit; text-decoration: none;">
+					<h3>Stream notes</h3>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">streamItems</span><span style="color: #000000">(</span>
+<span style="color: #000000">  </span><span style="color: #001080">contentType</span><span style="color: #000000">: </span><span style="color: #001080">ContentType</span><span style="color: #000000">.</span><span style="color: #001080">Note</span><span style="color: #000000">,</span>
+<span style="color: #000000">  (</span><span style="color: #001080">notes</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #795E26">reloadUI</span><span style="color: #000000">(</span><span style="color: #001080">notes</span><span style="color: #000000">);</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">);</span>
+</code></pre>
+				<a href="#building" id="building" style="color: inherit; text-decoration: none;">
+					<h2>Building</h2>
+				</a>
+				<ol>
+					<li><code>yarn install --pure-lockfile</code></li>
+					<li><code>yarn start</code> to start Webpack in development mode (watches changes), or <code>yarn bundle</code> to create dist files.</li>
+				</ol>
+				<a href="#tests" id="tests" style="color: inherit; text-decoration: none;">
+					<h2>Tests</h2>
+				</a>
+				<p>Please make sure you have <a href="https://www.docker.com">Docker</a> installed before running tests:</p>
+				<pre><code><span style="color: #001080">yarn</span><span style="color: #000000"> </span><span style="color: #001080">test</span>
+</code></pre>
+				<a href="#notes" id="notes" style="color: inherit; text-decoration: none;">
+					<h2>Notes</h2>
+				</a>
+				<ul>
+					<li>Almost all functions are asynchronous and return promises. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises">You can read about promises here</a>.</li>
+				</ul>
+				<a href="#help" id="help" style="color: inherit; text-decoration: none;">
+					<h2>Help</h2>
+				</a>
+				<p>Join the #dev channel in <a href="https://standardnotes.org/slack">our Slack group</a> for help and discussion.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/application.html">application</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/application_group.html">application_<wbr>group</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/challenges.html">challenges</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/device_interface.html">device_<wbr>interface</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/events.html">events</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/index.html">index</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/log.html">log</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/migrations.html">migrations</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/migrations_2_0_0.html">migrations/2_<wbr>0_0</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/migrations_2_0_15.html">migrations/2_<wbr>0_15</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/migrations_base.html">migrations/base</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/migrations_migration.html">migrations/migration</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/migrations_readers.html">migrations/readers</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/migrations_readers_functions.html">migrations/readers/functions</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/migrations_readers_reader.html">migrations/readers/reader</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/migrations_readers_reader_1_0_0.html">migrations/readers/reader_<wbr>1_0_<wbr>0</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/migrations_readers_reader_2_0_0.html">migrations/readers/reader_<wbr>2_0_<wbr>0</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/migrations_types.html">migrations/types</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models.html">models</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_app_action.html">models/app/action</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_app_component.html">models/app/component</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_app_editor.html">models/app/editor</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_app_extension.html">models/app/extension</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_app_items_key.html">models/app/items_<wbr>key</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_app_note.html">models/app/note</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_app_smarttag.html">models/app/smart<wbr>Tag</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_app_tag.html">models/app/tag</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_app_theme.html">models/app/theme</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_app_userprefs.html">models/app/user<wbr>Prefs</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_content_types.html">models/content_<wbr>types</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_core_item.html">models/core/item</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_core_predicate.html">models/core/predicate</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_functions.html">models/functions</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_generator.html">models/generator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_live_item.html">models/live_<wbr>item</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/platforms.html">platforms</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol.html">protocol</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_collection_collection.html">protocol/collection/collection</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_collection_collection_set.html">protocol/collection/collection_<wbr>set</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_collection_item_collection.html">protocol/collection/item_<wbr>collection</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_collection_item_collection_notes_view.html">protocol/collection/item_<wbr>collection_<wbr>notes_<wbr>view</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_collection_payload_collection.html">protocol/collection/payload_<wbr>collection</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_collection_uuid_map.html">protocol/collection/uuid_<wbr>map</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_intents.html">protocol/intents</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_key_params.html">protocol/key_<wbr>params</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_operator_001_operator_001.html">protocol/operator/001/operator_<wbr>001</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_operator_002_operator_002.html">protocol/operator/002/operator_<wbr>002</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_operator_003_operator_003.html">protocol/operator/003/operator_<wbr>003</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_operator_004_operator_004.html">protocol/operator/004/operator_<wbr>004</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_operator_algorithms.html">protocol/operator/algorithms</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_operator_operator.html">protocol/operator/operator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_payloads.html">protocol/payloads</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_payloads_deltas.html">protocol/payloads/deltas</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_payloads_deltas_conflict.html">protocol/payloads/deltas/conflict</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_payloads_deltas_delta.html">protocol/payloads/deltas/delta</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_payloads_deltas_file_import.html">protocol/payloads/deltas/file_<wbr>import</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_payloads_deltas_generator.html">protocol/payloads/deltas/generator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_payloads_deltas_out_of_sync.html">protocol/payloads/deltas/out_<wbr>of_<wbr>sync</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_payloads_deltas_remote_conflicts.html">protocol/payloads/deltas/remote_<wbr>conflicts</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_payloads_deltas_remote_retrieved.html">protocol/payloads/deltas/remote_<wbr>retrieved</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_payloads_deltas_remote_saved.html">protocol/payloads/deltas/remote_<wbr>saved</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_payloads_deltas_strategies.html">protocol/payloads/deltas/strategies</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_payloads_fields.html">protocol/payloads/fields</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_payloads_formats.html">protocol/payloads/formats</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_payloads_functions.html">protocol/payloads/functions</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_payloads_generator.html">protocol/payloads/generator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_payloads_pure_payload.html">protocol/payloads/pure_<wbr>payload</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_payloads_sources.html">protocol/payloads/sources</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_root_key.html">protocol/root_<wbr>key</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/protocol_versions.html">protocol/versions</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services.html">services</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_actions_service.html">services/actions_<wbr>service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_alert_service.html">services/alert_<wbr>service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_api_api_service.html">services/api/api_<wbr>service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_api_http_service.html">services/api/http_<wbr>service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_api_keys.html">services/api/keys</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_api_messages.html">services/api/messages</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_api_responses.html">services/api/responses</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_api_session.html">services/api/session</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_api_session_manager.html">services/api/session_<wbr>manager</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_application_service.html">services/application_<wbr>service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_challenge_challenge_operation.html">services/challenge/challenge_<wbr>operation</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_challenge_challenge_service.html">services/challenge/challenge_<wbr>service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_component_manager.html">services/component_<wbr>manager</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_encryption_delegate.html">services/encryption_<wbr>delegate</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_history_entries_item_history_entry.html">services/history/entries/item_<wbr>history_<wbr>entry</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_history_entries_note_history_entry.html">services/history/entries/note_<wbr>history_<wbr>entry</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_history_functions.html">services/history/functions</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_history_history_manager.html">services/history/history_<wbr>manager</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_history_session_item_session_history.html">services/history/session/item_<wbr>session_<wbr>history</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_history_session_session_history_map.html">services/history/session/session_<wbr>history_<wbr>map</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_item_manager.html">services/item_<wbr>manager</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_key_recovery_service.html">services/key_<wbr>recovery_<wbr>service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_migration_service.html">services/migration_<wbr>service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_model_manager.html">services/model_<wbr>manager</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_preferences_service.html">services/preferences_<wbr>service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_protection_service.html">services/protection_<wbr>service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_protocol_service.html">services/protocol_<wbr>service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_pure_service.html">services/pure_<wbr>service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_singleton_manager.html">services/singleton_<wbr>manager</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_storage_service.html">services/storage_<wbr>service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_sync_account_downloader.html">services/sync/account/downloader</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_sync_account_operation.html">services/sync/account/operation</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_sync_account_response_resolver.html">services/sync/account/response_<wbr>resolver</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_sync_events.html">services/sync/events</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_sync_offline_operation.html">services/sync/offline/operation</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_sync_response.html">services/sync/response</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_sync_signals.html">services/sync/signals</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_sync_sync_op_status.html">services/sync/sync_<wbr>op_<wbr>status</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_sync_sync_service.html">services/sync/sync_<wbr>service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_sync_sync_state.html">services/sync/sync_<wbr>state</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_sync_utils.html">services/sync/utils</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/stages.html">stages</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/storage_keys.html">storage_<wbr>keys</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/types.html">types</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/utils.html">utils</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/uuid.html">uuid</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/version.html">version</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

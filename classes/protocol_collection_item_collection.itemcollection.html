@@ -1,0 +1,990 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ItemCollection | SNJS Documentation - v2.0.41</title>
+	<meta name="description" content="Documentation for SNJS Documentation - v2.0.41">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">SNJS Documentation - v2.0.41</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">SNJS Documentation - v2.0.41</a>
+				</li>
+				<li>
+					<a href="../modules/protocol_collection_item_collection.html">protocol/collection/item_collection</a>
+				</li>
+				<li>
+					<a href="protocol_collection_item_collection.itemcollection.html">ItemCollection</a>
+				</li>
+			</ul>
+			<h1>Class ItemCollection</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The item collection class builds on mutable collection by providing an option to keep
+						items sorted and filtered.</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="protocol_collection_collection.mutablecollection.html" class="tsd-signature-type" data-tsd-kind="Class">MutableCollection</a><span class="tsd-signature-symbol">&lt;</span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">&gt;</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">ItemCollection</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#conflictmap" class="tsd-kind-icon">conflict<wbr>Map</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#dirtyindex" class="tsd-kind-icon">dirty<wbr>Index</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="protocol_collection_item_collection.itemcollection.html#displayfilter" class="tsd-kind-icon">display<wbr>Filter</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="protocol_collection_item_collection.itemcollection.html#displaysortby" class="tsd-kind-icon">display<wbr>Sort<wbr>By</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="protocol_collection_item_collection.itemcollection.html#filteredmap" class="tsd-kind-icon">filtered<wbr>Map</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#invalidsindex" class="tsd-kind-icon">invalids<wbr>Index</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#map" class="tsd-kind-icon">map</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#nondeletedindex" class="tsd-kind-icon">nondeleted<wbr>Index</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#referencemap" class="tsd-kind-icon">reference<wbr>Map</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="protocol_collection_item_collection.itemcollection.html#sortedmap" class="tsd-kind-icon">sorted<wbr>Map</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#typedmap" class="tsd-kind-icon">typed<wbr>Map</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#all" class="tsd-kind-icon">all</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#conflictsof" class="tsd-kind-icon">conflicts<wbr>Of</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#dirtyelements" class="tsd-kind-icon">dirty<wbr>Elements</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="protocol_collection_item_collection.itemcollection.html#discard" class="tsd-kind-icon">discard</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="protocol_collection_item_collection.itemcollection.html#displayelements" class="tsd-kind-icon">display<wbr>Elements</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#elementsreferencingelement" class="tsd-kind-icon">elements<wbr>Referencing<wbr>Element</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="protocol_collection_item_collection.itemcollection.html#filtersortelements" class="tsd-kind-icon">filter<wbr>Sort<wbr>Elements</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#find" class="tsd-kind-icon">find</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#findall" class="tsd-kind-icon">find<wbr>All</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#invalidelements" class="tsd-kind-icon">invalid<wbr>Elements</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#nondeletedelements" class="tsd-kind-icon">nondeleted<wbr>Elements</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#referencesforelement" class="tsd-kind-icon">references<wbr>For<wbr>Element</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="protocol_collection_item_collection.itemcollection.html#resortcontenttype" class="tsd-kind-icon">resort<wbr>Content<wbr>Type</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="protocol_collection_item_collection.itemcollection.html#set" class="tsd-kind-icon">set</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="protocol_collection_item_collection.itemcollection.html#setdisplayoptions" class="tsd-kind-icon">set<wbr>Display<wbr>Options</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#uuidreferencesforuuid" class="tsd-kind-icon">uuid<wbr>References<wbr>For<wbr>Uuid</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#uuids" class="tsd-kind-icon">uuids</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="protocol_collection_item_collection.itemcollection.html#uuidsthatreferenceuuid" class="tsd-kind-icon">uuids<wbr>That<wbr>Reference<wbr>Uuid</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Item<wbr>Collection<span class="tsd-signature-symbol">(</span>copy<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, mapCopy<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>, typedMapCopy<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a><span class="tsd-signature-symbol">, </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>, referenceMapCopy<span class="tsd-signature-symbol">?: </span><a href="protocol_collection_uuid_map.uuidmap.html" class="tsd-signature-type" data-tsd-kind="Class">UuidMap</a>, conflictMapCopy<span class="tsd-signature-symbol">?: </span><a href="protocol_collection_uuid_map.uuidmap.html" class="tsd-signature-type" data-tsd-kind="Class">UuidMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="protocol_collection_item_collection.itemcollection.html" class="tsd-signature-type" data-tsd-kind="Class">ItemCollection</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L37">protocol/collection/collection.ts:37</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>copy: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> mapCopy: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> typedMapCopy: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a><span class="tsd-signature-symbol">, </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> referenceMapCopy: <a href="protocol_collection_uuid_map.uuidmap.html" class="tsd-signature-type" data-tsd-kind="Class">UuidMap</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> conflictMapCopy: <a href="protocol_collection_uuid_map.uuidmap.html" class="tsd-signature-type" data-tsd-kind="Class">UuidMap</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="protocol_collection_item_collection.itemcollection.html" class="tsd-signature-type" data-tsd-kind="Class">ItemCollection</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="conflictmap" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> conflict<wbr>Map</h3>
+					<div class="tsd-signature tsd-kind-icon">conflict<wbr>Map<span class="tsd-signature-symbol">:</span> <a href="protocol_collection_uuid_map.uuidmap.html" class="tsd-signature-type" data-tsd-kind="Class">UuidMap</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#conflictmap">conflictMap</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L37">protocol/collection/collection.ts:37</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Maintains an index for each item uuid where the value is an array of uuids that are
+								conflicts of that item. So if Note B and C are conflicts of Note A,
+							conflictMap[A.uuid] == [B.uuid, C.uuid]</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="dirtyindex" class="tsd-anchor"></a>
+					<h3>dirty<wbr>Index</h3>
+					<div class="tsd-signature tsd-kind-icon">dirty<wbr>Index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#dirtyindex">dirtyIndex</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L17">protocol/collection/collection.ts:17</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An array of uuids of items that are dirty</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="displayfilter" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> display<wbr>Filter</h3>
+					<div class="tsd-signature tsd-kind-icon">display<wbr>Filter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/item_collection.ts#L22">protocol/collection/item_collection.ts:22</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="displaysortby" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> display<wbr>Sort<wbr>By</h3>
+					<div class="tsd-signature tsd-kind-icon">display<wbr>Sort<wbr>By<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">{ </span>dir<span class="tsd-signature-symbol">: </span><a href="../modules/protocol_collection_item_collection.html#sortdirection" class="tsd-signature-type" data-tsd-kind="Type alias">SortDirection</a><span class="tsd-signature-symbol">; </span>key<span class="tsd-signature-symbol">: </span><a href="../enums/protocol_collection_item_collection.collectionsort.html" class="tsd-signature-type" data-tsd-kind="Enumeration">CollectionSort</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/item_collection.ts#L18">protocol/collection/item_collection.ts:18</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="filteredmap" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> filtered<wbr>Map</h3>
+					<div class="tsd-signature tsd-kind-icon">filtered<wbr>Map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/item_collection.ts#L28">protocol/collection/item_collection.ts:28</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A display ready map of uuids-to-position in sorted array. i.e filteredMap[contentType]
+								returns {uuid_123: 1, uuid_456: 2}, where 1 and 2 are the positions of the element
+								in the sorted array. We keep track of positions so that when we want to re-sort or remove
+							and element, we don&#39;t have to search the entire sorted array to do so.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="invalidsindex" class="tsd-anchor"></a>
+					<h3>invalids<wbr>Index</h3>
+					<div class="tsd-signature tsd-kind-icon">invalids<wbr>Index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#invalidsindex">invalidsIndex</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L20">protocol/collection/collection.ts:20</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An array of uuids of items that are errorDecrypting or waitingForKey</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="map" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> map</h3>
+					<div class="tsd-signature tsd-kind-icon">map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#map">map</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L13">protocol/collection/collection.ts:13</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="nondeletedindex" class="tsd-anchor"></a>
+					<h3>nondeleted<wbr>Index</h3>
+					<div class="tsd-signature tsd-kind-icon">nondeleted<wbr>Index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#nondeletedindex">nondeletedIndex</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L23">protocol/collection/collection.ts:23</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An array of uuids of items that are not marked as deleted</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="referencemap" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> reference<wbr>Map</h3>
+					<div class="tsd-signature tsd-kind-icon">reference<wbr>Map<span class="tsd-signature-symbol">:</span> <a href="protocol_collection_uuid_map.uuidmap.html" class="tsd-signature-type" data-tsd-kind="Class">UuidMap</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#referencemap">referenceMap</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L33">protocol/collection/collection.ts:33</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Maintains an index where the direct map for each item id is an array
+								of item ids that the item references. This is essentially equivalent to
+								item.content.references, but keeps state even when the item is deleted.
+								So if tag A references Note B, referenceMap.directMap[A.uuid] == [B.uuid].
+								The inverse map for each item is an array of item ids where the items reference the
+								key item. So if tag A references Note B, referenceMap.inverseMap[B.uuid] == [A.uuid].
+								This allows callers to determine for a given item, who references it?
+							It would be prohibitive to look this up on demand</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="sortedmap" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> sorted<wbr>Map</h3>
+					<div class="tsd-signature tsd-kind-icon">sorted<wbr>Map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/item_collection.ts#L31">protocol/collection/item_collection.ts:31</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A sorted representation of the filteredMap, where sortedMap[contentType] returns
+							an array of sorted elements, based on the current displaySortBy</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="typedmap" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> typed<wbr>Map</h3>
+					<div class="tsd-signature tsd-kind-icon">typed<wbr>Map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a><span class="tsd-signature-symbol">, </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#typedmap">typedMap</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L14">protocol/collection/collection.ts:14</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="all" class="tsd-anchor"></a>
+					<h3>all</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">all<span class="tsd-signature-symbol">(</span>contentType<span class="tsd-signature-symbol">?: </span><a href="../enums/models_content_types.contenttype.html#any" class="tsd-signature-type" data-tsd-kind="Enumeration member">Any</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#item" class="tsd-signature-type" data-tsd-kind="Enumeration member">Item</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#rootkey" class="tsd-signature-type" data-tsd-kind="Enumeration member">RootKey</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#itemskey" class="tsd-signature-type" data-tsd-kind="Enumeration member">ItemsKey</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#encryptedstorage" class="tsd-signature-type" data-tsd-kind="Enumeration member">EncryptedStorage</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#note" class="tsd-signature-type" data-tsd-kind="Enumeration member">Note</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#tag" class="tsd-signature-type" data-tsd-kind="Enumeration member">Tag</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#smarttag" class="tsd-signature-type" data-tsd-kind="Enumeration member">SmartTag</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#component" class="tsd-signature-type" data-tsd-kind="Enumeration member">Component</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#editor" class="tsd-signature-type" data-tsd-kind="Enumeration member">Editor</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#actionsextension" class="tsd-signature-type" data-tsd-kind="Enumeration member">ActionsExtension</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#userprefs" class="tsd-signature-type" data-tsd-kind="Enumeration member">UserPrefs</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#historysession" class="tsd-signature-type" data-tsd-kind="Enumeration member">HistorySession</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#theme" class="tsd-signature-type" data-tsd-kind="Enumeration member">Theme</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#mfa" class="tsd-signature-type" data-tsd-kind="Enumeration member">Mfa</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#serverextension" class="tsd-signature-type" data-tsd-kind="Enumeration member">ServerExtension</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#filesafecredentials" class="tsd-signature-type" data-tsd-kind="Enumeration member">FilesafeCredentials</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#filesafefilemetadata" class="tsd-signature-type" data-tsd-kind="Enumeration member">FilesafeFileMetadata</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#filesafeintegration" class="tsd-signature-type" data-tsd-kind="Enumeration member">FilesafeIntegration</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#extensionrepo" class="tsd-signature-type" data-tsd-kind="Enumeration member">ExtensionRepo</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#all">all</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L61">protocol/collection/collection.ts:61</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> contentType: <a href="../enums/models_content_types.contenttype.html#any" class="tsd-signature-type" data-tsd-kind="Enumeration member">Any</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#item" class="tsd-signature-type" data-tsd-kind="Enumeration member">Item</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#rootkey" class="tsd-signature-type" data-tsd-kind="Enumeration member">RootKey</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#itemskey" class="tsd-signature-type" data-tsd-kind="Enumeration member">ItemsKey</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#encryptedstorage" class="tsd-signature-type" data-tsd-kind="Enumeration member">EncryptedStorage</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#note" class="tsd-signature-type" data-tsd-kind="Enumeration member">Note</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#tag" class="tsd-signature-type" data-tsd-kind="Enumeration member">Tag</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#smarttag" class="tsd-signature-type" data-tsd-kind="Enumeration member">SmartTag</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#component" class="tsd-signature-type" data-tsd-kind="Enumeration member">Component</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#editor" class="tsd-signature-type" data-tsd-kind="Enumeration member">Editor</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#actionsextension" class="tsd-signature-type" data-tsd-kind="Enumeration member">ActionsExtension</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#userprefs" class="tsd-signature-type" data-tsd-kind="Enumeration member">UserPrefs</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#historysession" class="tsd-signature-type" data-tsd-kind="Enumeration member">HistorySession</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#theme" class="tsd-signature-type" data-tsd-kind="Enumeration member">Theme</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#mfa" class="tsd-signature-type" data-tsd-kind="Enumeration member">Mfa</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#serverextension" class="tsd-signature-type" data-tsd-kind="Enumeration member">ServerExtension</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#filesafecredentials" class="tsd-signature-type" data-tsd-kind="Enumeration member">FilesafeCredentials</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#filesafefilemetadata" class="tsd-signature-type" data-tsd-kind="Enumeration member">FilesafeFileMetadata</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#filesafeintegration" class="tsd-signature-type" data-tsd-kind="Enumeration member">FilesafeIntegration</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html#extensionrepo" class="tsd-signature-type" data-tsd-kind="Enumeration member">ExtensionRepo</a><span class="tsd-signature-symbol"> | </span><a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="conflictsof" class="tsd-anchor"></a>
+					<h3>conflicts<wbr>Of</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">conflicts<wbr>Of<span class="tsd-signature-symbol">(</span>uuid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#conflictsof">conflictsOf</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L204">protocol/collection/collection.ts:204</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>uuid: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="dirtyelements" class="tsd-anchor"></a>
+					<h3>dirty<wbr>Elements</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">dirty<wbr>Elements<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#dirtyelements">dirtyElements</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L84">protocol/collection/collection.ts:84</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns all elements that are marked as dirty</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="discard" class="tsd-anchor"></a>
+					<h3>discard</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">discard<span class="tsd-signature-symbol">(</span>elements<span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol"> | </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#discard">discard</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/item_collection.ts#L39">protocol/collection/item_collection.ts:39</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>elements: <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol"> | </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="displayelements" class="tsd-anchor"></a>
+					<h3>display<wbr>Elements</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">display<wbr>Elements<span class="tsd-signature-symbol">(</span>contentType<span class="tsd-signature-symbol">: </span><a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/item_collection.ts#L88">protocol/collection/item_collection.ts:88</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the filtered and sorted list of elements for this content type,
+									according to the options set via <code>setDisplayOptions</code></p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>contentType: <a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="elementsreferencingelement" class="tsd-anchor"></a>
+					<h3>elements<wbr>Referencing<wbr>Element</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">elements<wbr>Referencing<wbr>Element<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#elementsreferencingelement">elementsReferencingElement</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L187">protocol/collection/collection.ts:187</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>element: <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="filtersortelements" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> filter<wbr>Sort<wbr>Elements</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">filter<wbr>Sort<wbr>Elements<span class="tsd-signature-symbol">(</span>elements<span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/item_collection.ts#L99">protocol/collection/item_collection.ts:99</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>elements: <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="find" class="tsd-anchor"></a>
+					<h3>find</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">find<span class="tsd-signature-symbol">(</span>uuid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#find">find</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L79">protocol/collection/collection.ts:79</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>uuid: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="findall" class="tsd-anchor"></a>
+					<h3>find<wbr>All</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">find<wbr>All<span class="tsd-signature-symbol">(</span>uuids<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, includeBlanks<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#findall">findAll</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L105">protocol/collection/collection.ts:105</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>uuids: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>includeBlanks: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If true and an item is not found, an <code>undefined</code> element
+										will be inserted into the array.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="invalidelements" class="tsd-anchor"></a>
+					<h3>invalid<wbr>Elements</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">invalid<wbr>Elements<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#invalidelements">invalidElements</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L90">protocol/collection/collection.ts:90</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns all elements that are errorDecrypting or waitingForKey</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="nondeletedelements" class="tsd-anchor"></a>
+					<h3>nondeleted<wbr>Elements</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">nondeleted<wbr>Elements<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#nondeletedelements">nondeletedElements</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L96">protocol/collection/collection.ts:96</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns all elements that are not marked as deleted</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="referencesforelement" class="tsd-anchor"></a>
+					<h3>references<wbr>For<wbr>Element</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">references<wbr>For<wbr>Element<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#referencesforelement">referencesForElement</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L199">protocol/collection/collection.ts:199</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>element: <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="resortcontenttype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> resort<wbr>Content<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">resort<wbr>Content<wbr>Type<span class="tsd-signature-symbol">(</span>contentType<span class="tsd-signature-symbol">: </span><a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/item_collection.ts#L168">protocol/collection/item_collection.ts:168</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>contentType: <a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="set" class="tsd-anchor"></a>
+					<h3>set</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">set<span class="tsd-signature-symbol">(</span>elements<span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol"> | </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#set">set</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/item_collection.ts#L33">protocol/collection/item_collection.ts:33</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>elements: <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol"> | </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setdisplayoptions" class="tsd-anchor"></a>
+					<h3>set<wbr>Display<wbr>Options</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Display<wbr>Options<span class="tsd-signature-symbol">(</span>contentType<span class="tsd-signature-symbol">: </span><a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a>, sortBy<span class="tsd-signature-symbol">?: </span><a href="../enums/protocol_collection_item_collection.collectionsort.html#createdat" class="tsd-signature-type" data-tsd-kind="Enumeration member">CreatedAt</a><span class="tsd-signature-symbol"> | </span><a href="../enums/protocol_collection_item_collection.collectionsort.html#updatedat" class="tsd-signature-type" data-tsd-kind="Enumeration member">UpdatedAt</a><span class="tsd-signature-symbol"> | </span><a href="../enums/protocol_collection_item_collection.collectionsort.html#title" class="tsd-signature-type" data-tsd-kind="Enumeration member">Title</a>, direction<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">&quot;asc&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;dsc&quot;</span>, filter<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/item_collection.ts#L55">protocol/collection/item_collection.ts:55</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets an optional sortBy and filter for a given content type. These options will be
+										applied against a separate &quot;display-only&quot; record and not the master record. Passing
+										null options removes any existing options. sortBy is always required, but a filter is
+										not always required.
+										Note that sorting and filtering only applies to collections of type SNItem, and not
+									payloads. This is because we access item properties such as <code>pinned</code> and <code>title</code>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>contentType: <a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> sortBy: <a href="../enums/protocol_collection_item_collection.collectionsort.html#createdat" class="tsd-signature-type" data-tsd-kind="Enumeration member">CreatedAt</a><span class="tsd-signature-symbol"> | </span><a href="../enums/protocol_collection_item_collection.collectionsort.html#updatedat" class="tsd-signature-type" data-tsd-kind="Enumeration member">UpdatedAt</a><span class="tsd-signature-symbol"> | </span><a href="../enums/protocol_collection_item_collection.collectionsort.html#title" class="tsd-signature-type" data-tsd-kind="Enumeration member">Title</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> direction: <span class="tsd-signature-type">&quot;asc&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;dsc&quot;</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> filter: <span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A function that receives an element and returns a boolean indicating
+										whether the element passes the filter and should be in displayable results.</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>element: <a href="models_core_item.snitem.html" class="tsd-signature-type" data-tsd-kind="Class">SNItem</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="uuidreferencesforuuid" class="tsd-anchor"></a>
+					<h3>uuid<wbr>References<wbr>For<wbr>Uuid</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">uuid<wbr>References<wbr>For<wbr>Uuid<span class="tsd-signature-symbol">(</span>uuid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#uuidreferencesforuuid">uuidReferencesForUuid</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L192">protocol/collection/collection.ts:192</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>uuid: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="uuids" class="tsd-anchor"></a>
+					<h3>uuids</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">uuids<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#uuids">uuids</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L57">protocol/collection/collection.ts:57</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="uuidsthatreferenceuuid" class="tsd-anchor"></a>
+					<h3>uuids<wbr>That<wbr>Reference<wbr>Uuid</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">uuids<wbr>That<wbr>Reference<wbr>Uuid<span class="tsd-signature-symbol">(</span>uuid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="protocol_collection_collection.mutablecollection.html">MutableCollection</a>.<a href="protocol_collection_collection.mutablecollection.html#uuidsthatreferenceuuid">uuidsThatReferenceUuid</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/collection/collection.ts#L180">protocol/collection/collection.ts:180</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>uuid: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/protocol_collection_item_collection.html">protocol/collection/item_<wbr>collection</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/protocol_collection_item_collection.collectionsort.html" class="tsd-kind-icon">Collection<wbr>Sort</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module">
+						<a href="protocol_collection_item_collection.itemcollection.html" class="tsd-kind-icon">Item<wbr>Collection</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#conflictmap" class="tsd-kind-icon">conflict<wbr>Map</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#dirtyindex" class="tsd-kind-icon">dirty<wbr>Index</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="protocol_collection_item_collection.itemcollection.html#displayfilter" class="tsd-kind-icon">display<wbr>Filter</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="protocol_collection_item_collection.itemcollection.html#displaysortby" class="tsd-kind-icon">display<wbr>Sort<wbr>By</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="protocol_collection_item_collection.itemcollection.html#filteredmap" class="tsd-kind-icon">filtered<wbr>Map</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#invalidsindex" class="tsd-kind-icon">invalids<wbr>Index</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#map" class="tsd-kind-icon">map</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#nondeletedindex" class="tsd-kind-icon">nondeleted<wbr>Index</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#referencemap" class="tsd-kind-icon">reference<wbr>Map</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="protocol_collection_item_collection.itemcollection.html#sortedmap" class="tsd-kind-icon">sorted<wbr>Map</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#typedmap" class="tsd-kind-icon">typed<wbr>Map</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#all" class="tsd-kind-icon">all</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#conflictsof" class="tsd-kind-icon">conflicts<wbr>Of</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#dirtyelements" class="tsd-kind-icon">dirty<wbr>Elements</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="protocol_collection_item_collection.itemcollection.html#discard" class="tsd-kind-icon">discard</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="protocol_collection_item_collection.itemcollection.html#displayelements" class="tsd-kind-icon">display<wbr>Elements</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#elementsreferencingelement" class="tsd-kind-icon">elements<wbr>Referencing<wbr>Element</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="protocol_collection_item_collection.itemcollection.html#filtersortelements" class="tsd-kind-icon">filter<wbr>Sort<wbr>Elements</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#find" class="tsd-kind-icon">find</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#findall" class="tsd-kind-icon">find<wbr>All</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#invalidelements" class="tsd-kind-icon">invalid<wbr>Elements</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#nondeletedelements" class="tsd-kind-icon">nondeleted<wbr>Elements</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#referencesforelement" class="tsd-kind-icon">references<wbr>For<wbr>Element</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="protocol_collection_item_collection.itemcollection.html#resortcontenttype" class="tsd-kind-icon">resort<wbr>Content<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="protocol_collection_item_collection.itemcollection.html#set" class="tsd-kind-icon">set</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="protocol_collection_item_collection.itemcollection.html#setdisplayoptions" class="tsd-kind-icon">set<wbr>Display<wbr>Options</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#uuidreferencesforuuid" class="tsd-kind-icon">uuid<wbr>References<wbr>For<wbr>Uuid</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#uuids" class="tsd-kind-icon">uuids</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="protocol_collection_item_collection.itemcollection.html#uuidsthatreferenceuuid" class="tsd-kind-icon">uuids<wbr>That<wbr>Reference<wbr>Uuid</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="../modules/protocol_collection_item_collection.html#sortdirection" class="tsd-kind-icon">Sort<wbr>Direction</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

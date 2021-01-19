@@ -1,0 +1,723 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>PurePayload | SNJS Documentation - v2.0.41</title>
+	<meta name="description" content="Documentation for SNJS Documentation - v2.0.41">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">SNJS Documentation - v2.0.41</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">SNJS Documentation - v2.0.41</a>
+				</li>
+				<li>
+					<a href="../modules/protocol_payloads_pure_payload.html">protocol/payloads/pure_payload</a>
+				</li>
+				<li>
+					<a href="protocol_payloads_pure_payload.purepayload.html">PurePayload</a>
+				</li>
+			</ul>
+			<h1>Class PurePayload</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A payload is a vehicle in which item data is transported or persisted.
+							This class represents an abstract PurePayload which does not have any fields. Instead,
+							subclasses must override the <code>fields</code> static method to return which fields this particular
+							class of payload contains. For example, a ServerItemPayload is a transmission vehicle for
+							transporting an item to the server, and does not contain fields like PayloadFields.Dirty.
+							However, a StorageItemPayload is a persistence vehicle for saving payloads to disk, and does contain
+						PayloadsFields.Dirty.</p>
+					</div>
+					<p>Payloads are completely immutable and may not be modified after creation. Payloads should
+						not be created directly using the constructor, but instead created using the generators avaiable
+					in generator.js.</p>
+					<p>Payloads also have a content format. Formats can either be
+					DecryptedBase64String, EncryptedString, or DecryptedBareObject.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">PurePayload</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#auth_hash" class="tsd-kind-icon">auth_<wbr>hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#auth_params" class="tsd-kind-icon">auth_<wbr>params</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#content" class="tsd-kind-icon">content</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#content_type" class="tsd-kind-icon">content_<wbr>type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#created_at" class="tsd-kind-icon">created_<wbr>at</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#deleted" class="tsd-kind-icon">deleted</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#dirtieddate" class="tsd-kind-icon">dirtied<wbr>Date</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#dirty" class="tsd-kind-icon">dirty</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#duplicate_of" class="tsd-kind-icon">duplicate_<wbr>of</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#enc_item_key" class="tsd-kind-icon">enc_<wbr>item_<wbr>key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#errordecrypting" class="tsd-kind-icon">error<wbr>Decrypting</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#errordecryptingvaluechanged" class="tsd-kind-icon">error<wbr>Decrypting<wbr>Value<wbr>Changed</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#fields" class="tsd-kind-icon">fields</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#format" class="tsd-kind-icon">format</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#items_key_id" class="tsd-kind-icon">items_<wbr>key_<wbr>id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#lastsyncbegan" class="tsd-kind-icon">last<wbr>Sync<wbr>Began</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#lastsyncend" class="tsd-kind-icon">last<wbr>Sync<wbr>End</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#source" class="tsd-kind-icon">source</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#updated_at" class="tsd-kind-icon">updated_<wbr>at</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#uuid" class="tsd-kind-icon">uuid</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#version" class="tsd-kind-icon">version</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#waitingforkey" class="tsd-kind-icon">waiting<wbr>For<wbr>Key</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#contentobject" class="tsd-kind-icon">content<wbr>Object</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#contentstring" class="tsd-kind-icon">content<wbr>String</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#discardable" class="tsd-kind-icon">discardable</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#references" class="tsd-kind-icon">references</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#safecontent" class="tsd-kind-icon">safe<wbr>Content</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#safereferences" class="tsd-kind-icon">safe<wbr>References</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="protocol_payloads_pure_payload.purepayload.html#ejected" class="tsd-kind-icon">ejected</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Pure<wbr>Payload<span class="tsd-signature-symbol">(</span>rawPayload<span class="tsd-signature-symbol">: </span><a href="../modules/protocol_payloads_generator.html#rawpayload" class="tsd-signature-type" data-tsd-kind="Type alias">RawPayload</a>, fields<span class="tsd-signature-symbol">: </span><a href="../enums/protocol_payloads_fields.payloadfield.html" class="tsd-signature-type" data-tsd-kind="Enumeration">PayloadField</a><span class="tsd-signature-symbol">[]</span>, source<span class="tsd-signature-symbol">: </span><a href="../enums/protocol_payloads_sources.payloadsource.html" class="tsd-signature-type" data-tsd-kind="Enumeration">PayloadSource</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L56">protocol/payloads/pure_payload.ts:56</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>rawPayload: <a href="../modules/protocol_payloads_generator.html#rawpayload" class="tsd-signature-type" data-tsd-kind="Type alias">RawPayload</a></h5>
+								</li>
+								<li>
+									<h5>fields: <a href="../enums/protocol_payloads_fields.payloadfield.html" class="tsd-signature-type" data-tsd-kind="Enumeration">PayloadField</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>source: <a href="../enums/protocol_payloads_sources.payloadsource.html" class="tsd-signature-type" data-tsd-kind="Enumeration">PayloadSource</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-signature-type" data-tsd-kind="Class">PurePayload</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="auth_hash" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> auth_<wbr>hash</h3>
+					<div class="tsd-signature tsd-kind-icon">auth_<wbr>hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L50">protocol/payloads/pure_payload.ts:50</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>deprecated</dt>
+							<dd></dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="auth_params" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> auth_<wbr>params</h3>
+					<div class="tsd-signature tsd-kind-icon">auth_<wbr>params<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L52">protocol/payloads/pure_payload.ts:52</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>deprecated</dt>
+							<dd></dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="content" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> content</h3>
+					<div class="tsd-signature tsd-kind-icon">content<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../modules/protocol_payloads_generator.html#payloadcontent" class="tsd-signature-type" data-tsd-kind="Type alias">PayloadContent</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L35">protocol/payloads/pure_payload.ts:35</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="content_type" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> content_<wbr>type</h3>
+					<div class="tsd-signature tsd-kind-icon">content_<wbr>type<span class="tsd-signature-symbol">:</span> <a href="../enums/models_content_types.contenttype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ContentType</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L34">protocol/payloads/pure_payload.ts:34</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="created_at" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> created_<wbr>at</h3>
+					<div class="tsd-signature tsd-kind-icon">created_<wbr>at<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L39">protocol/payloads/pure_payload.ts:39</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="deleted" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> deleted</h3>
+					<div class="tsd-signature tsd-kind-icon">deleted<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L36">protocol/payloads/pure_payload.ts:36</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="dirtieddate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> dirtied<wbr>Date</h3>
+					<div class="tsd-signature tsd-kind-icon">dirtied<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L41">protocol/payloads/pure_payload.ts:41</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="dirty" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> dirty</h3>
+					<div class="tsd-signature tsd-kind-icon">dirty<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L42">protocol/payloads/pure_payload.ts:42</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="duplicate_of" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> duplicate_<wbr>of</h3>
+					<div class="tsd-signature tsd-kind-icon">duplicate_<wbr>of<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L56">protocol/payloads/pure_payload.ts:56</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="enc_item_key" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> enc_<wbr>item_<wbr>key</h3>
+					<div class="tsd-signature tsd-kind-icon">enc_<wbr>item_<wbr>key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L38">protocol/payloads/pure_payload.ts:38</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="errordecrypting" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> error<wbr>Decrypting</h3>
+					<div class="tsd-signature tsd-kind-icon">error<wbr>Decrypting<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L43">protocol/payloads/pure_payload.ts:43</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="errordecryptingvaluechanged" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> error<wbr>Decrypting<wbr>Value<wbr>Changed</h3>
+					<div class="tsd-signature tsd-kind-icon">error<wbr>Decrypting<wbr>Value<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L45">protocol/payloads/pure_payload.ts:45</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="fields" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> fields</h3>
+					<div class="tsd-signature tsd-kind-icon">fields<span class="tsd-signature-symbol">:</span> <a href="../enums/protocol_payloads_fields.payloadfield.html" class="tsd-signature-type" data-tsd-kind="Enumeration">PayloadField</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L31">protocol/payloads/pure_payload.ts:31</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>When constructed, the payload takes in an array of fields that the input raw payload
+								contains. These fields allow consumers to determine whether a given payload has an actual
+								undefined value for payload.content, for example, or whether the payload was constructed
+							to omit that field altogether (as in the case of server saved payloads)</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="format" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> format</h3>
+					<div class="tsd-signature tsd-kind-icon">format<span class="tsd-signature-symbol">:</span> <a href="../enums/protocol_payloads_formats.payloadformat.html" class="tsd-signature-type" data-tsd-kind="Enumeration">PayloadFormat</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L54">protocol/payloads/pure_payload.ts:54</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="items_key_id" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> items_<wbr>key_<wbr>id</h3>
+					<div class="tsd-signature tsd-kind-icon">items_<wbr>key_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L37">protocol/payloads/pure_payload.ts:37</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="lastsyncbegan" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> last<wbr>Sync<wbr>Began</h3>
+					<div class="tsd-signature tsd-kind-icon">last<wbr>Sync<wbr>Began<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L46">protocol/payloads/pure_payload.ts:46</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="lastsyncend" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> last<wbr>Sync<wbr>End</h3>
+					<div class="tsd-signature tsd-kind-icon">last<wbr>Sync<wbr>End<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L47">protocol/payloads/pure_payload.ts:47</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="source" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> source</h3>
+					<div class="tsd-signature tsd-kind-icon">source<span class="tsd-signature-symbol">:</span> <a href="../enums/protocol_payloads_sources.payloadsource.html" class="tsd-signature-type" data-tsd-kind="Enumeration">PayloadSource</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L32">protocol/payloads/pure_payload.ts:32</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="updated_at" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> updated_<wbr>at</h3>
+					<div class="tsd-signature tsd-kind-icon">updated_<wbr>at<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L40">protocol/payloads/pure_payload.ts:40</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="uuid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> uuid</h3>
+					<div class="tsd-signature tsd-kind-icon">uuid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L33">protocol/payloads/pure_payload.ts:33</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="version" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> version</h3>
+					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../enums/protocol_versions.protocolversion.html#v000base64decrypted" class="tsd-signature-type" data-tsd-kind="Enumeration member">V000Base64Decrypted</a><span class="tsd-signature-symbol"> | </span><a href="../enums/protocol_versions.protocolversion.html#v001" class="tsd-signature-type" data-tsd-kind="Enumeration member">V001</a><span class="tsd-signature-symbol"> | </span><a href="../enums/protocol_versions.protocolversion.html#v002" class="tsd-signature-type" data-tsd-kind="Enumeration member">V002</a><span class="tsd-signature-symbol"> | </span><a href="../enums/protocol_versions.protocolversion.html#v003" class="tsd-signature-type" data-tsd-kind="Enumeration member">V003</a><span class="tsd-signature-symbol"> | </span><a href="../enums/protocol_versions.protocolversion.html#v004" class="tsd-signature-type" data-tsd-kind="Enumeration member">V004</a><span class="tsd-signature-symbol"> | </span><a href="../enums/protocol_versions.protocolversion.html#versionlength" class="tsd-signature-type" data-tsd-kind="Enumeration member">VersionLength</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L55">protocol/payloads/pure_payload.ts:55</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="waitingforkey" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> waiting<wbr>For<wbr>Key</h3>
+					<div class="tsd-signature tsd-kind-icon">waiting<wbr>For<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L44">protocol/payloads/pure_payload.ts:44</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="contentobject" class="tsd-anchor"></a>
+					<h3>content<wbr>Object</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> contentObject<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/protocol_payloads_generator.html#payloadcontent" class="tsd-signature-type" data-tsd-kind="Type alias">PayloadContent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L179">protocol/payloads/pure_payload.ts:179</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/protocol_payloads_generator.html#payloadcontent" class="tsd-signature-type" data-tsd-kind="Type alias">PayloadContent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="contentstring" class="tsd-anchor"></a>
+					<h3>content<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> contentString<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L186">protocol/payloads/pure_payload.ts:186</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="discardable" class="tsd-anchor"></a>
+					<h3>discardable</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> discardable<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L197">protocol/payloads/pure_payload.ts:197</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Whether a payload can be discarded and removed from storage.
+									This value is true if a payload is marked as deleted and not dirty.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="references" class="tsd-anchor"></a>
+					<h3>references</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> references<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/protocol_payloads_generator.html#contentreference" class="tsd-signature-type" data-tsd-kind="Type alias">ContentReference</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L171">protocol/payloads/pure_payload.ts:171</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Defined to allow singular API with Payloadable type (PurePayload | SNItem)</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/protocol_payloads_generator.html#contentreference" class="tsd-signature-type" data-tsd-kind="Type alias">ContentReference</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="safecontent" class="tsd-anchor"></a>
+					<h3>safe<wbr>Content</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> safeContent<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/protocol_payloads_generator.html#payloadcontent" class="tsd-signature-type" data-tsd-kind="Type alias">PayloadContent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L162">protocol/payloads/pure_payload.ts:162</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/protocol_payloads_generator.html#payloadcontent" class="tsd-signature-type" data-tsd-kind="Type alias">PayloadContent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="safereferences" class="tsd-anchor"></a>
+					<h3>safe<wbr>References</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> safeReferences<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/protocol_payloads_generator.html#contentreference" class="tsd-signature-type" data-tsd-kind="Type alias">ContentReference</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L175">protocol/payloads/pure_payload.ts:175</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/protocol_payloads_generator.html#contentreference" class="tsd-signature-type" data-tsd-kind="Type alias">ContentReference</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="ejected" class="tsd-anchor"></a>
+					<h3>ejected</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">ejected<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/protocol_payloads_generator.html#rawpayload" class="tsd-signature-type" data-tsd-kind="Type alias">RawPayload</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/standardnotes/snjs/blob/1584960/lib/protocol/payloads/pure_payload.ts#L135">protocol/payloads/pure_payload.ts:135</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a generic object with all payload fields except any that are meta-data
+										related (such as <code>fields</code>, <code>dirtiedDate</code>, etc). &quot;Ejected&quot; means a payload for
+										generic, non-contextual consumption, such as saving to a backup file or syncing
+									with a server.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/protocol_payloads_generator.html#rawpayload" class="tsd-signature-type" data-tsd-kind="Type alias">RawPayload</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/protocol_payloads_pure_payload.html">protocol/payloads/pure_<wbr>payload</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module">
+						<a href="protocol_payloads_pure_payload.purepayload.html" class="tsd-kind-icon">Pure<wbr>Payload</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#auth_hash" class="tsd-kind-icon">auth_<wbr>hash</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#auth_params" class="tsd-kind-icon">auth_<wbr>params</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#content" class="tsd-kind-icon">content</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#content_type" class="tsd-kind-icon">content_<wbr>type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#created_at" class="tsd-kind-icon">created_<wbr>at</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#deleted" class="tsd-kind-icon">deleted</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#dirtieddate" class="tsd-kind-icon">dirtied<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#dirty" class="tsd-kind-icon">dirty</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#duplicate_of" class="tsd-kind-icon">duplicate_<wbr>of</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#enc_item_key" class="tsd-kind-icon">enc_<wbr>item_<wbr>key</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#errordecrypting" class="tsd-kind-icon">error<wbr>Decrypting</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#errordecryptingvaluechanged" class="tsd-kind-icon">error<wbr>Decrypting<wbr>Value<wbr>Changed</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#fields" class="tsd-kind-icon">fields</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#format" class="tsd-kind-icon">format</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#items_key_id" class="tsd-kind-icon">items_<wbr>key_<wbr>id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#lastsyncbegan" class="tsd-kind-icon">last<wbr>Sync<wbr>Began</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#lastsyncend" class="tsd-kind-icon">last<wbr>Sync<wbr>End</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#source" class="tsd-kind-icon">source</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#updated_at" class="tsd-kind-icon">updated_<wbr>at</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#uuid" class="tsd-kind-icon">uuid</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#version" class="tsd-kind-icon">version</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#waitingforkey" class="tsd-kind-icon">waiting<wbr>For<wbr>Key</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#contentobject" class="tsd-kind-icon">content<wbr>Object</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#contentstring" class="tsd-kind-icon">content<wbr>String</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#discardable" class="tsd-kind-icon">discardable</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#references" class="tsd-kind-icon">references</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#safecontent" class="tsd-kind-icon">safe<wbr>Content</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#safereferences" class="tsd-kind-icon">safe<wbr>References</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="protocol_payloads_pure_payload.purepayload.html#ejected" class="tsd-kind-icon">ejected</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -211,7 +211,7 @@ describe('singletons', function () {
     expect(didCompleteRelevantSync).to.equal(true);
   }).timeout(10000);
 
-  it('signing into account and retrieving singleton shouldnt put us in deadlock', async function () {
+  it.only('signing into account and retrieving singleton shouldnt put us in deadlock', async function () {
     await this.registerUser();
     /** Create prefs */
     const ogPrefs = await findOrCreatePrefsSingleton(this.application);

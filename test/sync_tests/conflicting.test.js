@@ -551,7 +551,7 @@ describe('online conflict handling', function () {
     /** This number must be greater than the pagination limit per sync request.
      * For example if the limit per request is 150 items sent/received, this number should
      * be something like 160. */
-    const largeItemCount = SyncUpDownLimit + 10;
+    const largeItemCount = this.application.syncService.upDownLimit + 10;
     await Factory.createManyMappedNotes(this.application, largeItemCount);
     /** Upload */
     await this.application.syncService.sync(syncOptions);
@@ -841,7 +841,7 @@ describe('online conflict handling', function () {
        */
 
       /** Create bulk data belonging to another account and sync */
-      const largeItemCount = SyncUpDownLimit + 10;
+      const largeItemCount = this.application.syncService.upDownLimit + 10;
       await Factory.createManyMappedNotes(this.application, largeItemCount);
       await this.application.syncService.sync(syncOptions);
       const priorData = this.application.itemManager.items;

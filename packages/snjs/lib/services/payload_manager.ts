@@ -79,8 +79,8 @@ export class PayloadManager extends PureService {
     this.collection = new MutableCollection();
   }
 
-  public find(uuids: UuidString[]) {
-    return this.collection.findAll(uuids);
+  public find(uuids: UuidString[]): PurePayload[] {
+    return this.collection.findAll(uuids) as PurePayload[];
   }
 
   /**

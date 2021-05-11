@@ -155,7 +155,8 @@ describe('online syncing', function () {
         secret: '123',
       },
     });
-    const results = await this.application.syncService.payloadsByPreparingForServer(
+    const results = await payloadsByPreparingForServer(
+      this.application.protocolService,
       [payload]
     );
     const processed = results[0];
@@ -1045,5 +1046,50 @@ describe('online syncing', function () {
     expect(note.payload.created_at).to.be.ok;
     expect(note.payload.updated_at_timestamp).to.be.ok;
     expect(note.payload.updated_at).to.be.ok;
+  });
+
+  it('should use latest value of item when performing second page of sync', async function () {
+    /**
+     * If 151 items are set to sync, and the per page limit is 150, then the 151st item
+     * will be queued to sync after the first page completes. We want to make sure that
+     * in the second sync, the latest value of the 151st item is used, and not its value
+     * when it was first marked as dirty
+     */
+    const noteCount = 3;
+    await Factory.createManyMappedNotes(this.application, noteCount);
+    this.expectedItemCount += noteCount;
+    this.application.syncService.upDownLimit = noteCount - 1;
+    const dirtyItems = this.application.syncService.itemsNeedingSync();
+    expect(dirtyItems.length).to.equal(noteCount);
+    const lastItemUuid = dirtyItems[dirtyItems.length - 1].uuid;
+    let syncCount = 0;
+    this.application.addSingleEventObserver(
+      ApplicationEvent.WillSync,
+      async () => {
+        /** Modify the last item. Change the deleted value so that this value
+         * can be easily checked on saved_items response */
+        if (syncCount === 0) {
+          await this.application.itemManager.setItemToBeDeleted(lastItemUuid);
+          this.expectedItemCount--;
+        }
+      }
+    );
+
+    let testDidExcute = false;
+    this.application.syncService.addEventObserver((eventName, data) => {
+      if (eventName === SyncEvent.SingleSyncCompleted) {
+        if (syncCount === 1) {
+          const matchingPayload = data.savedPayloads.find(
+            (p) => p.uuid === lastItemUuid
+          );
+          expect(matchingPayload.deleted).to.equal(true);
+          testDidExcute = true;
+        }
+        syncCount++;
+      }
+    });
+
+    await this.application.sync();
+    expect(testDidExcute).to.equal(true);
   });
 });

@@ -31,7 +31,6 @@ import { PayloadSource } from './../protocol/payloads/sources';
 import { PurePayload } from './../protocol/payloads/pure_payload';
 import { PayloadManager } from './payload_manager';
 import { ContentType } from '../models/content_types';
-import { ThemeMutator } from '@Lib/models';
 import { ItemCollectionNotesView } from '@Lib/protocol/collection/item_collection_notes_view';
 import { NotesDisplayCriteria } from '@Lib/protocol/collection/notes_display_criteria';
 import { createMutatorForItem } from '@Lib/models/mutator';

@@ -1,3 +1,4 @@
+import { PayloadsByAlternatingUuid } from '@Payloads/functions';
 import { SNItemsKey } from '@Models/app/items_key';
 import { SNHistoryManager } from './../history/history_manager';
 import { SyncEvent } from '@Services/sync/events';
@@ -23,7 +24,6 @@ import { SyncState } from '@Services/sync/sync_state';
 import { AccountDownloader } from '@Services/sync/account/downloader';
 import {
   SyncResponseResolver,
-  NonEncryptedTypes,
 } from '@Services/sync/account/response_resolver';
 import { AccountSyncOperation } from '@Services/sync/account/operation';
 import { OfflineSyncOperation } from '@Services/sync/offline/operation';
@@ -31,9 +31,7 @@ import { DeltaOutOfSync } from '@Payloads/deltas';
 import { PayloadField } from '@Payloads/fields';
 import { PayloadSource } from '@Payloads/sources';
 import { ImmutablePayloadCollection } from '@Protocol/collection/payload_collection';
-import { PayloadsByAlternatingUuid } from '@Payloads/functions';
 import { CreateMaxPayloadFromAnyObject } from '@Payloads/generator';
-import { EncryptionIntent } from '@Protocol/intents';
 import { ContentType } from '@Models/content_types';
 import { CreateItemFromPayload } from '@Models/generator';
 import { Uuids } from '@Models/functions';
@@ -113,6 +111,9 @@ export class SNSyncService extends PureService<
   SyncEvent,
   SyncResponse | { source: SyncSources }
 > {
+
+  public upDownLimit = 150;
+
   private interval: any;
   private state?: SyncState;
   private opStatus!: SyncOpStatus;
@@ -359,12 +360,7 @@ export class SNSyncService extends PureService<
     await this.storageService.removeValue(StorageKey.PaginationToken);
   }
 
-  private async itemsNeedingSync() {
-    const items = this.itemManager.getDirtyItems();
-    return items;
-  }
-
-  private async alternateUuidForItem(uuid: UuidString) {
+  public async alternateUuidForItem(uuid: UuidString) {
     const item = this.itemManager.findItem(uuid)!;
     const payload = CreateMaxPayloadFromAnyObject(item);
     const results = await PayloadsByAlternatingUuid(
@@ -374,6 +370,10 @@ export class SNSyncService extends PureService<
     await this.payloadManager.emitPayloads(results, PayloadSource.LocalChanged);
     await this.persistPayloads(results);
     return this.itemManager.findItem(results[0].uuid!);
+  }
+
+  private itemsNeedingSync() {
+    return this.itemManager.getDirtyItems();
   }
 
   /**
@@ -449,17 +449,6 @@ export class SNSyncService extends PureService<
       });
   }
 
-  private async payloadsByPreparingForServer(payloads: PurePayload[]) {
-    return this.protocolService.payloadsByEncryptingPayloads(
-      payloads,
-      (payload) => {
-        return NonEncryptedTypes.includes(payload.content_type!)
-          ? EncryptionIntent.SyncDecrypted
-          : EncryptionIntent.Sync;
-      }
-    );
-  }
-
   public async downloadFirstSync(
     waitTimeOnFailureMs: number,
     otherSyncOptions?: SyncOptions
@@ -516,18 +505,18 @@ export class SNSyncService extends PureService<
       options.source = SyncSources.External;
     }
 
-    const items = await this.itemsNeedingSync();
+    const dirtyItems = this.itemsNeedingSync();
     /** Freeze the begin date immediately after getting items needing sync. This way an
      * item dirtied at any point after this date is marked as needing another sync */
     const beginDate = new Date();
     /** Items that have never been synced and marked as deleted should not be
      * uploaded to server, and instead deleted directly after sync completion. */
-    const neverSyncedDeleted = items.filter((item) => {
+    const neverSyncedDeleted = dirtyItems.filter((item) => {
       return item.neverSynced && item.deleted;
     });
-    subtractFromArray(items, neverSyncedDeleted);
+    subtractFromArray(dirtyItems, neverSyncedDeleted);
 
-    const decryptedPayloads = items.map((item) => {
+    const decryptedPayloads = dirtyItems.map((item) => {
       return item.payloadRepresentation();
     });
 
@@ -577,9 +566,9 @@ export class SNSyncService extends PureService<
 
     /** lastSyncBegan must be set *after* any point we may have returned above.
      * Setting this value means the item was 100% sent to the server. */
-    if (items.length > 0) {
+    if (dirtyItems.length > 0) {
       await this.itemManager.changeItems(
-        Uuids(items),
+        Uuids(dirtyItems),
         (mutator) => {
           mutator.lastSyncBegan = beginDate;
         },
@@ -605,21 +594,18 @@ export class SNSyncService extends PureService<
       }
     })(options.mode);
 
-    let uploadPayloads: PurePayload[] = [];
-    if (useMode === SyncModes.Default) {
-      if (online && !this.completedOnlineDownloadFirstSync) {
-        throw Error(
-          'Attempting to default mode sync without having completed initial.'
-        );
-      }
-      if (online) {
-        uploadPayloads = await this.payloadsByPreparingForServer(
-          decryptedPayloads
-        );
-      } else {
-        uploadPayloads = decryptedPayloads;
-      }
-    } else if (useMode === SyncModes.DownloadFirst) {
+    let uploadPayloads = decryptedPayloads;
+    if (
+      online &&
+      useMode === SyncModes.Default &&
+      !this.completedOnlineDownloadFirstSync
+    ) {
+      throw Error(
+        'Attempting to default mode sync without having completed initial.'
+      );
+    }
+
+    if (useMode === SyncModes.DownloadFirst) {
       uploadPayloads = [];
     }
 
@@ -684,7 +670,7 @@ export class SNSyncService extends PureService<
       if (options.awaitAll) {
         await promise;
       }
-    } else if ((await this.itemsNeedingSync()).length > 0) {
+    } else if ((this.itemsNeedingSync()).length > 0) {
       /**
        * As part of the just concluded sync operation, more items may have
        * been dirtied (like conflicts), and the caller may want to await the
@@ -746,7 +732,7 @@ export class SNSyncService extends PureService<
     mode: SyncModes
   ) {
     const operation = new AccountSyncOperation(
-      payloads,
+      Uuids(payloads),
       async (type: SyncSignal, response?: SyncResponse, stats?: SyncStats) => {
         switch (type) {
           case SyncSignal.Response:
@@ -766,8 +752,11 @@ export class SNSyncService extends PureService<
       },
       await this.getLastSyncToken(),
       await this.getPaginationToken(),
+      this.upDownLimit,
       checkIntegrity,
-      this.apiService
+      this.apiService,
+      this.payloadManager,
+      this.protocolService
     );
     this.log(
       'Syncing online user',
@@ -779,7 +768,7 @@ export class SNSyncService extends PureService<
       checkIntegrity,
       'mode:',
       mode,
-      'payloads:',
+      'unprocessed payloads:',
       payloads
     );
     return operation;

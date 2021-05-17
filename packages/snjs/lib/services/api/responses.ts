@@ -24,20 +24,18 @@ export enum StatusCode {
 }
 
 export type HttpResponse<T = unknown> = {
-  status: StatusCode,
-  error?: {
-    message: string;
-    status: number;
-    tag?: string;
-    /** In the case of MFA required responses,
-     * the required prompt is returned as part of the error */
-    payload?: {
-      mfa_key?: string
-    }
-  }
-  data?: T,
-  meta?: ResponseMeta
-}
+  status: StatusCode;
+  error?: HttpResponseError;
+  data?: T;
+  meta?: ResponseMeta;
+};
+
+export type HttpResponseError = {
+  message: string;
+  status: number;
+  tag?: string;
+  wrappedError?: HttpResponseError;
+};
 
 export type ResponseMeta = {
   auth: {

@@ -12,6 +12,7 @@ import {
   StatusCode,
   isErrorResponseExpiredToken,
   ResponseMeta,
+  KeyParamsResponse,
 } from './responses';
 import { RemoteSession, Session, TokenSession } from './session';
 import { ContentType } from '@Models/content_types';
@@ -19,7 +20,6 @@ import { PurePayload } from '@Payloads/pure_payload';
 import { SNRootKeyParams } from './../../protocol/key_params';
 import { SNStorageService } from './../storage_service';
 import {
-  ErrorTag,
   HttpParams,
   HttpRequest,
   HttpVerb,
@@ -32,8 +32,12 @@ import { PureService } from '@Services/pure_service';
 import { joinPaths } from '@Lib/utils';
 import { StorageKey } from '@Lib/storage_keys';
 import { SNPermissionsService } from '../permissions_service';
+import { GetAuthMethodsResponse, MfaStatus, SNMfaService } from './mfa_service';
+import { SNAlertService } from '@Lib/index';
+import { ErrorTag } from '@standardnotes/auth';
+import { Uuid, MfaSetting } from '@standardnotes/auth';
 
-type PathNames = {
+type PathsV0 = {
   keyParams: string;
   register: string;
   signIn: string;
@@ -47,8 +51,30 @@ type PathNames = {
   itemRevision: (itemId: string, revisionId: string) => string;
 };
 
+type PathsV1 = {
+  authMethods: string;
+  keyParams: string;
+  register: string;
+  signIn: string;
+  signOut: string;
+  putSetting: (userUuid: Uuid) => string;
+  deleteSetting: ({
+    userUuid,
+    settingName,
+  }: {
+    userUuid: Uuid;
+    settingName: string;
+  }) => string;
+};
+
+type DeleteSettingDto = {
+  userUuid: Uuid;
+  settingName: string;
+};
+
 const Paths: {
-  v0: PathNames;
+  v0: PathsV0;
+  v1: PathsV1;
 } = {
   v0: {
     keyParams: '/auth/params',
@@ -64,12 +90,26 @@ const Paths: {
     itemRevision: (itemId: string, revisionId: string) =>
       `/items/${itemId}/revisions/${revisionId}`,
   },
+  v1: {
+    authMethods: '/v1/auth/methods',
+    keyParams: '/v1/login-params',
+    register: '/v1/users',
+    signIn: '/v1/login',
+    signOut: '/v1/logout',
+    putSetting: (userUuid: Uuid) => `/v1/users/${userUuid}/settings`,
+    deleteSetting: ({ userUuid, settingName }: DeleteSettingDto) =>
+      `/v1/users/${userUuid}/settings/${settingName}`,
+  },
 };
 
 /** Legacy api version field to be specified in params when calling v0 APIs. */
 const V0_API_VERSION = '20200115';
 
 type InvalidSessionObserver = (revoked: boolean) => void;
+
+type HttpRequestWithFallbackError = HttpRequest & {
+  fallbackErrorMessage: string;
+};
 
 export class SNApiService extends PureService {
   private session?: Session;
@@ -85,7 +125,9 @@ export class SNApiService extends PureService {
     private httpService: SNHttpService,
     private storageService: SNStorageService,
     private permissionsService: SNPermissionsService,
-    private host: string
+    private host: string,
+    private mfaService: SNMfaService,
+    private alertService: SNAlertService
   ) {
     super();
   }
@@ -179,6 +221,11 @@ export class SNApiService extends PureService {
   }
 
   private processMetaObject(meta: ResponseMeta) {
+    const {
+      auth: { role, permissions },
+    } = meta;
+    if (role === undefined || permissions === undefined) return;
+
     this.permissionsService.update(meta.auth.role, meta.auth.permissions);
   }
 
@@ -188,13 +235,9 @@ export class SNApiService extends PureService {
     }
   }
 
-  private async request(params: {
-    verb: HttpVerb;
-    url: string;
-    fallbackErrorMessage: string;
-    params?: HttpParams;
-    authentication?: string;
-  }) {
+  private async request(
+    params: HttpRequestWithFallbackError
+  ): Promise<HttpResponse<unknown>> {
     try {
       const response = await this.httpService.runHttp(params);
       this.processResponse(response);
@@ -207,34 +250,127 @@ export class SNApiService extends PureService {
     }
   }
 
-  /**
-   * @param mfaKeyPath  The params path the server expects for authentication against
-   *                    a particular mfa challenge. A value of foo would mean the server
-   *                    would receive parameters as params['foo'] with value equal to mfaCode.
-   * @param mfaCode     The mfa challenge response value.
-   */
-  getAccountKeyParams(
-    email: string,
-    mfaKeyPath?: string,
-    mfaCode?: string
-  ): Promise<HttpResponse> {
-    const params = this.params({
-      email: email,
-    });
-    if (mfaKeyPath && mfaCode) {
-      params[mfaKeyPath] = mfaCode;
-    }
+  private async getAuthMethods(
+    email: string
+  ): Promise<HttpResponse<GetAuthMethodsResponse>> {
+    const params = this.params({ email });
+
     return this.request({
       verb: HttpVerb.Get,
-      url: joinPaths(this.host, Paths.v0.keyParams),
+      url: joinPaths(this.host, Paths.v1.authMethods),
+      fallbackErrorMessage: messages.AUTH_METHODS_ERROR,
+      params,
+    }) as Promise<HttpResponse<GetAuthMethodsResponse>>;
+  }
+
+  private async requestWithMfa(
+    httpRequest: HttpRequestWithFallbackError & {
+      identifier: string;
+    }
+  ): Promise<HttpResponse> {
+    const { identifier, ...restRequest } = httpRequest;
+
+    for (;;) {
+      const authMethodsResponse = await this.getAuthMethods(identifier);
+      const mfaResult = await this.mfaService.handleMfa(authMethodsResponse);
+
+      switch (mfaResult.status) {
+        case MfaStatus.ErrorMissingCode: {
+          // User dismissed window without input
+          return this.createErrorResponse(
+            messages.SignInStrings.SignInCanceledMissingMfa,
+            StatusCode.CanceledMfa
+          );
+        }
+        case MfaStatus.ErrorResponse: {
+          const originalResponse = mfaResult.response;
+          return {
+            error: {
+              message: messages.SignInStrings.ErrorFetchingAuthMethods,
+              status: originalResponse.status,
+              wrappedError: originalResponse.error,
+            },
+            status: originalResponse.status,
+          };
+        }
+        default: {
+          const mfaParams = this.mfaService.getMfaQueryParams(mfaResult);
+
+          const response = await this.request({
+            ...restRequest,
+            params: {
+              ...restRequest.params,
+              ...mfaParams,
+            },
+          });
+
+          if (response.error?.tag === ErrorTag.MfaInvalid) {
+            // alert, then iterate (this is an infinite loop)
+            await this.alertService.alert(messages.SignInStrings.IncorrectMfa);
+          } else {
+            return response;
+          }
+        }
+      }
+    }
+  }
+
+  public async enableMfa({
+    userUuid,
+    secret,
+  }: {
+    userUuid: Uuid;
+    secret: string;
+  }): Promise<HttpResponse<unknown>> {
+    return this.request({
+      verb: HttpVerb.Put,
+      url: joinPaths(this.host, Paths.v1.putSetting(userUuid)),
+      fallbackErrorMessage: messages.MFA_ENABLE_ERROR,
+      authentication: this.session?.authorizationValue,
+      params: {
+        name: MfaSetting.MfaSecret,
+        value: secret,
+        serverEncryptionVersion: 1,
+      },
+    });
+  }
+
+  public async disableMfa(userUuid: Uuid): Promise<HttpResponse<unknown>> {
+    return this.request({
+      verb: HttpVerb.Delete,
+      url: joinPaths(
+        this.host,
+        Paths.v1.deleteSetting({
+          settingName: MfaSetting.MfaSecret,
+          userUuid,
+        })
+      ),
+      fallbackErrorMessage: messages.MFA_DISABLE_ERROR,
+      authentication: this.session?.authorizationValue,
+    });
+  }
+
+  public async getAccountKeyParams(
+    email: string
+  ): Promise<HttpResponse<KeyParamsResponse>> {
+    const params = this.params({
+      email,
+    });
+
+    const response = await this.requestWithMfa({
+      identifier: email,
+      verb: HttpVerb.Get,
+      url: joinPaths(this.host, Paths.v1.keyParams),
       fallbackErrorMessage: messages.API_MESSAGE_GENERIC_INVALID_LOGIN,
       params,
       /** A session is optional here, if valid, endpoint returns extra params */
       authentication: this.session?.authorizationValue,
     });
+
+    return this.responseV1toV0(response) as HttpResponse<KeyParamsResponse>;
   }
 
-  async register(
+  public async register(
     email: string,
     serverPassword: string,
     keyParams: SNRootKeyParams,
@@ -246,7 +382,7 @@ export class SNApiService extends PureService {
       ) as RegistrationResponse;
     }
     this.registering = true;
-    const url = joinPaths(this.host, Paths.v0.register);
+    const url = joinPaths(this.host, Paths.v1.register);
     const params = this.params({
       password: serverPassword,
       email,
@@ -260,14 +396,13 @@ export class SNApiService extends PureService {
       params,
     });
     this.registering = false;
-    return response as RegistrationResponse;
+
+    return this.responseV1toV0(response) as RegistrationResponse;
   }
 
-  async signIn(
+  public async signIn(
     email: string,
     serverPassword: string,
-    mfaKeyPath?: string,
-    mfaCode?: string,
     ephemeral = false
   ): Promise<SignInResponse> {
     if (this.authenticating) {
@@ -276,16 +411,14 @@ export class SNApiService extends PureService {
       ) as SignInResponse;
     }
     this.authenticating = true;
-    const url = joinPaths(this.host, Paths.v0.signIn);
+    const url = joinPaths(this.host, Paths.v1.signIn);
     const params = this.params({
       email,
       password: serverPassword,
       ephemeral,
     });
-    if (mfaKeyPath && mfaCode) {
-      params[mfaKeyPath] = mfaCode;
-    }
-    const response = await this.request({
+    const response = await this.requestWithMfa({
+      identifier: email,
       verb: HttpVerb.Post,
       url,
       params,
@@ -293,16 +426,19 @@ export class SNApiService extends PureService {
     });
 
     this.authenticating = false;
-    return response as SignInResponse;
+
+    return this.responseV1toV0(response) as SignInResponse;
   }
 
-  signOut(): Promise<SignOutResponse> {
-    const url = joinPaths(this.host, Paths.v0.signOut);
-    return this.httpService
+  public async signOut(): Promise<SignOutResponse> {
+    const url = joinPaths(this.host, Paths.v1.signOut);
+    const response = await this.httpService
       .postAbsolute(url, undefined, this.session!.authorizationValue)
       .catch((errorResponse) => {
         return errorResponse;
-      }) as Promise<SignOutResponse>;
+      });
+
+    return this.responseV1toV0(response) as SignOutResponse;
   }
 
   async changePassword(
@@ -582,5 +718,15 @@ export class SNApiService extends PureService {
         response.error?.tag === ErrorTag.RevokedSession
       );
     }
+  }
+
+  /**
+   * A workaround that allows using v1 responses without rewriting downstream logic that expects v0 responses.
+   */
+  private responseV1toV0<T>(response: HttpResponse<T>): HttpResponse<T> {
+    return {
+      ...response,
+      ...response.data,
+    };
   }
 }

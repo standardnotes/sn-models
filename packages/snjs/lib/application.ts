@@ -101,6 +101,7 @@ import { PayloadFormat } from './protocol/payloads';
 import { SNPermissionsService } from './services/permissions_service';
 import { ProtectionEvent } from './services/protection_service';
 import { Permission } from '@standardnotes/auth';
+import { SNMfaService } from './services/api/mfa_service';
 
 /** How often to automatically sync, in milliseconds */
 const DEFAULT_AUTO_SYNC_INTERVAL = 30_000;
@@ -142,6 +143,7 @@ export class SNApplication {
   private preferencesService!: SNPreferencesService;
   private permissionsService!: SNPermissionsService;
   private credentialService!: SNCredentialService;
+  private mfaService!: SNMfaService;
 
   private eventHandlers: ApplicationObserver[] = [];
   private services: PureService<any, any>[] = [];
@@ -1395,6 +1397,7 @@ export class SNApplication {
     this.storageService.encryptionDelegate = encryptionDelegate;
     this.createChallengeService();
     this.createHttpManager();
+    this.createMfaService();
     this.createApiService();
     this.createSessionManager();
     this.createMigrationService();
@@ -1430,6 +1433,7 @@ export class SNApplication {
     (this.preferencesService as unknown) = undefined;
     (this.permissionsService as unknown) = undefined;
     (this.credentialService as unknown) = undefined;
+    (this.mfaService as unknown) = undefined;
 
     this.services = [];
   }
@@ -1477,7 +1481,9 @@ export class SNApplication {
       this.httpService,
       this.storageService,
       this.permissionsService,
-      this.defaultHost
+      this.defaultHost,
+      this.mfaService,
+      this.alertService,
     );
     this.services.push(this.apiService);
   }
@@ -1566,7 +1572,7 @@ export class SNApplication {
       this.apiService,
       this.alertService,
       this.protocolService,
-      this.challengeService
+      this.challengeService,
     );
     this.serviceObservers.push(
       this.sessionManager.addEventObserver(async (event) => {
@@ -1695,6 +1701,11 @@ export class SNApplication {
       })
     );
     this.services.push(this.preferencesService);
+  }
+
+  private createMfaService() {
+    this.mfaService = new SNMfaService(this.challengeService);
+    this.services.push(this.mfaService);
   }
 
   private getClass<T>(base: T) {

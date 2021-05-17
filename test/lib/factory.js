@@ -71,7 +71,8 @@ export async function createAppContext(identifier) {
 }
 
 export function getDefaultHost() {
-  return 'http://localhost:3123';
+  // API Gateway
+  return 'http://localhost:3124';
 }
 
 export function createApplication(identifier, environment, platform) {

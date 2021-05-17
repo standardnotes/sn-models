@@ -10,6 +10,8 @@
   <script src="../node_modules/mocha/mocha.js"></script>
   <script src="../node_modules/@standardnotes/sncrypto-web/dist/sncrypto-web.js"></script>
   <script src="../node_modules/sinon/pkg/sinon.js"></script>
+  <script src="../node_modules/@otplib/preset-browser/buffer.js"></script>
+  <script src="../node_modules/@otplib/preset-browser/index.js"></script>
   <script src="../packages/snjs/dist/snjs.js"></script>
   <script>
 
@@ -32,6 +34,7 @@
     mocha.timeout(5000);
     mocha.bail(bail);
   </script>
+  <script type="module" src="mfa.test.js"></script>
   <script type="module" src="session.test.js"></script>
   <script type="module" src="memory.test.js"></script>
   <script type="module" src="protocol.test.js"></script>

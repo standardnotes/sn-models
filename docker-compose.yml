@@ -1,3 +1,4 @@
+# prettier-ignore
 version: '3.8'
 services:
   snjs:
@@ -56,7 +57,7 @@ services:
       - snjs
 
   api-gateway:
-    image: standardnotes/api-gateway:1.4.4
+    image: standardnotes/api-gateway:dev
     depends_on:
       - syncing-server-js
       - auth
@@ -74,7 +75,7 @@ services:
       - snjs
 
   auth:
-    image: standardnotes/auth:1.6.4
+    image: standardnotes/auth:dev
     depends_on:
       - syncing-server-js
     entrypoint: [
@@ -86,7 +87,7 @@ services:
       - snjs
 
   auth-worker:
-    image: standardnotes/auth:1.6.4
+    image: standardnotes/auth:dev
     depends_on:
       - auth
     entrypoint: [

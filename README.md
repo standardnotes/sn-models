@@ -31,7 +31,7 @@ import { SNApplication } from 'snjs';
 ## Integrating in non-module web environment
 
 ```javascript
-<script src="snjs.js"></script>
+<script src="snjs.js"></script>;
 Object.assign(window, SNLibrary);
 ```
 
@@ -47,19 +47,17 @@ const app = new SNApplication(
   Platform.LinuxWeb,
   deviceInterface,
   new SNWebCrypto(),
-  alertService,
+  alertService
 );
 ```
 
 2. Launch the application:
 
 ```javascript
- await app.prepareForLaunch({
-  receiveChallenge: (challenge, orchestrator) => {
-
-  }
- });
- await app.launch();
+await app.prepareForLaunch({
+  receiveChallenge: (challenge, orchestrator) => {},
+});
+await app.launch();
 ```
 
 Once the app is launched, you may perform any app-related functions, including:
@@ -67,43 +65,28 @@ Once the app is launched, you may perform any app-related functions, including:
 ### Signing into an account
 
 ```javascript
-app.signIn(
-  email,
-  password
-).then((response) => {
-
-});
+app.signIn(email, password).then((response) => {});
 ```
 
 ### Registering a new account
 
 ```javascript
-app.register(
-  email,
-  password
-).then((response) => {
-
-});
+app.register(email, password).then((response) => {});
 ```
 
 ### Lock the app with a passcode
 
 ```javascript
-app.setPasscode(somePasscode).then(() => {
-
-});
+app.setPasscode(somePasscode).then(() => {});
 ```
 
 ### Create a note
 
 ```javascript
-const item = await app.createManagedItem(
-  ContentType.Note,
-  {
-    title: 'Ideas',
-    text: 'Coming soon.'
-  }
-);
+const item = await app.createManagedItem(ContentType.Note, {
+  title: 'Ideas',
+  text: 'Coming soon.',
+});
 /** Save the item both locally and sync with server */
 await app.saveItem(item.uuid);
 ```
@@ -111,12 +94,9 @@ await app.saveItem(item.uuid);
 ### Stream notes
 
 ```javascript
-app.streamItems(
-  contentType: ContentType.Note,
-  (notes) => {
-    reloadUI(notes);
-  }
-);
+app.streamItems((contentType: ContentType.Note), (notes) => {
+  reloadUI(notes);
+});
 ```
 
 ## Building
@@ -127,6 +107,7 @@ app.streamItems(
 ## Tests
 
 Please make sure you have [Docker](https://www.docker.com) installed before running tests:
+
 ```
 yarn test
 ```
@@ -149,7 +130,9 @@ yarn run test:e2e:dev
 Or open browser to `localhost:9002/test/test.html`.
 
 ## Notes
+
 - Almost all functions are asynchronous and return promises. [You can read about promises here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises).
 
 ## Help
+
 Join the #dev channel in [our Slack group](https://standardnotes.org/slack) for help and discussion.

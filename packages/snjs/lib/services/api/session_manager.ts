@@ -19,9 +19,7 @@ import {
 } from './responses';
 import { SNProtocolService } from './../protocol_service';
 import { SNApiService } from './api_service';
-import {
-  SNStorageService,
-} from './../storage_service';
+import { SNStorageService } from './../storage_service';
 import { SNRootKey } from '@Protocol/root_key';
 import {
   AnyKeyParamsContent,
@@ -75,7 +73,7 @@ export class SNSessionManager extends PureService<SessionEvent> {
     private apiService: SNApiService,
     private alertService: SNAlertService,
     private protocolService: SNProtocolService,
-    private challengeService: ChallengeService
+    private challengeService: ChallengeService,
   ) {
     super();
     apiService.setInvalidSessionObserver((revoked) => {
@@ -205,30 +203,6 @@ export class SNSessionManager extends PureService<SessionEvent> {
     });
   }
 
-  private async promptForMfaValue() {
-    const challenge = new Challenge(
-      [
-        new ChallengePrompt(
-          ChallengeValidation.None,
-          PromptTitles.Mfa,
-          SessionStrings.MfaInputPlaceholder,
-          false,
-          ChallengeKeyboardType.Numeric
-        ),
-      ],
-      ChallengeReason.Custom,
-      true,
-      SessionStrings.EnterMfa
-    );
-    const response = await this.challengeService.promptForChallengeResponse(
-      challenge
-    );
-    if (response) {
-      this.challengeService.completeChallenge(challenge);
-      return response.values[0].value as string;
-    }
-  }
-
   async register(
     email: string,
     password: string,
@@ -282,54 +256,20 @@ export class SNSessionManager extends PureService<SessionEvent> {
 
   private async retrieveKeyParams(
     email: string,
-    mfaKeyPath?: string,
-    mfaCode?: string
   ): Promise<{
-    keyParams?: SNRootKeyParams;
     response: KeyParamsResponse;
-    mfaKeyPath?: string;
-    mfaCode?: string;
+    keyParams?: SNRootKeyParams;
   }> {
-    const response = await this.apiService.getAccountKeyParams(
-      email,
-      mfaKeyPath,
-      mfaCode
-    );
-    if (response.error) {
-      if (mfaCode) {
-        await this.alertService.alert(SignInStrings.IncorrectMfa);
-      }
-      if (response.error.payload?.mfa_key) {
-        /** Prompt for MFA code and try again */
-        const inputtedCode = await this.promptForMfaValue();
-        if (!inputtedCode) {
-          /** User dismissed window without input */
-          return {
-            response: this.apiService.createErrorResponse(
-              SignInStrings.SignInCanceledMissingMfa,
-              StatusCode.CanceledMfa
-            ),
-          };
-        }
-        return this.retrieveKeyParams(
-          email,
-          response.error.payload.mfa_key,
-          inputtedCode
-        );
-      } else {
-        return { response };
-      }
-    }
-    /** Make sure to use client value for identifier/email */
+    const response = await this.apiService.getAccountKeyParams(email);
+
+    if (response.error) return { response };
+
     const keyParams = KeyParamsFromApiResponse(response, email);
-    if (!keyParams || !keyParams.version) {
-      return {
-        response: this.apiService.createErrorResponse(
-          messages.API_MESSAGE_FALLBACK_LOGIN_FAIL
-        ),
-      };
-    }
-    return { keyParams, response, mfaKeyPath, mfaCode };
+
+    return {
+      response,
+      keyParams,
+    };
   }
 
   public async signIn(
@@ -463,9 +403,7 @@ export class SNSessionManager extends PureService<SessionEvent> {
     const signInResponse = await this.bypassChecksAndSignInWithRootKey(
       email,
       rootKey,
-      paramsResult.mfaKeyPath,
-      paramsResult.mfaCode,
-      ephemeral
+      ephemeral,
     );
     return {
       response: signInResponse,
@@ -475,8 +413,6 @@ export class SNSessionManager extends PureService<SessionEvent> {
   public async bypassChecksAndSignInWithRootKey(
     email: string,
     rootKey: SNRootKey,
-    mfaKeyPath?: string,
-    mfaCode?: string,
     ephemeral = false
   ): Promise<SignInResponse> {
     const {
@@ -492,9 +428,7 @@ export class SNSessionManager extends PureService<SessionEvent> {
     const signInResponse = await this.apiService.signIn(
       email,
       rootKey.serverPassword!,
-      mfaKeyPath,
-      mfaCode,
-      ephemeral
+      ephemeral,
     );
     if (!signInResponse.error) {
       const expandedRootKey = await SNRootKey.ExpandedCopy(
@@ -508,29 +442,8 @@ export class SNSessionManager extends PureService<SessionEvent> {
       );
       return signInResponse;
     } else {
-      if (signInResponse.error.payload?.mfa_key) {
-        if (mfaCode) {
-          await this.alertService.alert(SignInStrings.IncorrectMfa);
-        }
-        /** Prompt for MFA code and try again */
-        const inputtedCode = await this.promptForMfaValue();
-        if (!inputtedCode) {
-          /** User dismissed window without input */
-          return this.apiService.createErrorResponse(
-            SignInStrings.SignInCanceledMissingMfa,
-            StatusCode.CanceledMfa
-          );
-        }
-        return this.bypassChecksAndSignInWithRootKey(
-          email,
-          rootKey,
-          signInResponse.error.payload.mfa_key,
-          inputtedCode
-        );
-      } else {
-        /** Some other error, return to caller */
-        return signInResponse;
-      }
+      // return error to caller
+      return signInResponse;
     }
   }
 

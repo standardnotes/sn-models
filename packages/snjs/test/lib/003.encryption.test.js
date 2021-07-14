@@ -5,10 +5,10 @@ import {
   KeyParamsOrigination,
   SNProtocolOperator003
 } from '@Lib/index';
-import { createApplication } from '../setup/snjs/appFactory';
+import { createAndInitializeApplication } from './../factory';
 import SNCrypto from '../setup/snjs/snCrypto';
 
-describe('Test 003 encryption', () => {
+describe('003 protocol operations', () => {
   /** The global Standard Notes application. */
   let testSNApp;
 
@@ -19,7 +19,7 @@ describe('Test 003 encryption', () => {
   const protocol003 = new SNProtocolOperator003(new SNCrypto());
 
   beforeEach(async () => {
-    testSNApp = await createApplication('test-application', Environment.Web, Platform.LinuxWeb);
+    testSNApp = await createAndInitializeApplication('test-application', Environment.Web, Platform.LinuxWeb);
     rootKey = await protocol003.createRootKey(
       identifier,
       password,

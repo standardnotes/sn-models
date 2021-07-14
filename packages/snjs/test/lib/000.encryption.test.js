@@ -1,19 +1,13 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-undef */
-import * as Factory from './lib/factory.js';
-chai.use(chaiAsPromised);
-const expect = chai.expect;
+import * as Factory from './../factory';
+import { SNProtocolOperator004, CreateMaxPayloadFromAnyObject } from '@Lib/index';
+import SNCrypto from '../setup/snjs/snCrypto';
 
 describe('000 protocol operations', () => {
-  const application = Factory.createApplication();
-  const protocol000 = new SNProtocolOperator004(new SNWebCrypto());
+  let application;
+  const protocol000 = new SNProtocolOperator004(new SNCrypto());
 
-  before(async () => {
-    await Factory.initializeApplication(application);
-  });
-
-  after(() => {
-    application.deinit();
+  beforeAll(async () => {
+    application = await Factory.createAndInitializeApplication();
   });
 
   it('can decode 000 item', async function () {
@@ -25,6 +19,6 @@ describe('000 protocol operations', () => {
       content_type: 'foo',
     });
     const decoded = await protocol000.generateDecryptedParameters(payload);
-    expect(decoded.content.text).to.equal('world');
+    expect(decoded.content.text).toEqual('world');
   });
 });

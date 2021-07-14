@@ -1,19 +1,22 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-undef */
-import * as Factory from './lib/factory.js';
-chai.use(chaiAsPromised);
-const expect = chai.expect;
+import * as Factory from './../factory';
+import {
+  SNProtocolOperator002,
+  KeyParamsOrigination,
+  PayloadFormat,
+  CreateMaxPayloadFromAnyObject
+} from '@Lib/index';
+import SNCrypto from '../setup/snjs/snCrypto';
 
 describe('002 protocol operations', () => {
   const _identifier = 'hello@test.com';
   const _password = 'password';
   let _keyParams, _key;
-  const application = Factory.createApplication();
-  const protocol002 = new SNProtocolOperator002(new SNWebCrypto());
+  let application;
+  const protocol002 = new SNProtocolOperator002(new SNCrypto());
 
   // runs once before all tests in this block
-  before(async () => {
-    localStorage.clear();
+  beforeAll(async () => {
+    application = await Factory.createApplication();
     await Factory.initializeApplication(application);
     _key = await protocol002.createRootKey(
       _identifier,
@@ -23,18 +26,14 @@ describe('002 protocol operations', () => {
     _keyParams = _key.keyParams;
   });
 
-  after(() => {
-    application.deinit();
-  });
-
   it('generates random key', async () => {
     const length = 128;
     const key = await protocol002.crypto.generateRandomKey(length);
-    expect(key.length).to.equal(length / 4);
+    expect(key.length).toEqual(length / 4);
   });
 
   it('cost minimum', () => {
-    expect(application.protocolService.costMinimumForVersion('002')).to.equal(
+    expect(application.protocolService.costMinimumForVersion('002')).toEqual(
       3000
     );
   });
@@ -45,32 +44,31 @@ describe('002 protocol operations', () => {
       _password,
       KeyParamsOrigination.Registration
     );
-    expect(key.dataAuthenticationKey).to.be.ok;
-    expect(key.serverPassword).to.be.ok;
-    expect(key.masterKey).to.be.ok;
+    expect(key.dataAuthenticationKey).toBeDefined;
+    expect(key.serverPassword).toBeDefined;
+    expect(key.masterKey).toBeDefined;
 
-    expect(key.keyParams.content.pw_nonce).to.be.ok;
-    expect(key.keyParams.content.pw_cost).to.be.ok;
-    expect(key.keyParams.content.pw_salt).to.be.ok;
+    expect(key.keyParams.content.pw_nonce).toBeDefined;
+    expect(key.keyParams.content.pw_cost).toBeDefined;
+    expect(key.keyParams.content.pw_salt).toBeDefined;
   });
 
   it('generates valid keys from existing params and decrypts', async () => {
     const password = 'password';
     const keyParams = await application.protocolService.createKeyParams({
-      pw_salt:
-        '8d381ef44cdeab1489194f87066b747b46053a833ee24956e846e7b40440f5f4',
+      pw_salt: '8d381ef44cdeab1489194f87066b747b46053a833ee24956e846e7b40440f5f4',
       pw_cost: 101000,
       version: '002',
     });
     const key = await protocol002.computeRootKey(password, keyParams);
-    expect(key.keyVersion).to.equal('002');
-    expect(key.serverPassword).to.equal(
+    expect(key.keyVersion).toEqual('002');
+    expect(key.serverPassword).toEqual(
       'f3cc7efc93380a7a3765dcb0498dabe83387acdda78f43bc7cfc31f4a2a05077'
     );
-    expect(key.masterKey).to.equal(
+    expect(key.masterKey).toEqual(
       '66500f7c9fb8ba0843e13e2f555feb5e43a3c27fee23e9b900a2577f1b373e1a'
     );
-    expect(key.dataAuthenticationKey).to.equal(
+    expect(key.dataAuthenticationKey).toEqual(
       'af3d6a7fd6c0422a7a84b0e99d6ac2a79b77675c9848f74314c20046e1f95c75'
     );
     const payload = CreateMaxPayloadFromAnyObject({
@@ -85,8 +83,8 @@ describe('002 protocol operations', () => {
       payload,
       key
     );
-    expect(decrypted.errorDecrypting).to.not.be.ok;
-    expect(decrypted.content.text).to.equal('Decryptable Sentence');
+    expect(decrypted.errorDecrypting).toBeUndefined;
+    expect(decrypted.content.text).toEqual('Decryptable Sentence');
   });
 
   it('properly encrypts and decrypts strings', async () => {
@@ -95,12 +93,12 @@ describe('002 protocol operations', () => {
     const iv = await protocol002.crypto.generateRandomKey(128);
     const encString = await protocol002.encryptString002(text, key, iv);
     const decString = await protocol002.decryptString002(encString, key, iv);
-    expect(decString).to.equal(text);
+    expect(decString).toEqual(text);
   });
 
   it('generates existing keys for key params', async () => {
     const key = await protocol002.computeRootKey(_password, _keyParams);
-    expect(key.compare(_key)).to.be.true;
+    expect(key.compare(_key)).toBeDefined;
   });
 
   it('generating encryption params includes items_key_id', async () => {
@@ -111,9 +109,9 @@ describe('002 protocol operations', () => {
       PayloadFormat.EncryptedString,
       key
     );
-    expect(params.content).to.be.ok;
-    expect(params.enc_item_key).to.be.ok;
-    expect(params.items_key_id).to.equal(key.uuid);
+    expect(params.content).toBeDefined;
+    expect(params.enc_item_key).toBeDefined;
+    expect(params.items_key_id).toEqual(key.uuid);
   });
 
   it('can decrypt encrypted params', async () => {
@@ -129,7 +127,7 @@ describe('002 protocol operations', () => {
       params,
       key
     );
-    expect(decrypted.content).to.eql(payload.content);
+    expect(decrypted.content).toEqual(payload.content);
   });
 
   it('payloads missing enc_item_key should decrypt as errorDecrypting', async () => {
@@ -147,6 +145,6 @@ describe('002 protocol operations', () => {
       modified,
       key
     );
-    expect(decrypted.errorDecrypting).to.equal(true);
+    expect(decrypted.errorDecrypting).toEqual(true);
   });
 });

@@ -19,7 +19,7 @@ import {
   SHORT_DELAY_TIME,
   sleep
 } from '../../helpers';
-import { createApplication } from '../../setup/snjs/appFactory';
+import { createAndInitializeApplication } from './../../factory';
 
 // To prevent conflicts with Mocha
 import {
@@ -41,7 +41,7 @@ describe('Component Manager', () => {
   let testTheme;
 
   beforeEach(async () => {
-    testSNApp = await createApplication('test-application', Environment.Web, Platform.LinuxWeb);
+    testSNApp = await createAndInitializeApplication('test-application', Environment.Web, Platform.LinuxWeb);
     /**
      * Lock syncing so that there aren't any sync requests that may affect new application instances.
      */
@@ -57,19 +57,19 @@ describe('Component Manager', () => {
 
   describe('isDesktop', () => {
     it('returns false if in a Web app', async () => {
-      testSNApp = await createApplication('test-application', Environment.Web, Platform.LinuxWeb);
+      testSNApp = await createAndInitializeApplication('test-application', Environment.Web, Platform.LinuxWeb);
       const { isDesktop } = testSNApp.componentManager;
       expect(isDesktop).toBe(false);
     });
 
     it('returns false if in a Mobile app', async () => {
-      testSNApp = await createApplication('test-application', Environment.Mobile, Platform.Android);
+      testSNApp = await createAndInitializeApplication('test-application', Environment.Mobile, Platform.Android);
       const { isDesktop } = testSNApp.componentManager;
       expect(isDesktop).toBe(false);
     });
 
     it('returns true if in a Desktop app', async () => {
-      testSNApp = await createApplication('test-application', Environment.Desktop, Platform.LinuxDesktop);
+      testSNApp = await createAndInitializeApplication('test-application', Environment.Desktop, Platform.LinuxDesktop);
       const { isDesktop } = testSNApp.componentManager;
       expect(isDesktop).toBe(true);
     });
@@ -77,19 +77,19 @@ describe('Component Manager', () => {
 
   describe('isMobile', () => {
     it('returns false if in a Web app', async () => {
-      testSNApp = await createApplication('test-application', Environment.Web, Platform.LinuxWeb);
+      testSNApp = await createAndInitializeApplication('test-application', Environment.Web, Platform.LinuxWeb);
       const { isMobile } = testSNApp.componentManager;
       expect(isMobile).toBe(false);
     });
 
     it('returns false if in a Desktop app', async () => {
-      testSNApp = await createApplication('test-application', Environment.Desktop, Platform.LinuxDesktop);
+      testSNApp = await createAndInitializeApplication('test-application', Environment.Desktop, Platform.LinuxDesktop);
       const { isMobile } = testSNApp.componentManager;
       expect(isMobile).toBe(false);
     });
 
     it('returns true if in a Mobile app', async () => {
-      testSNApp = await createApplication('test-application', Environment.Mobile, Platform.Android);
+      testSNApp = await createAndInitializeApplication('test-application', Environment.Mobile, Platform.Android);
       const { isMobile } = testSNApp.componentManager;
       expect(isMobile).toBe(true);
     });
@@ -97,12 +97,12 @@ describe('Component Manager', () => {
 
   describe('components', () => {
     it('returns an empty array if no items of type Component or Theme exist', async () => {
-      const testApp = await createApplication('test-application', Environment.Web, Platform.LinuxWeb);
+      const testApp = await createAndInitializeApplication('test-application', Environment.Web, Platform.LinuxWeb);
       expect(testApp.componentManager.components).toHaveLength(0);
     });
 
     it('returns an array of items of type Component and Theme', async () => {
-      const testApp = await createApplication('test-application', Environment.Web, Platform.LinuxWeb);
+      const testApp = await createAndInitializeApplication('test-application', Environment.Web, Platform.LinuxWeb);
 
       await createComponentItem(testApp, testExtensionEditorPackage);
       await createComponentItem(testApp, testThemeDefaultPackage);
@@ -117,7 +117,7 @@ describe('Component Manager', () => {
 
   describe('componentsForArea()', () => {
     it('returns an array of Component items', async () => {
-      const testApp = await createApplication('test-application', Environment.Web, Platform.LinuxWeb);
+      const testApp = await createAndInitializeApplication('test-application', Environment.Web, Platform.LinuxWeb);
 
       await createComponentItem(testApp, testExtensionEditorPackage);
       await createComponentItem(testApp, testThemeDefaultPackage);
@@ -200,7 +200,7 @@ describe('Component Manager', () => {
 
     describe('Mobile', () => {
       it('returns just one theme', async () => {
-        testSNApp = await createApplication('test-application', Environment.Mobile, Platform.Android);
+        testSNApp = await createAndInitializeApplication('test-application', Environment.Mobile, Platform.Android);
         await createComponentItem(testSNApp, testThemeDefaultPackage, {
           active: true
         });
@@ -220,7 +220,7 @@ describe('Component Manager', () => {
 
   describe('urlsForActiveThemes()', () => {
     it('returns an empty array if there are no active themes', async () => {
-      const testApp = await createApplication('test-application', Environment.Web, Platform.LinuxWeb);
+      const testApp = await createAndInitializeApplication('test-application', Environment.Web, Platform.LinuxWeb);
       const urlsForActiveThemes = testApp.componentManager.urlsForActiveThemes();
       expect(urlsForActiveThemes).toHaveLength(0);
     });
@@ -410,7 +410,7 @@ describe('Component Manager', () => {
   describe('urlForComponent()', () => {
     describe('Desktop', () => {
       it('returns null because offlineOnly is available on desktop, and not on web or mobile', async () => {
-        testSNApp = await createApplication('test-application', Environment.Mobile, Platform.Android);
+        testSNApp = await createAndInitializeApplication('test-application', Environment.Mobile, Platform.Android);
         testComponent = await createComponentItem(testSNApp, testExtensionEditorPackage, {
           offlineOnly: true
         });
@@ -420,7 +420,7 @@ describe('Component Manager', () => {
       });
 
       it('replaces sn:// with the extensions server host', async () => {
-        testSNApp = await createApplication('test-application', Environment.Desktop, Platform.LinuxDesktop);
+        testSNApp = await createAndInitializeApplication('test-application', Environment.Desktop, Platform.LinuxDesktop);
 
         const extServerHost = 'https://127.0.0.1:45653/'
         const desktopManager = {
@@ -442,7 +442,7 @@ describe('Component Manager', () => {
 
     describe('Mobile', () => {
       it('replaces localhost or sn.local with localhost on iOS', async () => {
-        testSNApp = await createApplication('test-application', Environment.Mobile, Platform.Ios);
+        testSNApp = await createAndInitializeApplication('test-application', Environment.Mobile, Platform.Ios);
 
         const localhostComponent = await createComponentItem(testSNApp, testExtensionEditorPackage, {
           hosted_url: 'http://localhost/my-extension-for-ios'
@@ -464,7 +464,7 @@ describe('Component Manager', () => {
       });
 
       it('replaces localhost or sn.local with 10.0.2.2 on Android', async () => {
-        testSNApp = await createApplication('test-application', Environment.Mobile, Platform.Android);
+        testSNApp = await createAndInitializeApplication('test-application', Environment.Mobile, Platform.Android);
 
         const localhostComponent = await createComponentItem(testSNApp, testExtensionEditorPackage, {
           hosted_url: 'http://localhost/my-extension-for-android'
@@ -765,7 +765,7 @@ describe('Component Manager', () => {
     let runFunction;
 
     beforeEach(async () => {
-      testSNApp = await createApplication('test-application', Environment.Web, Platform.LinuxWeb);
+      testSNApp = await createAndInitializeApplication('test-application', Environment.Web, Platform.LinuxWeb);
       testComponent = await createComponentItem(testSNApp, testExtensionEditorPackage);
       runFunction = jest.fn();
     });
@@ -1088,7 +1088,7 @@ describe('Component Manager', () => {
     });
 
     test('on mobile, return default editor if plain editor is not prefered', async () => {
-      testSNApp = await createApplication('test-application', Environment.Mobile, Platform.Android);
+      testSNApp = await createAndInitializeApplication('test-application', Environment.Mobile, Platform.Android);
       testNote = await createNoteItem(testSNApp, {
         title: 'Note 1'
       });
@@ -1126,7 +1126,7 @@ describe('Component Manager', () => {
     });
 
     it('returns the first default editor on mobile', async () => {
-      testSNApp = await createApplication('test-application', Environment.Mobile, Platform.Android);
+      testSNApp = await createAndInitializeApplication('test-application', Environment.Mobile, Platform.Android);
       const editorComponent = await createComponentItem(
         testSNApp,
         testExtensionEditorPackage

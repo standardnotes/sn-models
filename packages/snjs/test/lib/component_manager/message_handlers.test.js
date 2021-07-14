@@ -15,7 +15,7 @@ import {
   SHORT_DELAY_TIME,
   sleep
 } from '../../helpers';
-import { createApplication } from '../../setup/snjs/appFactory';
+import { createAndInitializeApplication } from './../../factory';
 
 // To prevent conflicts with Mocha
 import {
@@ -34,7 +34,7 @@ describe('Component Manager', () => {
   let testComponent;
 
   beforeEach(async () => {
-    testSNApp = await createApplication('test-application', Environment.Web, Platform.LinuxWeb);
+    testSNApp = await createAndInitializeApplication('test-application', Environment.Web, Platform.LinuxWeb);
     /**
      * Lock syncing so that there aren't any sync requests that may affect new application instances.
      */
@@ -276,7 +276,7 @@ describe('Component Manager', () => {
     });
 
     test('post message as json on mobile', async () => {
-      testSNApp = await createApplication('test-application', Environment.Mobile, Platform.Android);
+      testSNApp = await createAndInitializeApplication('test-application', Environment.Mobile, Platform.Android);
       await testSNApp.componentManager.registerComponentWindow(
         testComponent,
         iframeWindow

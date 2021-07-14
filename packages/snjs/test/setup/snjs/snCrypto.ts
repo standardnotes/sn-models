@@ -35,7 +35,7 @@ export default class SNCrypto implements SNPureCrypto {
     iterations: number,
     length: number
   ): Promise<HexString | null> {
-    const key = NodeCrypto.pbkdf2Sync(password, salt, iterations, length, "sha256");
+    const key = NodeCrypto.pbkdf2Sync(password, salt, iterations, length, 'sha512');
     return key.toString("hex");
   }
 

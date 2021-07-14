@@ -1,23 +1,12 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-undef */
-import WebDeviceInterface from './lib/web_device_interface.js';
-import * as Factory from './lib/factory.js';
-chai.use(chaiAsPromised);
-const expect = chai.expect;
+import DeviceInterface from './../setup/snjs/deviceInterface';
+import * as Factory from './../factory';
+import { SNApplicationGroup, RawStorageKey, DeinitSource } from '@Lib/index';
 
 describe('application group', function () {
-  const deviceInterface = new WebDeviceInterface(
+  const deviceInterface = new DeviceInterface(
     setTimeout.bind(window),
     setInterval.bind(window)
   );
-
-  beforeEach(async function () {
-    localStorage.clear();
-  });
-
-  afterEach(async function () {
-    localStorage.clear();
-  });
 
   it('initializing a group should result with primary application', async function () {
     const group = new SNApplicationGroup(deviceInterface);
@@ -29,8 +18,8 @@ describe('application group', function () {
         );
       },
     });
-    expect(group.primaryApplication).to.be.ok;
-    expect(group.primaryApplication.identifier).to.be.ok;
+    expect(group.primaryApplication).toBeTruthy;
+    expect(group.primaryApplication.identifier).toBeTruthy();
   });
 
   it('initializing a group should result with proper descriptor setup', async function () {
@@ -44,7 +33,7 @@ describe('application group', function () {
       },
     });
     const identifier = group.primaryApplication.identifier;
-    expect(group.descriptorRecord[identifier].identifier).to.equal(identifier);
+    expect(group.descriptorRecord[identifier].identifier).toBe(identifier);
   });
 
   it('should persist descriptor record after changes', async function () {
@@ -62,19 +51,19 @@ describe('application group', function () {
     const descriptorRecord = await group.deviceInterface.getJsonParsedRawStorageValue(
       RawStorageKey.DescriptorRecord
     );
-    expect(descriptorRecord[identifier].identifier).to.equal(identifier);
-    expect(descriptorRecord[identifier].primary).to.equal(true);
+    expect(descriptorRecord[identifier].identifier).toBe(identifier);
+    expect(descriptorRecord[identifier].primary).toBe(true);
 
     await group.addNewApplication();
     const descriptorRecord2 = await group.deviceInterface.getJsonParsedRawStorageValue(
       RawStorageKey.DescriptorRecord
     );
-    expect(Object.keys(descriptorRecord2).length).to.equal(2);
+    expect(Object.keys(descriptorRecord2).length).toBe(2);
 
-    expect(descriptorRecord2[identifier].primary).to.equal(false);
+    expect(descriptorRecord2[identifier].primary).toBe(false);
     expect(
       descriptorRecord2[group.primaryApplication.identifier].primary
-    ).to.equal(true);
+    ).toBe(true);
   });
 
   it('adding new application should incrememnt total descriptor count', async function () {
@@ -90,8 +79,8 @@ describe('application group', function () {
     const currentIdentifier = group.primaryApplication.identifier;
     await group.addNewApplication();
 
-    expect(group.getDescriptors().length).to.equal(2);
-    expect(group.primaryApplication.identifier).to.not.equal(currentIdentifier);
+    expect(group.getDescriptors().length).toBe(2);
+    expect(group.primaryApplication.identifier).not.toBe(currentIdentifier);
   });
 
   it('signing out of application should remove from group and create new', async function () {
@@ -113,10 +102,10 @@ describe('application group', function () {
      * next tick
      */
     await Factory.sleep(0);
-    expect(group.applications.length).to.equal(1);
+    expect(group.applications.length).toBe(1);
 
     /** Expect a new application to have been created */
-    expect(group.applications[0].identifier).to.not.equal(identifier);
+    expect(group.applications[0].identifier).not.toBe(identifier);
   });
 
   it('should be notified when application changes', async function () {
@@ -141,7 +130,7 @@ describe('application group', function () {
       });
       await group.addNewApplication();
     }).then(() => {
-      expect(notifyCount).to.equal(expectedCount);
+      expect(notifyCount).toBe(expectedCount);
     });
-  }).timeout(1000);
+  });
 });

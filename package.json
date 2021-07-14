@@ -10,12 +10,9 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "start": "lerna run start --parallel",
-    "start:test-server": "node test-server.js",
-    "start:test-server:dev": "node test-server.js --dev",
     "test": "lerna run test --parallel",
     "test:e2e": "bash test.sh",
     "test:e2e:dev-setup": "docker-compose up",
-    "test:e2e:dev": "mocha-headless-chrome --timeout 1200000 -f http://localhost:9002/test/test.html?sync_server_host_name=localhost",
     "build": "lerna run build",
     "lint": "lerna run lint",
     "publish-packages": "lerna publish from-package --yes"

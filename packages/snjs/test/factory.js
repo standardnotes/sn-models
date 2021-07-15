@@ -123,9 +123,7 @@ export function createApplication(identifier, environment, platform) {
     },
     identifier || `${Math.random()}`,
     getSwappedClasses(environment),
-    getDefaultHost(),
-    getDefaultHost(),
-    getDefaultWebSocketUrl(),
+    getDefaultHost()
   );
 }
 
